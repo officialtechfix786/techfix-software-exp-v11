@@ -1,24 +1,69 @@
-FILE: assets/js/mobiles.js
-PART: 9
-STATUS: In Progress
-
-```javascript id="q3zq8c"
-/* ==========================================
-   TECHFIX SOFTWARE EXP v11
-   MOBILE DATABASE MODULE
-
-   Founder: MIAN AHMAD
-========================================== */
-
-
 "use strict";
+
+
+/*
+    TECHFIX SOFTWARE EXP v11
+    MOBILE DATABASE SYSTEM
+
+    Handles:
+    - Mobile models
+    - Search
+    - Brand filter
+    - Cards
+*/
 
 
 
 const MobileSystem = {
 
 
-    devices: [],
+
+    devices:[
+
+
+
+
+
+        {
+            brand:"Apple",
+            model:"iPhone 17 Pro",
+            image:"assets/images/mobiles/iphone17pro.png",
+            android:"",
+            chipset:"A19 Pro",
+            repair:"Software & Hardware Solutions"
+        },
+
+
+
+        {
+            brand:"Google",
+            model:"Pixel Series",
+            image:"assets/images/mobiles/pixel.png",
+            android:"Android",
+            chipset:"Google Tensor",
+            repair:"Firmware & Repair"
+        },
+
+
+
+        {
+            brand:"Samsung",
+            model:"Galaxy Series",
+            image:"assets/images/mobiles/samsung.png",
+            android:"Android",
+            chipset:"Exynos / Snapdragon",
+            repair:"Software Solutions"
+        }
+
+
+
+
+
+    ],
+
+
+
+
 
 
 
@@ -34,6 +79,10 @@ const MobileSystem = {
 
 
 
+
+
+
+
     getAll(){
 
 
@@ -44,17 +93,31 @@ const MobileSystem = {
 
 
 
+
+
+
+
     search(keyword){
+
+
+
+        keyword =
+        keyword
+        .toLowerCase()
+        .trim();
+
 
 
         return this.devices.filter(
             device => {
 
 
-                return JSON.stringify(device)
+                return JSON.stringify(
+                    device
+                )
                 .toLowerCase()
                 .includes(
-                    keyword.toLowerCase()
+                    keyword
                 );
 
 
@@ -66,7 +129,12 @@ const MobileSystem = {
 
 
 
+
+
+
+
     filterByBrand(brand){
+
 
 
         return this.devices.filter(
@@ -74,9 +142,10 @@ const MobileSystem = {
 
 
                 return device.brand
-                ?.toLowerCase()
+                .toLowerCase()
                 ===
-                brand.toLowerCase();
+                brand
+                .toLowerCase();
 
 
             }
@@ -87,51 +156,117 @@ const MobileSystem = {
 
 
 
+
+
+
 };
 
 
 
 
 
-/* =========================
-   SAMPLE STRUCTURE ONLY
-
-   Real devices will be added
-   from database files.
-========================= */
 
 
-function createMobile(
-    data
+
+
+function createMobileCard(
+    device
 ){
 
 
-    return {
+    return `
 
 
-        brand:data.brand || "",
-
-        model:data.model || "",
-
-        image:data.image || "assets/images/logo/techfix-logo.png",
-
-        android:data.android || "",
-
-        chipset:data.chipset || "",
-
-        boot:data.boot || "",
-
-        firmware:data.firmware || "",
-
-        repair:data.repair || "",
-
-        notes:data.notes || ""
+    <div class="mobile-card">
 
 
-    };
+        <img src="${device.image}"
+        alt="${device.model}">
+
+
+        <h3>
+            ${device.model}
+        </h3>
+
+
+        <p>
+            Brand:
+            ${device.brand}
+        </p>
+
+
+        <p>
+            Chipset:
+            ${device.chipset}
+        </p>
+
+
+        <p>
+            ${device.repair}
+        </p>
+
+
+    </div>
+
+
+    `;
 
 
 }
+
+
+
+
+
+
+
+
+function loadMobiles(
+    container
+){
+
+
+
+    const box =
+    document.querySelector(
+        container
+    );
+
+
+
+    if(!box){
+
+        return;
+
+    }
+
+
+
+    box.innerHTML="";
+
+
+
+    MobileSystem
+    .getAll()
+    .forEach(
+        device => {
+
+
+            box.innerHTML +=
+            createMobileCard(
+                device
+            );
+
+
+        }
+    );
+
+
+}
+
+
+
+
 
 
 
@@ -140,6 +275,9 @@ window.MobileSystem =
 MobileSystem;
 
 
-window.createMobile =
-createMobile;
-```
+window.createMobileCard =
+createMobileCard;
+
+
+window.loadMobiles =
+loadMobiles;

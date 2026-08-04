@@ -1,24 +1,72 @@
-FILE: assets/js/software.js
-PART: 10
-STATUS: In Progress
-
-```javascript id="f6m8cz"
-/* ==========================================
-   TECHFIX SOFTWARE EXP v11
-   SOFTWARE DATABASE MODULE
-
-   Founder: MIAN AHMAD
-========================================== */
-
-
 "use strict";
+
+
+/*
+    TECHFIX SOFTWARE EXP v11
+    SOFTWARE DATABASE SYSTEM
+
+    Handles:
+    - Software tools
+    - Categories
+    - Search
+    - Cards
+*/
 
 
 
 const SoftwareSystem = {
 
 
-    tools: [],
+
+    tools:[
+
+
+
+        {
+            name:"ADB Fastboot Tools",
+            logo:"assets/images/software/adb.png",
+            category:"Android",
+            version:"Latest",
+            description:"Android debugging and flashing tools",
+            download:"#"
+        },
+
+
+        {
+            name:"Platform Tools",
+            logo:"assets/images/software/platform.png",
+            category:"Android",
+            version:"Latest",
+            description:"Official Android platform utilities",
+            download:"#"
+        },
+
+
+        {
+            name:"iOS Repair Tools",
+            logo:"assets/images/software/apple.png",
+            category:"Apple",
+            version:"Latest",
+            description:"Apple device service solutions",
+            download:"#"
+        },
+
+
+        {
+            name:"Firmware Tools",
+            logo:"assets/images/software/firmware.png",
+            category:"Firmware",
+            version:"v11",
+            description:"Mobile firmware management",
+            download:"#"
+        }
+
+
+    ],
+
+
+
+
 
 
 
@@ -34,6 +82,10 @@ const SoftwareSystem = {
 
 
 
+
+
+
+
     getAll(){
 
 
@@ -44,17 +96,30 @@ const SoftwareSystem = {
 
 
 
+
+
+
+
     search(keyword){
+
+
+        keyword =
+        keyword
+        .toLowerCase()
+        .trim();
+
 
 
         return this.tools.filter(
             tool => {
 
 
-                return JSON.stringify(tool)
+                return JSON.stringify(
+                    tool
+                )
                 .toLowerCase()
                 .includes(
-                    keyword.toLowerCase()
+                    keyword
                 );
 
 
@@ -66,6 +131,10 @@ const SoftwareSystem = {
 
 
 
+
+
+
+
     filterByCategory(category){
 
 
@@ -74,9 +143,10 @@ const SoftwareSystem = {
 
 
                 return tool.category
-                ?.toLowerCase()
+                .toLowerCase()
                 ===
-                category.toLowerCase();
+                category
+                .toLowerCase();
 
 
             }
@@ -93,50 +163,104 @@ const SoftwareSystem = {
 
 
 
-/* =========================
-   SOFTWARE CARD CREATOR
-
-   Official links will be
-   added through database.
-========================= */
 
 
-function createSoftware(
-    data
+
+function createSoftwareCard(
+    tool
 ){
 
 
-    return {
+    return `
 
 
-        name:data.name || "",
-
-        logo:data.logo ||
-        "assets/images/logo/techfix-logo.png",
+    <div class="software-card">
 
 
-        description:data.description || "",
+        <img src="${tool.logo}"
+        alt="${tool.name}">
 
 
-        category:data.category || "",
+        <h3>
+            ${tool.name}
+        </h3>
 
 
-        version:data.version || "",
+        <p>
+            ${tool.description}
+        </p>
 
 
-        website:data.website || "",
+        <span>
+            ${tool.category}
+        </span>
 
 
-        rating:data.rating || "★★★★★ 5/5",
+        <a href="${tool.download}">
+            Download
+        </a>
 
 
-        download:data.download || ""
+    </div>
 
 
-    };
+    `;
 
 
 }
+
+
+
+
+
+
+
+
+function loadSoftware(
+    container
+){
+
+
+
+    const box =
+    document.querySelector(
+        container
+    );
+
+
+
+    if(!box){
+
+        return;
+
+    }
+
+
+
+    box.innerHTML="";
+
+
+
+    SoftwareSystem
+    .getAll()
+    .forEach(
+        tool => {
+
+
+            box.innerHTML +=
+            createSoftwareCard(
+                tool
+            );
+
+
+        }
+    );
+
+
+}
+
+
+
 
 
 
@@ -145,6 +269,9 @@ window.SoftwareSystem =
 SoftwareSystem;
 
 
-window.createSoftware =
-createSoftware;
-```
+window.createSoftwareCard =
+createSoftwareCard;
+
+
+window.loadSoftware =
+loadSoftware;

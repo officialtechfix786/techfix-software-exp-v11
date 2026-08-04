@@ -1,157 +1,263 @@
-FILE: assets/js/utils.js
-PART: 12
-STATUS: In Progress
-
-```javascript id="3m6x9v"
-/* ==========================================
-   TECHFIX SOFTWARE EXP v11
-   UTILITY FUNCTIONS
-
-   Founder: MIAN AHMAD
-========================================== */
-
-
 "use strict";
 
 
+/*
+    TECHFIX SOFTWARE EXP v11
+    UTILITY SYSTEM
 
-/* =========================
-   SAFE SELECTOR
-========================= */
-
-
-function select(
-    selector
-){
+    Common helper functions
+*/
 
 
-    return document.querySelector(
-        selector
-    );
 
-
-}
+const TechFixUtils = {
 
 
 
 
+    select(selector){
 
-/* =========================
-   SELECT ALL
-========================= */
+        return document.querySelector(
+            selector
+        );
 
-
-function selectAll(
-    selector
-){
-
-
-    return document.querySelectorAll(
-        selector
-    );
-
-
-}
+    },
 
 
 
 
 
-/* =========================
-   IMAGE FALLBACK SYSTEM
-========================= */
+    selectAll(selector){
+
+        return [
+            ...document.querySelectorAll(
+                selector
+            )
+        ];
+
+    },
 
 
-function imageFallback(
-    image
-){
 
 
-    if(!image.src ||
-       image.src === ""
-    ){
 
 
-        image.src =
-        "assets/images/logo/techfix-logo.png";
+
+    create(tag, className=""){
+
+
+        const element =
+        document.createElement(
+            tag
+        );
+
+
+        if(className){
+
+            element.className =
+            className;
+
+        }
+
+
+        return element;
+
+
+    },
+
+
+
+
+
+
+
+    formatPrice(price){
+
+
+        return "Rs. " +
+        Number(price)
+        .toLocaleString();
+
+
+    },
+
+
+
+
+
+
+
+    save(key,value){
+
+
+        localStorage.setItem(
+            key,
+            JSON.stringify(value)
+        );
+
+
+    },
+
+
+
+
+
+
+
+    get(key){
+
+
+        const data =
+        localStorage.getItem(
+            key
+        );
+
+
+
+        if(!data){
+
+            return null;
+
+        }
+
+
+
+        try{
+
+
+            return JSON.parse(
+                data
+            );
+
+
+        }
+        catch(error){
+
+
+            return data;
+
+
+        }
+
+
+    },
+
+
+
+
+
+
+
+    remove(key){
+
+
+        localStorage.removeItem(
+            key
+        );
+
+
+    },
+
+
+
+
+
+
+
+    notify(message,type="info"){
+
+
+
+        const box =
+        document.createElement(
+            "div"
+        );
+
+
+
+        box.className =
+        "techfix-notification " +
+        type;
+
+
+
+        box.textContent =
+        message;
+
+
+
+        document.body.appendChild(
+            box
+        );
+
+
+
+        setTimeout(
+            () => {
+
+
+                box.remove();
+
+
+            },
+            3000
+        );
+
+
+    },
+
+
+
+
+
+
+
+    debounce(func,delay=300){
+
+
+
+        let timer;
+
+
+
+        return function(...args){
+
+
+            clearTimeout(
+                timer
+            );
+
+
+            timer =
+            setTimeout(
+                () => {
+
+
+                    func.apply(
+                        this,
+                        args
+                    );
+
+
+                },
+                delay
+            );
+
+
+        };
 
 
     }
 
 
-}
+
+};
 
 
 
 
 
-/* =========================
-   TEXT FORMATTER
-========================= */
 
 
-function capitalize(
-    text
-){
-
-
-    if(!text){
-
-        return "";
-
-    }
-
-
-
-    return text.charAt(0)
-    .toUpperCase()
-    +
-    text.slice(1);
-
-
-}
-
-
-
-
-
-/* =========================
-   SAFE LOG
-========================= */
-
-
-function techfixLog(
-    message
-){
-
-
-    console.log(
-        "[TECHFIX]",
-        message
-    );
-
-
-}
-
-
-
-
-window.select =
-select;
-
-
-window.selectAll =
-selectAll;
-
-
-window.imageFallback =
-imageFallback;
-
-
-window.capitalize =
-capitalize;
-
-
-window.techfixLog =
-techfixLog;
-```
+window.TechFixUtils =
+TechFixUtils;

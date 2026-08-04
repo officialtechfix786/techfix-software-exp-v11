@@ -1,36 +1,224 @@
-FILE: assets/js/database.js
-PART: 8
-STATUS: In Progress
-
-```javascript
-/* ==========================================
-   TECHFIX SOFTWARE EXP v11
-   DATABASE CORE SYSTEM
-
-   Founder: MIAN AHMAD
-========================================== */
-
-
 "use strict";
+
+
+/*
+    TECHFIX SOFTWARE EXP v11
+    DATABASE CORE SYSTEM
+
+    Handles:
+    - Mobile data
+    - Software data
+    - Price data
+    - Brand data
+    - Local storage
+*/
 
 
 
 const TechFixDatabase = {
 
 
-    mobiles: [],
+
+    data:{
 
 
-    software: [],
+        mobiles:[],
 
 
-    brands: [],
+        software:[],
 
 
-    solutions: [],
+        brands:[],
 
 
-    prices: []
+        solutions:[],
+
+
+        prices:[]
+
+
+    },
+
+
+
+
+
+
+
+    add(
+        category,
+        item
+    ){
+
+
+
+        if(
+            !this.data[category]
+        ){
+
+
+            console.warn(
+                "Invalid database category:",
+                category
+            );
+
+
+            return false;
+
+
+        }
+
+
+
+        this.data[category]
+        .push(
+            item
+        );
+
+
+
+        return true;
+
+
+    },
+
+
+
+
+
+
+
+    get(
+        category
+    ){
+
+
+
+        if(
+            !this.data[category]
+        ){
+
+
+            return [];
+
+
+        }
+
+
+
+        return this.data[category];
+
+
+    },
+
+
+
+
+
+
+
+    search(
+        category,
+        keyword
+    ){
+
+
+
+        const items =
+        this.get(
+            category
+        );
+
+
+
+        keyword =
+        keyword
+        .toLowerCase()
+        .trim();
+
+
+
+
+
+        return items.filter(
+            item => {
+
+
+                return JSON.stringify(
+                    item
+                )
+                .toLowerCase()
+                .includes(
+                    keyword
+                );
+
+
+            }
+        );
+
+
+    },
+
+
+
+
+
+
+
+    save(){
+
+
+
+        localStorage.setItem(
+            "TechFixDatabase",
+            JSON.stringify(
+                this.data
+            )
+        );
+
+
+    },
+
+
+
+
+
+
+
+    load(){
+
+
+
+        const saved =
+        localStorage.getItem(
+            "TechFixDatabase"
+        );
+
+
+
+        if(saved){
+
+
+            this.data =
+            JSON.parse(
+                saved
+            );
+
+
+        }
+
+
+
+        return this.data;
+
+
+    }
+
+
+
+
+
+
 
 };
 
@@ -38,124 +226,30 @@ const TechFixDatabase = {
 
 
 
-/* =========================
-   DATABASE LOADER
-========================= */
-
-
-function loadDatabase(){
-
-
-    console.log(
-        "TechFix Database System Ready"
-    );
-
-
-    return TechFixDatabase;
-
-
-}
 
 
 
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
 
 
-/* =========================
-   ADD DATABASE DATA
-========================= */
+        TechFixDatabase.load();
 
 
-function addDatabaseItem(
-    category,
-    data
-){
 
-
-    if(
-        !TechFixDatabase[category]
-    ){
-
-        console.warn(
-            "Invalid database category:",
-            category
+        console.log(
+            "TechFix Database Ready"
         );
 
-        return;
 
     }
-
-
-
-    TechFixDatabase[category].push(
-        data
-    );
-
-
-}
+);
 
 
 
 
-
-/* =========================
-   SEARCH DATABASE
-========================= */
-
-
-function searchDatabase(
-    category,
-    keyword
-){
-
-
-    if(
-        !TechFixDatabase[category]
-    ){
-
-        return [];
-
-    }
-
-
-
-    return TechFixDatabase[category]
-    .filter(
-        item => {
-
-
-            return JSON.stringify(item)
-            .toLowerCase()
-            .includes(
-                keyword.toLowerCase()
-            );
-
-
-        }
-    );
-
-
-}
-
-
-
-
-/* =========================
-   EXPORT SYSTEM
-========================= */
 
 
 window.TechFixDatabase =
 TechFixDatabase;
-
-
-window.loadDatabase =
-loadDatabase;
-
-
-window.addDatabaseItem =
-addDatabaseItem;
-
-
-window.searchDatabase =
-searchDatabase;
-```

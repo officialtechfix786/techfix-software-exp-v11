@@ -1,22 +1,200 @@
-FILE: assets/js/app.js
-PART: 4
-STATUS: In Progress
-
-```javascript id="4ks8pw"
-/* ==========================================
-   TECHFIX SOFTWARE EXP v11
-   MAIN APPLICATION JAVASCRIPT
-
-   Founder: MIAN AHMAD
-========================================== */
-
-
 "use strict";
 
 
-/* =========================
-   WEBSITE READY
-========================= */
+/*
+    TECHFIX SOFTWARE EXP v11
+    MAIN APPLICATION CORE
+
+    Handles:
+    - Website initialization
+    - Preloader
+    - Page ready state
+    - Global events
+    - System status
+*/
+
+
+
+const TechFixApp = {
+
+
+
+    version:"v11",
+
+
+
+    founder:"MIAN AHMAD",
+
+
+
+    status:"ONLINE",
+
+
+
+
+    init(){
+
+
+        this.preloader();
+
+
+        this.systemReady();
+
+
+        this.globalEvents();
+
+
+        console.log(
+            "TechFix Software EXP " +
+            this.version +
+            " Loaded"
+        );
+
+
+    },
+
+
+
+
+
+    preloader(){
+
+
+        const loader =
+        document.getElementById(
+            "preloader"
+        );
+
+
+
+        if(loader){
+
+
+            window.addEventListener(
+                "load",
+                () => {
+
+
+                    setTimeout(
+                        () => {
+
+
+                            loader.classList.add(
+                                "hide"
+                            );
+
+
+                        },
+                        700
+                    );
+
+
+                }
+            );
+
+
+        }
+
+
+    },
+
+
+
+
+
+
+
+    systemReady(){
+
+
+        document.body.classList.add(
+            "techfix-ready"
+        );
+
+
+
+        const status =
+        document.querySelector(
+            ".system-status"
+        );
+
+
+
+        if(status){
+
+
+            status.innerHTML =
+            `
+            <span></span>
+            SYSTEM ONLINE
+            `;
+
+
+        }
+
+
+    },
+
+
+
+
+
+
+
+    globalEvents(){
+
+
+
+        window.addEventListener(
+            "error",
+            error => {
+
+
+                console.warn(
+                    "TechFix Error:",
+                    error.message
+                );
+
+
+            }
+        );
+
+
+
+        document.addEventListener(
+            "visibilitychange",
+            () => {
+
+
+                if(
+                    document.visibilityState
+                    ===
+                    "visible"
+                ){
+
+
+                    console.log(
+                        "System Active"
+                    );
+
+
+                }
+
+
+            }
+        );
+
+
+    }
+
+
+
+};
+
+
+
+
+
 
 
 document.addEventListener(
@@ -24,7 +202,7 @@ document.addEventListener(
     () => {
 
 
-        initializeWebsite();
+        TechFixApp.init();
 
 
     }
@@ -32,136 +210,8 @@ document.addEventListener(
 
 
 
-/* =========================
-   INITIALIZATION
-========================= */
 
 
-function initializeWebsite(){
 
-
-    removePreloader();
-
-
-    headerScrollEffect();
-
-
-    console.log(
-        "TechFix Software EXP v11 Loaded Successfully"
-    );
-
-
-}
-
-
-
-/* =========================
-   PRELOADER
-========================= */
-
-
-function removePreloader(){
-
-
-    const loader =
-    document.getElementById("preloader");
-
-
-    if(loader){
-
-
-        setTimeout(()=>{
-
-
-            loader.style.opacity="0";
-
-
-            setTimeout(()=>{
-
-
-                loader.remove();
-
-
-            },500);
-
-
-
-        },800);
-
-
-    }
-
-
-}
-
-
-
-/* =========================
-   HEADER EFFECT
-========================= */
-
-
-function headerScrollEffect(){
-
-
-    const header =
-    document.getElementById("header");
-
-
-    if(!header) return;
-
-
-
-    window.addEventListener(
-        "scroll",
-        ()=>{
-
-
-            if(window.scrollY > 50){
-
-
-                header.classList.add(
-                    "scrolled"
-                );
-
-
-            }
-
-            else {
-
-
-                header.classList.remove(
-                    "scrolled"
-                );
-
-
-            }
-
-
-        }
-    );
-
-
-}
-
-
-
-/* =========================
-   SAFE ERROR HANDLER
-========================= */
-
-
-window.addEventListener(
-    "error",
-    (event)=>{
-
-
-        console.warn(
-            "TechFix Script Warning:",
-            event.message
-        );
-
-
-    }
-);
-```
+window.TechFixApp =
+TechFixApp;

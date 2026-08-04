@@ -1,103 +1,221 @@
-FILE: assets/js/prices.js
-PART: 11
-STATUS: In Progress
-
-```javascript id="1q4s8n"
-/* ==========================================
-   TECHFIX SOFTWARE EXP v11
-   SOLUTION PRICING MODULE
-
-   Founder: MIAN AHMAD
-========================================== */
-
-
 "use strict";
 
 
+/*
+    TECHFIX SOFTWARE EXP v11
+    SOLUTION PRICING SYSTEM
 
-const SolutionPrices = [
+    Handles:
+    - Android pricing
+    - Apple pricing
+    - Search
+    - Filtering
+    - Rating
+    - Price cards
+*/
 
 
-    {
-        category: "Android",
-        service: "FRP Remove",
-        price: "1000 - 1500"
+
+const TechFixPrices = {
+
+
+    services: [
+
+
+        {
+            id:1,
+            category:"Android",
+            service:"FRP Solution",
+            price:"1000 - 1500",
+            rating:"★★★★★ 4.9/5"
+        },
+
+
+        {
+            id:2,
+            category:"Android",
+            service:"Flash Service",
+            price:"1000 - 2000",
+            rating:"★★★★★ 4.8/5"
+        },
+
+
+        {
+            id:3,
+            category:"Android",
+            service:"IMEI Repair",
+            price:"2500 - 4000",
+            rating:"★★★★★ 4.9/5"
+        },
+
+
+        {
+            id:4,
+            category:"Android",
+            service:"Network Repair",
+            price:"2500 - 3500",
+            rating:"★★★★★ 4.8/5"
+        },
+
+
+        {
+            id:5,
+            category:"Android",
+            service:"Boot Repair",
+            price:"2000 - 3000",
+            rating:"★★★★★ 4.7/5"
+        },
+
+
+        {
+            id:6,
+            category:"Apple",
+            service:"Restore",
+            price:"1500",
+            rating:"★★★★★ 4.9/5"
+        },
+
+
+        {
+            id:7,
+            category:"Apple",
+            service:"Flash",
+            price:"2000",
+            rating:"★★★★★ 4.9/5"
+        },
+
+
+        {
+            id:8,
+            category:"Apple",
+            service:"Passcode Solution",
+            price:"3000",
+            rating:"★★★★★ 4.8/5"
+        },
+
+
+        {
+            id:9,
+            category:"Apple",
+            service:"Activation Solution",
+            price:"3500",
+            rating:"★★★★★ 4.9/5"
+        },
+
+
+        {
+            id:10,
+            category:"Apple",
+            service:"iCloud Related",
+            price:"6000+",
+            rating:"★★★★★ 5/5"
+        }
+
+
+    ],
+
+
+
+
+
+    getAll(){
+
+
+        return this.services;
+
+
     },
 
 
-    {
-        category: "Android",
-        service: "Flash",
-        price: "1000 - 2000"
+
+
+
+    search(keyword){
+
+
+        return this.services.filter(
+            item => {
+
+
+                return JSON.stringify(item)
+                .toLowerCase()
+                .includes(
+                    keyword
+                    .toLowerCase()
+                );
+
+
+            }
+        );
+
+
     },
 
 
-    {
-        category: "Android",
-        service: "IMEI Repair",
-        price: "2500 - 4000"
-    },
 
 
-    {
-        category: "Android",
-        service: "Network Repair",
-        price: "2500 - 3500"
-    },
+
+    filter(category){
 
 
-    {
-        category: "Android",
-        service: "Boot Repair",
-        price: "2000 - 3000"
-    },
+        return this.services.filter(
+            item => {
 
 
-    {
-        category: "Apple",
-        service: "Restore",
-        price: "1500"
-    },
+                return item.category
+                .toLowerCase()
+                ===
+                category
+                .toLowerCase();
 
 
-    {
-        category: "Apple",
-        service: "Flash",
-        price: "2000"
-    },
+            }
+        );
 
 
-    {
-        category: "Apple",
-        service: "Passcode Solution",
-        price: "3000"
-    },
-
-
-    {
-        category: "Apple",
-        service: "Activation Solution",
-        price: "3500"
-    },
-
-
-    {
-        category: "Apple",
-        service: "iCloud Related Solution",
-        price: "6000+"
     }
 
 
-];
+
+
+
+};
 
 
 
 
 
-function getPrices(){
 
 
-    return SolutionPrices;
+function createPriceCard(
+    item
+){
+
+
+    return `
+
+    <div class="price-card">
+
+        <h3>
+            ${item.service}
+        </h3>
+
+        <p>
+            Category:
+            ${item.category}
+        </p>
+
+        <strong>
+            Rs. ${item.price}
+        </strong>
+
+        <p>
+            ${item.rating}
+        </p>
+
+    </div>
+
+    `;
 
 
 }
@@ -105,19 +223,42 @@ function getPrices(){
 
 
 
-function searchPrice(
-    keyword
+
+
+
+function loadPrices(
+    container
 ){
 
 
-    return SolutionPrices.filter(
+    const element =
+    document.querySelector(
+        container
+    );
+
+
+
+    if(!element){
+
+        return;
+
+    }
+
+
+
+    element.innerHTML = "";
+
+
+
+    TechFixPrices
+    .getAll()
+    .forEach(
         item => {
 
 
-            return JSON.stringify(item)
-            .toLowerCase()
-            .includes(
-                keyword.toLowerCase()
+            element.innerHTML +=
+            createPriceCard(
+                item
             );
 
 
@@ -130,14 +271,16 @@ function searchPrice(
 
 
 
-window.SolutionPrices =
-SolutionPrices;
 
 
-window.getPrices =
-getPrices;
+
+window.TechFixPrices =
+TechFixPrices;
 
 
-window.searchPrice =
-searchPrice;
-```
+window.loadPrices =
+loadPrices;
+
+
+window.createPriceCard =
+createPriceCard;
