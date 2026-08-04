@@ -1,0 +1,334 @@
+FILE: assets/css/style.css
+PART: 3
+STATUS: In Progress
+
+```css
+/* ==========================================
+   TECHFIX SOFTWARE EXP v11
+   GLOBAL PREMIUM STYLE FOUNDATION
+   Founder: MIAN AHMAD
+========================================== */
+
+
+/* Google Font Reference
+   Orbitron
+   Outfit
+   Inter
+*/
+
+
+:root {
+
+    --primary-orange: #ff6b00;
+    --dark-orange: #d94f00;
+
+    --black: #050505;
+    --dark-gray: #111111;
+    --gray: #222222;
+
+    --silver: #c0c0c0;
+    --white: #ffffff;
+
+    --blue: #00bfff;
+    --green: #00ff88;
+    --red: #ff3333;
+    --gold: #ffd700;
+
+
+    --glass:
+        rgba(255,255,255,0.08);
+
+
+    --border:
+        rgba(255,255,255,0.15);
+
+
+    --shadow:
+        0 0 30px rgba(255,107,0,0.25);
+
+
+    --transition:
+        all 0.3s ease;
+
+}
+
+
+/* =====================
+   RESET
+===================== */
+
+
+* {
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+
+html {
+
+    scroll-behavior:smooth;
+
+}
+
+
+body {
+
+    min-height:100vh;
+
+    background:
+    radial-gradient(
+        circle at top,
+        #1a1a1a,
+        #050505 60%
+    );
+
+    color:var(--white);
+
+    font-family:"Outfit", "Inter", sans-serif;
+
+    overflow-x:hidden;
+
+}
+
+
+a {
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+
+img {
+
+    max-width:100%;
+
+    display:block;
+
+}
+
+
+
+/* =====================
+   PRELOADER
+===================== */
+
+
+#preloader {
+
+    position:fixed;
+
+    inset:0;
+
+    background:var(--black);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+
+}
+
+
+.loader-logo {
+
+    font-family:"Orbitron",sans-serif;
+
+    font-size:clamp(1.5rem,4vw,3rem);
+
+    letter-spacing:3px;
+
+    animation:
+    logoGlow 2s infinite alternate;
+
+}
+
+
+
+@keyframes logoGlow {
+
+    from {
+
+        text-shadow:
+        0 0 10px var(--primary-orange);
+
+    }
+
+
+    to {
+
+        text-shadow:
+        0 0 35px var(--blue);
+
+    }
+
+}
+
+
+
+/* =====================
+   HEADER BASE
+===================== */
+
+
+#header {
+
+    width:100%;
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    z-index:1000;
+
+    padding:20px 6%;
+
+
+    background:
+    rgba(0,0,0,0.35);
+
+
+    backdrop-filter:
+    blur(15px);
+
+
+    border-bottom:
+    1px solid var(--border);
+
+}
+
+
+.logo {
+
+    font-family:"Orbitron",sans-serif;
+
+    font-weight:900;
+
+    font-size:1.3rem;
+
+    color:var(--primary-orange);
+
+}
+
+
+
+/* =====================
+   HERO BASE
+===================== */
+
+
+.hero {
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    padding:120px 6% 60px;
+
+}
+
+
+
+.hero-content {
+
+    max-width:900px;
+
+}
+
+
+.hero h1 {
+
+    font-family:"Orbitron",sans-serif;
+
+    font-size:clamp(2rem,5vw,4.5rem);
+
+    margin-bottom:20px;
+
+}
+
+
+.hero p {
+
+    font-size:1.2rem;
+
+    color:var(--silver);
+
+    margin-bottom:40px;
+
+}
+
+
+
+/* =====================
+   BUTTONS
+===================== */
+
+
+.hero-buttons {
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+
+
+.hero-buttons a {
+
+    padding:14px 35px;
+
+    border-radius:50px;
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--primary-orange),
+        var(--dark-orange)
+    );
+
+
+    color:white;
+
+    font-weight:700;
+
+    transition:var(--transition);
+
+    box-shadow:var(--shadow);
+
+}
+
+
+
+.hero-buttons a:hover {
+
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 0 45px var(--primary-orange);
+
+}
+
+
+
+/* END FOUNDATION */
+```
