@@ -4943,3 +4943,55 @@ transform:translateY(0);
 
 /* TECHFIX FINAL THEME END */
 
+/* ===============================
+   HEADER LOGO FIX
+=============================== */
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+
+.logo img{
+    width:55px;
+    height:55px;
+    object-fit:contain;
+}
+
+
+.logo span{
+    font-family:'Orbitron', sans-serif;
+    font-size:20px;
+    font-weight:800;
+    color:#00eaff;
+    white-space:nowrap;
+}
+
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+
+.nav-links a{
+    white-space:nowrap;
+}
+
+
+@media(max-width:900px){
+
+.logo img{
+    width:45px;
+    height:45px;
+}
+
+
+.logo span{
+    font-size:15px;
+}
+
+}
