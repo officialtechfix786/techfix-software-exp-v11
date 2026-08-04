@@ -2209,3 +2209,277 @@ footer {
 #preloader{
     display:none !important;
 }
+/* ==========================================
+   TECHFIX SOFTWARE EXP v11
+   GLOBAL PREMIUM THEME OVERRIDE
+========================================== */
+
+
+/* =========================
+   GLOBAL COLOR FLOW
+========================= */
+
+:root{
+
+    --tech-black:#05070b;
+
+    --tech-dark:#0b111a;
+
+    --tech-blue:#00bfff;
+
+    --tech-silver:#d7dde5;
+
+    --tech-orange:#ff6b00;
+
+    --tech-green:#00ff88;
+
+    --tech-glass:
+    rgba(255,255,255,0.06);
+
+}
+
+
+
+/* =========================
+   BODY PREMIUM BACKGROUND
+========================= */
+
+
+body{
+
+background:
+
+radial-gradient(
+circle at 20% 20%,
+rgba(0,191,255,.15),
+transparent 35%
+),
+
+radial-gradient(
+circle at 80% 30%,
+rgba(255,107,0,.12),
+transparent 35%
+),
+
+#05070b;
+
+
+}
+
+
+
+/* =========================
+   HEADER PREMIUM
+========================= */
+
+
+#header{
+
+background:
+
+rgba(5,7,11,.75);
+
+
+border-bottom:
+
+1px solid rgba(0,191,255,.25);
+
+
+}
+
+
+
+.logo img{
+
+width:45px;
+
+height:45px;
+
+object-fit:contain;
+
+
+}
+
+
+
+/* =========================
+   ALL CARDS
+========================= */
+
+
+.service-card,
+.brand-card,
+.price-card{
+
+
+background:
+
+linear-gradient(
+145deg,
+rgba(255,255,255,.08),
+rgba(255,255,255,.02)
+);
+
+
+border:
+
+1px solid rgba(0,191,255,.25);
+
+
+box-shadow:
+
+0 15px 40px rgba(0,0,0,.4);
+
+
+}
+
+
+
+.service-card:hover,
+.brand-card:hover,
+.price-card:hover{
+
+
+border-color:
+
+var(--tech-blue);
+
+
+box-shadow:
+
+0 0 35px rgba(0,191,255,.35);
+
+
+}
+
+
+
+/* =========================
+   BUTTON SYSTEM
+========================= */
+
+
+.hero-buttons a,
+.cta-section a{
+
+
+background:
+
+linear-gradient(
+135deg,
+#ff6b00,
+#ff9900
+);
+
+
+}
+
+
+
+.hero-buttons a:hover,
+.cta-section a:hover{
+
+
+box-shadow:
+
+0 0 40px #ff6b00;
+
+
+}
+
+
+
+/* =========================
+   WHATSAPP BUTTON
+========================= */
+
+
+.whatsapp-top{
+
+
+background:
+
+rgba(0,255,136,.12);
+
+
+color:
+
+#00ff88;
+
+
+border:
+
+1px solid #00ff88;
+
+
+}
+
+
+
+.whatsapp-top:hover{
+
+
+box-shadow:
+
+0 0 30px #00ff88;
+
+
+}
+
+
+
+/* =========================
+   SOCIAL BUTTONS
+========================= */
+
+
+.social-links a:hover{
+
+
+border-color:
+
+var(--tech-blue);
+
+
+color:
+
+var(--tech-blue);
+
+
+box-shadow:
+
+0 0 20px rgba(0,191,255,.4);
+
+
+}
+
+
+
+
+/* =========================
+   MOBILE SAFE
+========================= */
+
+
+@media(max-width:768px){
+
+
+.logo img{
+
+width:38px;
+
+height:38px;
+
+}
+
+
+.nav-links{
+
+background:
+
+rgba(5,7,11,.96);
+
+}
+
+
+}
