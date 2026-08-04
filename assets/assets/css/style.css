@@ -1,70 +1,92 @@
-FILE: assets/css/style.css
-PART: 3
-STATUS: In Progress
-
-```css
 /* ==========================================
    TECHFIX SOFTWARE EXP v11
-   GLOBAL PREMIUM STYLE FOUNDATION
+   PREMIUM GLOBAL STYLESHEET
+
    Founder: MIAN AHMAD
 ========================================== */
 
 
-/* Google Font Reference
-   Orbitron
-   Outfit
-   Inter
-*/
+/* =========================
+   GOOGLE FONT SETUP
+========================= */
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@500;700;900&family=Outfit:wght@400;500;600;700&display=swap');
+
+
+
+/* =========================
+   ROOT VARIABLES
+========================= */
 
 :root {
 
-    --primary-orange: #ff6b00;
+
+    --orange: #ff6b00;
+
     --dark-orange: #d94f00;
 
+
     --black: #050505;
-    --dark-gray: #111111;
-    --gray: #222222;
+
+    --dark: #0b0b0b;
+
+    --gray: #171717;
+
 
     --silver: #c0c0c0;
+
     --white: #ffffff;
 
+
     --blue: #00bfff;
+
     --green: #00ff88;
+
     --red: #ff3333;
+
     --gold: #ffd700;
 
 
+
     --glass:
-        rgba(255,255,255,0.08);
+    rgba(255,255,255,0.08);
+
 
 
     --border:
-        rgba(255,255,255,0.15);
+    rgba(255,255,255,0.15);
+
 
 
     --shadow:
-        0 0 30px rgba(255,107,0,0.25);
+    0 0 30px rgba(255,107,0,0.35);
+
 
 
     --transition:
-        all 0.3s ease;
+    0.3s ease;
 
 }
 
 
-/* =====================
+
+
+
+/* =========================
    RESET
-===================== */
+========================= */
 
 
 * {
 
     margin:0;
+
     padding:0;
+
     box-sizing:border-box;
 
 }
+
 
 
 html {
@@ -74,171 +96,620 @@ html {
 }
 
 
+
 body {
+
 
     min-height:100vh;
 
+
     background:
+
     radial-gradient(
         circle at top,
-        #1a1a1a,
+        #202020,
         #050505 60%
     );
 
+
     color:var(--white);
 
-    font-family:"Outfit", "Inter", sans-serif;
+
+    font-family:
+
+    "Outfit",
+    "Inter",
+    sans-serif;
+
 
     overflow-x:hidden;
+
 
 }
 
 
+
 a {
+
 
     text-decoration:none;
 
     color:inherit;
 
+
 }
+
 
 
 img {
 
+
     max-width:100%;
 
+    height:auto;
+
     display:block;
+
 
 }
 
 
 
-/* =====================
+
+/* =========================
+   HEADINGS
+========================= */
+
+
+h1,
+h2,
+h3 {
+
+
+    font-family:
+    "Orbitron",
+    sans-serif;
+
+
+    letter-spacing:1px;
+
+
+}
+
+
+
+h2 {
+
+
+    font-size:
+    clamp(1.8rem,4vw,3rem);
+
+
+    text-align:center;
+
+
+    margin-bottom:40px;
+
+
+}
+
+
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+
+.container {
+
+
+    width:90%;
+
+    max-width:1400px;
+
+    margin:auto;
+
+
+}
+
+
+
+
+/* =========================
    PRELOADER
-===================== */
+========================= */
 
 
 #preloader {
 
+
     position:fixed;
+
 
     inset:0;
 
-    background:var(--black);
+
+    background:#000;
+
 
     display:flex;
 
-    justify-content:center;
 
     align-items:center;
 
+
+    justify-content:center;
+
+
     z-index:9999;
 
+
 }
+
 
 
 .loader-logo {
 
-    font-family:"Orbitron",sans-serif;
 
-    font-size:clamp(1.5rem,4vw,3rem);
+    font-family:
+    "Orbitron",
+    sans-serif;
 
-    letter-spacing:3px;
+
+    font-size:
+    clamp(1.5rem,5vw,3rem);
+
+
+    color:var(--orange);
+
 
     animation:
-    logoGlow 2s infinite alternate;
+
+    techGlow
+    2s infinite alternate;
+
 
 }
 
 
 
-@keyframes logoGlow {
+
+@keyframes techGlow {
+
 
     from {
 
+
         text-shadow:
-        0 0 10px var(--primary-orange);
+
+        0 0 10px var(--orange);
+
 
     }
 
 
     to {
 
+
         text-shadow:
+
         0 0 35px var(--blue);
+
 
     }
 
+
 }
-
-
-
-/* =====================
-   HEADER BASE
-===================== */
+/* =========================
+   HEADER SYSTEM
+========================= */
 
 
 #header {
 
-    width:100%;
 
     position:fixed;
 
+
     top:0;
+
 
     left:0;
 
+
+    width:100%;
+
+
     z-index:1000;
 
-    padding:20px 6%;
+
+    padding:20px 5%;
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    justify-content:space-between;
+
 
 
     background:
-    rgba(0,0,0,0.35);
+
+    rgba(5,5,5,0.45);
+
 
 
     backdrop-filter:
-    blur(15px);
+
+    blur(18px);
+
 
 
     border-bottom:
+
     1px solid var(--border);
 
+
+
+    transition:
+
+    var(--transition);
+
+
+
 }
+
+
+
+
+#header.scrolled {
+
+
+    padding:12px 5%;
+
+
+    background:
+
+    rgba(0,0,0,0.85);
+
+
+    box-shadow:
+
+    0 10px 30px rgba(0,0,0,0.5);
+
+
+}
+
+
+
+
+/* =========================
+   FOUNDER / LOGO GLOW
+========================= */
 
 
 .logo {
 
-    font-family:"Orbitron",sans-serif;
+
+    font-family:
+
+    "Orbitron",
+    sans-serif;
+
+
+
+    font-size:
+
+    clamp(1rem,3vw,1.5rem);
+
+
 
     font-weight:900;
 
-    font-size:1.3rem;
 
-    color:var(--primary-orange);
+
+    animation:
+
+    founderGlow
+    5s infinite;
+
+
 
 }
 
 
 
-/* =====================
-   HERO BASE
-===================== */
+@keyframes founderGlow {
+
+
+    0% {
+
+
+        color:var(--orange);
+
+        text-shadow:
+
+        0 0 15px var(--orange);
+
+
+    }
+
+
+    25% {
+
+
+        color:var(--silver);
+
+        text-shadow:
+
+        0 0 15px var(--silver);
+
+
+    }
+
+
+    50% {
+
+
+        color:var(--blue);
+
+        text-shadow:
+
+        0 0 20px var(--blue);
+
+
+    }
+
+
+    75% {
+
+
+        color:var(--red);
+
+        text-shadow:
+
+        0 0 20px var(--red);
+
+
+    }
+
+
+    100% {
+
+
+        color:var(--gold);
+
+        text-shadow:
+
+        0 0 25px var(--gold);
+
+
+    }
+
+
+}
+
+
+
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+
+.nav-links {
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    gap:25px;
+
+
+}
+
+
+
+
+.nav-links a {
+
+
+    font-weight:600;
+
+
+    color:var(--silver);
+
+
+    position:relative;
+
+
+    transition:
+
+    var(--transition);
+
+
+}
+
+
+
+
+.nav-links a::after {
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    left:0;
+
+
+    bottom:-8px;
+
+
+    width:0;
+
+
+    height:2px;
+
+
+    background:
+
+    var(--orange);
+
+
+    transition:
+
+    var(--transition);
+
+
+}
+
+
+
+
+.nav-links a:hover {
+
+
+    color:var(--white);
+
+
+}
+
+
+
+
+.nav-links a:hover::after {
+
+
+    width:100%;
+
+
+}
+
+
+
+
+
+/* =========================
+   MOBILE MENU BUTTON
+========================= */
+
+
+.menu-toggle {
+
+
+    display:none;
+
+
+    background:none;
+
+
+    border:none;
+
+
+    color:white;
+
+
+    font-size:28px;
+
+
+    cursor:pointer;
+
+
+}
+/* =========================
+   HERO SECTION
+========================= */
 
 
 .hero {
 
+
     min-height:100vh;
+
 
     display:flex;
 
+
     align-items:center;
+
 
     justify-content:center;
 
+
+
     text-align:center;
 
-    padding:120px 6% 60px;
+
+
+    padding:
+
+    120px 5% 60px;
+
+
+
+    position:relative;
+
+
+    overflow:hidden;
+
+
+}
+
+
+
+.hero::before {
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    width:500px;
+
+
+    height:500px;
+
+
+    background:
+
+    var(--orange);
+
+
+
+    filter:
+
+    blur(180px);
+
+
+
+    opacity:0.18;
+
+
+
+    top:20%;
+
+
+    left:50%;
+
+
+    transform:
+
+    translateX(-50%);
+
+
 
 }
 
@@ -246,89 +717,1490 @@ img {
 
 .hero-content {
 
+
+    position:relative;
+
+
+    z-index:2;
+
+
     max-width:900px;
 
+
 }
+
+
 
 
 .hero h1 {
 
-    font-family:"Orbitron",sans-serif;
 
-    font-size:clamp(2rem,5vw,4.5rem);
+    font-size:
 
-    margin-bottom:20px;
+    clamp(2.2rem,6vw,5rem);
+
+
+
+    margin-bottom:25px;
+
+
+
+    animation:
+
+    heroTitle
+    1s ease;
+
 
 }
+
+
+
+@keyframes heroTitle {
+
+
+    from {
+
+
+        opacity:0;
+
+
+        transform:
+
+        translateY(40px);
+
+
+    }
+
+
+
+    to {
+
+
+        opacity:1;
+
+
+        transform:
+
+        translateY(0);
+
+
+    }
+
+
+}
+
+
 
 
 .hero p {
 
-    font-size:1.2rem;
 
-    color:var(--silver);
+    color:
+
+    var(--silver);
+
+
+
+    font-size:
+
+    clamp(1rem,2vw,1.3rem);
+
+
+
+    line-height:1.8;
+
+
 
     margin-bottom:40px;
+
+
 
 }
 
 
 
-/* =====================
-   BUTTONS
-===================== */
+
+
+/* =========================
+   HERO BUTTONS
+========================= */
 
 
 .hero-buttons {
 
+
     display:flex;
+
 
     justify-content:center;
 
+
     gap:20px;
+
 
     flex-wrap:wrap;
 
+
 }
+
 
 
 
 .hero-buttons a {
 
-    padding:14px 35px;
 
-    border-radius:50px;
+    padding:
+
+    15px 35px;
+
+
+
+    border-radius:
+
+    50px;
+
+
 
     background:
+
     linear-gradient(
         135deg,
-        var(--primary-orange),
+        var(--orange),
         var(--dark-orange)
     );
 
 
-    color:white;
 
     font-weight:700;
 
-    transition:var(--transition);
 
-    box-shadow:var(--shadow);
+
+    box-shadow:
+
+    var(--shadow);
+
+
+
+    transition:
+
+    var(--transition);
+
 
 }
+
 
 
 
 .hero-buttons a:hover {
 
-    transform:translateY(-5px);
+
+    transform:
+
+    translateY(-6px);
+
+
 
     box-shadow:
-    0 0 45px var(--primary-orange);
+
+    0 0 50px var(--orange);
+
 
 }
 
 
 
-/* END FOUNDATION */
-```
+
+/* =========================
+   SYSTEM STATUS
+========================= */
+
+
+.system-status {
+
+
+    margin-top:35px;
+
+
+
+    display:inline-flex;
+
+
+    align-items:center;
+
+
+
+    gap:10px;
+
+
+
+    padding:
+
+    10px 25px;
+
+
+
+    border-radius:
+
+    50px;
+
+
+
+    background:
+
+    var(--glass);
+
+
+
+    border:
+
+    1px solid var(--border);
+
+
+
+    color:
+
+    var(--green);
+
+
+}
+
+
+
+
+.system-status span {
+
+
+    width:12px;
+
+
+    height:12px;
+
+
+    background:
+
+    var(--green);
+
+
+
+    border-radius:50%;
+
+
+
+    animation:
+
+    statusPulse
+    1.5s infinite;
+
+
+
+}
+
+
+
+
+@keyframes statusPulse {
+
+
+    50% {
+
+
+        transform:
+
+        scale(1.5);
+
+
+
+        opacity:.5;
+
+
+    }
+
+
+}
+/* =========================
+   SERVICES SECTION
+========================= */
+
+
+.services {
+
+
+    padding:
+
+    90px 5%;
+
+
+}
+
+
+
+
+.service-grid {
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    repeat(
+        3,
+        1fr
+    );
+
+
+
+    gap:30px;
+
+
+}
+
+
+
+
+.service-card {
+
+
+    padding:
+
+    35px;
+
+
+
+    background:
+
+    var(--glass);
+
+
+
+    backdrop-filter:
+
+    blur(20px);
+
+
+
+    border:
+
+    1px solid var(--border);
+
+
+
+    border-radius:
+
+    25px;
+
+
+
+    transition:
+
+    var(--transition);
+
+
+
+    box-shadow:
+
+    0 0 25px rgba(0,0,0,.3);
+
+
+}
+
+
+
+
+.service-card:hover {
+
+
+    transform:
+
+    translateY(-10px);
+
+
+
+    border-color:
+
+    var(--orange);
+
+
+
+    box-shadow:
+
+    0 0 40px rgba(255,107,0,.25);
+
+
+}
+
+
+
+
+.service-card h3 {
+
+
+    color:
+
+    var(--orange);
+
+
+
+    margin-bottom:15px;
+
+
+
+    font-size:1.4rem;
+
+
+}
+
+
+
+
+.service-card p {
+
+
+    color:
+
+    var(--silver);
+
+
+
+    line-height:1.7;
+
+
+}
+
+
+
+
+
+/* =========================
+   BRANDS SECTION
+========================= */
+
+
+.brands-section {
+
+
+    padding:
+
+    90px 5%;
+
+
+}
+
+
+
+
+
+.brand-grid {
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    repeat(
+        5,
+        1fr
+    );
+
+
+
+    gap:20px;
+
+
+}
+
+
+
+
+
+.brand-card {
+
+
+    min-height:120px;
+
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    justify-content:center;
+
+
+
+    background:
+
+    var(--glass);
+
+
+
+    border:
+
+    1px solid var(--border);
+
+
+
+    border-radius:
+
+    20px;
+
+
+
+    font-family:
+
+    "Orbitron",
+    sans-serif;
+
+
+
+    color:
+
+    var(--silver);
+
+
+
+    transition:
+
+    var(--transition);
+
+
+}
+
+
+
+
+
+.brand-card:hover {
+
+
+    color:
+
+    var(--orange);
+
+
+
+    transform:
+
+    scale(1.05);
+
+
+
+    box-shadow:
+
+    0 0 30px rgba(255,107,0,.25);
+
+
+}
+/* =========================
+   SEARCH SECTION
+========================= */
+
+
+.search-section {
+
+
+    padding:
+
+    90px 5%;
+
+
+
+    text-align:center;
+
+
+}
+
+
+
+
+#global-search {
+
+
+    width:
+
+    min(700px,90%);
+
+
+
+    padding:
+
+    18px 25px;
+
+
+
+    border-radius:
+
+    50px;
+
+
+
+    border:
+
+    1px solid var(--border);
+
+
+
+    outline:none;
+
+
+
+    background:
+
+    var(--glass);
+
+
+
+    color:white;
+
+
+
+    font-size:1rem;
+
+
+
+    backdrop-filter:
+
+    blur(15px);
+
+
+}
+
+
+
+#global-search::placeholder {
+
+
+    color:
+
+    var(--silver);
+
+
+}
+
+
+
+
+
+/* =========================
+   PRICING SECTION
+========================= */
+
+
+.pricing-preview {
+
+
+    padding:
+
+    90px 5%;
+
+
+}
+
+
+
+.price-grid {
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    repeat(
+        4,
+        1fr
+    );
+
+
+
+    gap:25px;
+
+
+}
+
+
+
+.price-card {
+
+
+    padding:
+
+    30px;
+
+
+
+    text-align:center;
+
+
+
+    border-radius:
+
+    20px;
+
+
+
+    background:
+
+    linear-gradient(
+        145deg,
+        rgba(255,107,0,.15),
+        rgba(255,255,255,.05)
+    );
+
+
+
+    border:
+
+    1px solid var(--border);
+
+
+
+    font-weight:700;
+
+
+
+    color:
+
+    var(--white);
+
+
+
+    transition:
+
+    var(--transition);
+
+
+}
+
+
+
+
+.price-card:hover {
+
+
+    transform:
+
+    translateY(-8px);
+
+
+
+    box-shadow:
+
+    0 0 35px rgba(255,107,0,.3);
+
+
+}
+
+
+
+
+
+/* =========================
+   CTA SECTION
+========================= */
+
+
+.cta-section {
+
+
+    margin:
+
+    80px 5%;
+
+
+
+    padding:
+
+    60px 30px;
+
+
+
+    text-align:center;
+
+
+
+    background:
+
+    var(--glass);
+
+
+
+    border:
+
+    1px solid var(--border);
+
+
+
+    border-radius:
+
+    30px;
+
+
+}
+
+
+
+
+.cta-section p {
+
+
+    color:
+
+    var(--silver);
+
+
+
+    margin:
+
+    20px 0 35px;
+
+
+}
+
+
+
+
+.cta-section a {
+
+
+    display:inline-block;
+
+
+
+    padding:
+
+    15px 40px;
+
+
+
+    background:
+
+    var(--orange);
+
+
+
+    border-radius:
+
+    50px;
+
+
+
+    font-weight:700;
+
+
+
+    transition:
+
+    var(--transition);
+
+
+}
+
+
+
+
+.cta-section a:hover {
+
+
+    box-shadow:
+
+    0 0 40px var(--orange);
+
+
+}
+/* =========================
+   FOOTER
+========================= */
+
+
+footer {
+
+
+    padding:
+
+    50px 5%;
+
+
+
+    background:
+
+    #030303;
+
+
+
+    border-top:
+
+    1px solid var(--border);
+
+
+
+    text-align:center;
+
+
+}
+
+
+
+
+.footer-content h3 {
+
+
+    font-family:
+
+    "Orbitron",
+    sans-serif;
+
+
+
+    color:
+
+    var(--orange);
+
+
+
+    margin-bottom:15px;
+
+
+}
+
+
+
+.footer-content p {
+
+
+    color:
+
+    var(--silver);
+
+
+
+    margin:
+
+    10px 0;
+
+
+}
+
+
+
+
+
+.social-links {
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    gap:20px;
+
+
+    flex-wrap:wrap;
+
+
+
+    margin:
+
+    25px 0;
+
+
+}
+
+
+
+
+.social-links a {
+
+
+    padding:
+
+    10px 20px;
+
+
+
+    border-radius:
+
+    50px;
+
+
+
+    background:
+
+    var(--glass);
+
+
+
+    border:
+
+    1px solid var(--border);
+
+
+
+    transition:
+
+    var(--transition);
+
+
+}
+
+
+
+
+.social-links a:hover {
+
+
+    color:
+
+    var(--orange);
+
+
+
+    border-color:
+
+    var(--orange);
+
+
+}
+
+
+
+
+
+/* =========================
+   REVEAL ANIMATION
+========================= */
+
+
+.reveal {
+
+
+    opacity:0;
+
+
+    transform:
+
+    translateY(40px);
+
+
+
+    transition:
+
+    0.8s ease;
+
+
+}
+
+
+
+.reveal.active {
+
+
+    opacity:1;
+
+
+    transform:
+
+    translateY(0);
+
+
+}
+
+
+
+
+
+/* =========================
+   TABLET RESPONSIVE
+========================= */
+
+
+@media(max-width:1024px){
+
+
+
+    .service-grid {
+
+
+        grid-template-columns:
+
+        repeat(
+            2,
+            1fr
+        );
+
+
+    }
+
+
+
+    .brand-grid {
+
+
+        grid-template-columns:
+
+        repeat(
+            4,
+            1fr
+        );
+
+
+    }
+
+
+
+    .price-grid {
+
+
+        grid-template-columns:
+
+        repeat(
+            2,
+            1fr
+        );
+
+
+    }
+
+
+}
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+
+@media(max-width:768px){
+
+
+
+    #header {
+
+
+        padding:
+
+        15px 5%;
+
+
+    }
+
+
+
+
+
+    .nav-links {
+
+
+        position:fixed;
+
+
+        top:70px;
+
+
+        right:-100%;
+
+
+        width:80%;
+
+
+        height:calc(100vh - 70px);
+
+
+
+        background:
+
+        rgba(0,0,0,.95);
+
+
+
+        backdrop-filter:
+
+        blur(20px);
+
+
+
+        flex-direction:column;
+
+
+
+        justify-content:flex-start;
+
+
+
+        padding:
+
+        40px 20px;
+
+
+
+        transition:
+
+        .4s ease;
+
+
+    }
+
+
+
+
+
+    .nav-links.active {
+
+
+        right:0;
+
+
+    }
+
+
+
+
+    .menu-toggle {
+
+
+        display:block;
+
+
+    }
+
+
+
+
+    .hero {
+
+
+        padding-top:
+
+        140px;
+
+
+    }
+
+
+
+
+
+    .hero h1 {
+
+
+        font-size:
+
+        2.2rem;
+
+
+    }
+
+
+
+
+
+    .hero-buttons {
+
+
+        flex-direction:column;
+
+
+        align-items:center;
+
+
+    }
+
+
+
+
+
+    .hero-buttons a {
+
+
+        width:
+
+        90%;
+
+
+    }
+
+
+
+
+
+    .service-grid {
+
+
+        grid-template-columns:
+
+        1fr;
+
+
+    }
+
+
+
+
+
+    .brand-grid {
+
+
+        grid-template-columns:
+
+        repeat(
+            2,
+            1fr
+        );
+
+
+    }
+
+
+
+
+
+    .price-grid {
+
+
+        grid-template-columns:
+
+        1fr;
+
+
+    }
+
+
+
+
+
+    .cta-section {
+
+
+        margin:
+
+        40px 5%;
+
+
+
+        padding:
+
+        40px 20px;
+
+
+    }
+
+
+}
+
+
+
+
+
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+
+@media(max-width:425px){
+
+
+
+    .logo {
+
+
+        font-size:
+
+        .9rem;
+
+
+    }
+
+
+
+
+    h2 {
+
+
+        font-size:
+
+        1.6rem;
+
+
+    }
+
+
+
+
+
+    .brand-card {
+
+
+        min-height:
+
+        90px;
+
+
+
+        font-size:
+
+        .85rem;
+
+
+    }
+
+
+
+
+
+    .service-card {
+
+
+        padding:
+
+        25px;
+
+
+    }
+
+
+
+}
+
+
+
+
+/* =========================
+   EXTRA SMALL 320px
+========================= */
+
+
+@media(max-width:320px){
+
+
+
+    .hero h1 {
+
+
+        font-size:
+
+        1.8rem;
+
+
+    }
+
+
+
+
+    .hero p {
+
+
+        font-size:
+
+        .9rem;
+
+
+    }
+
+
+
+}
