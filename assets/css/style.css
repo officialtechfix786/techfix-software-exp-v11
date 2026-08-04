@@ -2204,3 +2204,8 @@ footer {
 
 
 }
+/* FIX PRELOADER */
+
+#preloader{
+    display:none !important;
+}
