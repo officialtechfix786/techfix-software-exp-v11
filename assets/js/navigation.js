@@ -580,6 +580,3 @@ document.body.classList.remove(
 /* =====================================
    END OF TECHFIX NAVIGATION SYSTEM
 ===================================== */
-
-
-})
