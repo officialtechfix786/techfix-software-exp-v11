@@ -1,333 +1,107 @@
 "use strict";
 
-
 /*
-    TECHFIX SOFTWARE EXP v11
+    TECHFIX SOFTWARE EXP v12
     GLOBAL SEARCH ENGINE
-
-    Handles:
-    - Mobile search
-    - Software search
-    - Price search
-    - Results
 */
-
-
 
 const TechFixSearch = {
 
-
-
-    sources: [],
-
-
-
-
+    input:null,
+    results:null,
 
     init(){
 
+        this.input=document.querySelector(".search-input");
+        this.results=document.querySelector(".search-results");
 
-        this.connect();
+        if(!this.input || !this.results) return;
 
+        this.input.addEventListener("input",()=>{
 
-        this.events();
+            this.search(this.input.value);
 
-
-    },
-
-
-
-
-
-
-
-    connect(){
-
-
-
-        if(
-            window.MobileSystem
-        ){
-
-
-            this.sources.push(
-                "mobiles"
-            );
-
-
-        }
-
-
-
-        if(
-            window.SoftwareSystem
-        ){
-
-
-            this.sources.push(
-                "software"
-            );
-
-
-        }
-
-
-
-        if(
-            window.TechFixPrices
-        ){
-
-
-            this.sources.push(
-                "prices"
-            );
-
-
-        }
-
+        });
 
     },
-
-
-
-
-
-
-
-    events(){
-
-
-
-        const input =
-        document.querySelector(
-            ".search-input"
-        );
-
-
-
-        if(!input){
-
-            return;
-
-        }
-
-
-
-
-        input.addEventListener(
-            "input",
-            () => {
-
-
-                this.search(
-                    input.value
-                );
-
-
-            }
-        );
-
-
-    },
-
-
-
-
-
-
 
     search(keyword){
 
+        keyword=keyword.toLowerCase().trim();
 
+        this.results.innerHTML="";
 
-        keyword =
-        keyword
-        .toLowerCase()
-        .trim();
+        if(keyword==="") return;
 
+        let data=[];
 
+        if(window.MobileSystem){
 
-        const results = [];
-
-
-
-        if(
-            keyword === ""
-        ){
-
-
-            this.show(
-                []
+            data=data.concat(
+                window.MobileSystem.search(keyword)
             );
-
-
-            return;
-
 
         }
 
+        if(window.SoftwareSystem){
 
-
-
-
-
-
-        if(
-            window.MobileSystem
-        ){
-
-
-            results.push(
-                ...window.MobileSystem.search(
-                    keyword
-                )
+            data=data.concat(
+                window.SoftwareSystem.search(keyword)
             );
-
 
         }
 
+        if(window.TechFixPrices){
 
-
-
-
-
-
-        if(
-            window.SoftwareSystem
-        ){
-
-
-            results.push(
-                ...window.SoftwareSystem.search(
-                    keyword
-                )
+            data=data.concat(
+                window.TechFixPrices.search(keyword)
             );
-
 
         }
 
+        if(data.length===0){
 
-
-
-
-
-
-        if(
-            window.TechFixPrices
-        ){
-
-
-            results.push(
-                ...window.TechFixPrices.search(
-                    keyword
-                )
-            );
-
-
-        }
-
-
-
-
-
-
-        this.show(
-            results
-        );
-
-
-
-    },
-
-
-
-
-
-
-
-    show(results){
-
-
-
-        const box =
-        document.querySelector(
-            ".search-results"
-        );
-
-
-
-        if(!box){
+            this.results.innerHTML="<div class='search-result-item'>No Results Found</div>";
 
             return;
 
         }
 
+        data.forEach(item=>{
 
+            const div=document.createElement("div");
 
+            div.className="search-result-item";
 
+            div.innerHTML=`
+                <strong>${item.model || item.name || item.service || "Unknown"}</strong>
+                <br>
+                <small>${item.brand || ""}</small>
+            `;
 
-        box.innerHTML = "";
+            div.onclick=()=>{
 
-
-
-        results.forEach(
-            item => {
-
-
-                const div =
-                document.createElement(
-                    "div"
+                localStorage.setItem(
+                    "TechFixSelected",
+                    JSON.stringify(item)
                 );
 
+                window.location.href="model.html";
 
-                div.className =
-                "search-result-item";
+            };
 
+            this.results.appendChild(div);
 
-
-                div.textContent =
-                item.name ||
-                item.service ||
-                item.model ||
-                "Result";
-
-
-
-                box.appendChild(
-                    div
-                );
-
-
-            }
-        );
-
+        });
 
     }
-
-
 
 };
 
+document.addEventListener("DOMContentLoaded",()=>{
 
+    TechFixSearch.init();
 
+});
 
-
-
-
-document.addEventListener(
-    "DOMContentLoaded",
-    () => {
-
-
-        TechFixSearch.init();
-
-
-    }
-);
-
-
-
-
-
-window.TechFixSearch =
-TechFixSearch;
+window.TechFixSearch=TechFixSearch;
