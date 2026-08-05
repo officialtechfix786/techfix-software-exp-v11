@@ -1,361 +1,166 @@
 "use strict";
 
-
 /*
-    TECHFIX SOFTWARE EXP v11
-    ANIMATION ENGINE
-
-    Handles:
-    - Scroll reveal
-    - Counters
-    - Floating effects
-    - Smooth UI animations
+==========================================
+TECHFIX SOFTWARE EXP v11
+Animation Engine (Fixed)
+==========================================
 */
 
+document.addEventListener("DOMContentLoaded", () => {
 
+    /* ======================================
+       SCROLL REVEAL
+    ====================================== */
 
-document.addEventListener(
-    "DOMContentLoaded",
-    () => {
+    const revealItems = document.querySelectorAll(".reveal");
 
+    if (revealItems.length) {
 
+        const revealObserver = new IntersectionObserver((entries, observer) => {
 
-        /* =========================
-           SCROLL REVEAL SYSTEM
-        ========================= */
+            entries.forEach(entry => {
 
+                if (entry.isIntersecting) {
 
-        const revealItems =
-        document.querySelectorAll(
-            ".reveal"
-        );
+                    entry.target.classList.add("show");
 
-
-
-        if(revealItems.length){
-
-
-            const revealObserver =
-            new IntersectionObserver(
-                entries => {
-
-
-                    entries.forEach(
-                        entry => {
-
-
-                            if(
-                                entry.isIntersecting
-                            ){
-
-
-                                entry.target.classList.add(
-                                    "active"
-                                );
-
-
-                                revealObserver.unobserve(
-                                    entry.target
-                                );
-
-
-                            }
-
-
-                        }
-                    );
-
-
-                },
-                {
-                    threshold:0.15
-                }
-            );
-
-
-
-            revealItems.forEach(
-                item => {
-
-
-                    revealObserver.observe(
-                        item
-                    );
-
+                    observer.unobserve(entry.target);
 
                 }
-            );
 
+            });
 
-        }
+        }, {
+            threshold: 0.15
+        });
 
-
-
-
-
-        /* =========================
-           COUNTER ANIMATION
-        ========================= */
-
-
-        const counters =
-        document.querySelectorAll(
-            "[data-count]"
-        );
-
-
-
-        counters.forEach(
-            counter => {
-
-
-
-                let started = false;
-
-
-
-                const counterObserver =
-                new IntersectionObserver(
-                    entries => {
-
-
-
-                        entries.forEach(
-                            entry => {
-
-
-
-                                if(
-                                    entry.isIntersecting &&
-                                    !started
-                                ){
-
-
-                                    started = true;
-
-
-
-                                    let target =
-                                    Number(
-                                        counter.dataset.count
-                                    );
-
-
-
-                                    let current = 0;
-
-
-
-                                    let speed =
-                                    Math.max(
-                                        target / 80,
-                                        1
-                                    );
-
-
-
-                                    const update =
-                                    () => {
-
-
-
-                                        current += speed;
-
-
-
-                                        if(
-                                            current >= target
-                                        ){
-
-
-                                            counter.textContent =
-                                            target;
-
-
-
-                                            return;
-
-
-                                        }
-
-
-
-                                        counter.textContent =
-                                        Math.floor(
-                                            current
-                                        );
-
-
-
-                                        requestAnimationFrame(
-                                            update
-                                        );
-
-
-                                    };
-
-
-
-                                    update();
-
-
-
-                                    counterObserver.unobserve(
-                                        counter
-                                    );
-
-
-                                }
-
-
-
-                            }
-                        );
-
-
-                    },
-                    {
-                        threshold:0.5
-                    }
-                );
-
-
-
-                counterObserver.observe(
-                    counter
-                );
-
-
-            }
-        );
-
-
-
-
-
-
-
-        /* =========================
-           FLOATING EFFECT
-        ========================= */
-
-
-        const floatingElements =
-        document.querySelectorAll(
-            ".floating"
-        );
-
-
-
-        floatingElements.forEach(
-            element => {
-
-
-                element.style.animation =
-                "floatAnimation 4s ease-in-out infinite";
-
-
-            }
-        );
-
-
-
-
-
-        /* =========================
-           SMOOTH ANCHOR SCROLL
-        ========================= */
-
-
-        document.querySelectorAll(
-            'a[href^="#"]'
-        )
-        .forEach(
-            link => {
-
-
-                link.addEventListener(
-                    "click",
-                    event => {
-
-
-                        const target =
-                        document.querySelector(
-                            link.getAttribute(
-                                "href"
-                            )
-                        );
-
-
-
-                        if(target){
-
-
-                            event.preventDefault();
-
-
-
-                            target.scrollIntoView(
-                                {
-                                    behavior:"smooth"
-                                }
-                            );
-
-
-                        }
-
-
-                    }
-                );
-
-
-            }
-        );
-
-
+        revealItems.forEach(item => {
+            revealObserver.observe(item);
+        });
 
     }
-);
 
 
+    /* ======================================
+       COUNTER
+    ====================================== */
+
+    const counters = document.querySelectorAll("[data-count]");
+
+    if (counters.length) {
+
+        const counterObserver = new IntersectionObserver((entries, observer) => {
+
+            entries.forEach(entry => {
+
+                if (!entry.isIntersecting) return;
+
+                const counter = entry.target;
+
+                const target = Number(counter.dataset.count);
+
+                let current = 0;
+
+                const increment = Math.max(target / 80, 1);
+
+                function updateCounter() {
+
+                    current += increment;
+
+                    if (current >= target) {
+
+                        counter.textContent = target;
+
+                    } else {
+
+                        counter.textContent = Math.floor(current);
+
+                        requestAnimationFrame(updateCounter);
+
+                    }
+
+                }
+
+                updateCounter();
+
+                observer.unobserve(counter);
+
+            });
+
+        }, {
+            threshold: 0.5
+        });
+
+        counters.forEach(counter => {
+            counterObserver.observe(counter);
+        });
+
+    }
 
 
+    /* ======================================
+       FLOATING EFFECT
+    ====================================== */
+
+    document.querySelectorAll(".floating").forEach(el => {
+
+        el.style.animation =
+            "floatAnimation 4s ease-in-out infinite";
+
+    });
 
 
-/* =========================
-   FLOAT KEYFRAME SUPPORT
-========================= */
+    /* ======================================
+       SMOOTH SCROLL
+    ====================================== */
+
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+
+        link.addEventListener("click", e => {
+
+            const target = document.querySelector(
+                link.getAttribute("href")
+            );
+
+            if (!target) return;
+
+            e.preventDefault();
+
+            target.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+        });
+
+    });
+
+});
 
 
-const floatingStyle =
-document.createElement(
-    "style"
-);
+/* ======================================
+   FLOAT KEYFRAMES
+====================================== */
 
+const style = document.createElement("style");
 
+style.innerHTML = `
+@keyframes floatAnimation{
 
-floatingStyle.innerHTML = `
-
-@keyframes floatAnimation {
-
-0% {
-transform:translateY(0);
+0%{
+transform:translateY(0px);
 }
 
-50% {
+50%{
 transform:translateY(-15px);
 }
 
-100% {
-transform:translateY(0);
+100%{
+transform:translateY(0px);
 }
 
 }
-
 `;
 
-
-
-document.head.appendChild(
-    floatingStyle
-);
+document.head.appendChild(style);
