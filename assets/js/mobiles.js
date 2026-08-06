@@ -1,283 +1,121 @@
 "use strict";
 
-
 /*
-    TECHFIX SOFTWARE EXP v11
-    MOBILE DATABASE SYSTEM
-
-    Handles:
-    - Mobile models
-    - Search
-    - Brand filter
-    - Cards
+==========================================
+TECHFIX SOFTWARE EXP v13
+MOBILE DATABASE
+==========================================
 */
 
-
-
-const MobileSystem = {
-
-
-
-    devices:[
-
-
-
-
-
-        {
-            brand:"Apple",
-            model:"iPhone 17 Pro",
-            image:"assets/images/mobiles/iphone17pro.png",
-            android:"",
-            chipset:"A19 Pro",
-            repair:"Software & Hardware Solutions"
-        },
-
-
-
-        {
-            brand:"Google",
-            model:"Pixel Series",
-            image:"assets/images/mobiles/pixel.png",
-            android:"Android",
-            chipset:"Google Tensor",
-            repair:"Firmware & Repair"
-        },
-
-
-
-        {
-            brand:"Samsung",
-            model:"Galaxy Series",
-            image:"assets/images/mobiles/samsung.png",
-            android:"Android",
-            chipset:"Exynos / Snapdragon",
-            repair:"Software Solutions"
-        }
-
-
-
-
-
-    ],
-
-
-
-
-
-
-
-    add(device){
-
-
-        this.devices.push(
-            device
-        );
-
-
-    },
-
-
-
-
-
-
-
-    getAll(){
-
-
-        return this.devices;
-
-
-    },
-
-
-
-
-
-
-
-    search(keyword){
-
-
-
-        keyword =
-        keyword
-        .toLowerCase()
-        .trim();
-
-
-
-        return this.devices.filter(
-            device => {
-
-
-                return JSON.stringify(
-                    device
-                )
-                .toLowerCase()
-                .includes(
-                    keyword
-                );
-
-
-            }
-        );
-
-
-    },
-
-
-
-
-
-
-
-    filterByBrand(brand){
-
-
-
-        return this.devices.filter(
-            device => {
-
-
-                return device.brand
-                .toLowerCase()
-                ===
-                brand
-                .toLowerCase();
-
-
-            }
-        );
-
-
-    }
-
-
-
-
-
+const MobileSystem={
+
+models:[
+
+{
+id:1,
+brand:"Samsung",
+series:"Galaxy S",
+model:"Galaxy S25 Ultra",
+image:"assets/images/mobiles/samsung-s25-ultra.png",
+prices:{frp:3000,imei:15000,cpid:22000,bypassSignal:6000,bypassNoSignal:7500},
+solutions:{FRP:true,IMEI:true,CPID:true,Firmware:true,Network:true}
+},
+
+{
+id:2,
+brand:"Samsung",
+series:"Galaxy S",
+model:"Galaxy S25 Plus",
+image:"assets/images/mobiles/samsung-s25-plus.png",
+prices:{frp:3000,imei:15000,cpid:22000,bypassSignal:6000,bypassNoSignal:7500},
+solutions:{FRP:true,IMEI:true,CPID:true,Firmware:true}
+},
+
+{
+id:3,
+brand:"Samsung",
+series:"Galaxy S",
+model:"Galaxy S25",
+image:"assets/images/mobiles/samsung-s25.png",
+prices:{frp:2800,imei:14000,cpid:21000,bypassSignal:5800,bypassNoSignal:7000},
+solutions:{FRP:true,IMEI:true,CPID:true,Firmware:true}
+},
+
+{
+id:4,
+brand:"Samsung",
+series:"Galaxy S",
+model:"Galaxy S24 Ultra",
+image:"assets/images/mobiles/samsung-s24-ultra.png",
+prices:{frp:2500,imei:12000,cpid:18000,bypassSignal:5000,bypassNoSignal:6500},
+solutions:{FRP:true,IMEI:true,CPID:true,Firmware:true}
+},
+
+{
+id:5,
+brand:"Samsung",
+series:"Galaxy S",
+model:"Galaxy S24 Plus",
+image:"assets/images/mobiles/samsung-s24-plus.png",
+prices:{frp:2500,imei:12000,cpid:18000,bypassSignal:5000,bypassNoSignal:6500},
+solutions:{FRP:true,IMEI:true,CPID:true,Firmware:true}
+},
+
+{
+id:6,
+brand:"Samsung",
+series:"Galaxy S",
+model:"Galaxy S24",
+image:"assets/images/mobiles/samsung-s24.png",
+prices:{frp:2200,imei:11000,cpid:17000,bypassSignal:4500,bypassNoSignal:6000},
+solutions:{FRP:true,IMEI:true,CPID:true,Firmware:true}
+}
+
+],
+
+search(keyword){
+
+keyword=keyword.toLowerCase().trim();
+
+return this.models.filter(item=>
+
+item.brand.toLowerCase().includes(keyword)||
+item.series.toLowerCase().includes(keyword)||
+item.model.toLowerCase().includes(keyword)
+
+);
+
+},
+
+getModel(name){
+
+return this.models.find(item=>item.model===name);
+
+},
+
+getAll(){
+
+return this.models;
+
+}
 
 };
+if(window.SamsungDatabase){
 
-
-
-
-
-
-
-
-
-function createMobileCard(
-    device
-){
-
-
-    return `
-
-
-    <div class="mobile-card">
-
-
-        <img src="${device.image}"
-        alt="${device.model}">
-
-
-        <h3>
-            ${device.model}
-        </h3>
-
-
-        <p>
-            Brand:
-            ${device.brand}
-        </p>
-
-
-        <p>
-            Chipset:
-            ${device.chipset}
-        </p>
-
-
-        <p>
-            ${device.repair}
-        </p>
-
-
-    </div>
-
-
-    `;
-
+MobileSystem.models.push(...SamsungDatabase);
 
 }
 
+if(window.AppleDatabase){
 
-
-
-
-
-
-
-function loadMobiles(
-    container
-){
-
-
-
-    const box =
-    document.querySelector(
-        container
-    );
-
-
-
-    if(!box){
-
-        return;
-
-    }
-
-
-
-    box.innerHTML="";
-
-
-
-    MobileSystem
-    .getAll()
-    .forEach(
-        device => {
-
-
-            box.innerHTML +=
-            createMobileCard(
-                device
-            );
-
-
-        }
-    );
-
+MobileSystem.models.push(...AppleDatabase);
 
 }
 
+if(window.XiaomiDatabase){
 
+MobileSystem.models.push(...XiaomiDatabase);
 
+}
 
-
-
-
-
-window.MobileSystem =
-MobileSystem;
-
-
-window.createMobileCard =
-createMobileCard;
-
-
-window.loadMobiles =
-loadMobiles;
+window.MobileSystem=MobileSystem;

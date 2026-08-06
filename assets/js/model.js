@@ -5,166 +5,111 @@
     MODEL PAGE ENGINE
 */
 
-const TechFixModel={
+const TechFixModel = {
 
-data:null,
+    data: null,
 
-init(){
+    init() {
 
-const saved=localStorage.getItem("TechFixSelected");
+        const saved = localStorage.getItem("TechFixSelected");
 
-if(!saved){
+        if (!saved) {
+            this.notFound();
+            return;
+        }
 
-this.notFound();
+        this.data = JSON.parse(saved);
 
-return;
+        this.render();
 
-}
+    },
 
-this.data=JSON.parse(saved);
+    render() {
 
-this.render();
+        document.getElementById("modelName").textContent =
+            this.data.model || "Unknown Model";
 
-},
+        document.getElementById("modelBrand").textContent =
+            this.data.brand || "Unknown Brand";
 
-render(){
+        document.getElementById("modelSeries").textContent =
+            this.data.series || "Unknown Series";
 
-document.getElementById("modelName").textContent=
-this.data.model || "Unknown Model";
+        const prices = this.data.prices || {};
 
-document.getElementById("modelBrand").textContent=
-this.data.brand || "Unknown Brand";
+        document.getElementById("priceFRP").textContent =
+            prices.frp ? "Rs " + prices.frp : "Contact";
 
-document.getElementById("modelSeries").textContent=
-this.data.series || "Unknown Series";
+        document.getElementById("priceIMEI").textContent =
+            prices.imei ? "Rs " + prices.imei : "Not Available";
 
-const p=this.data.prices || {};
+        document.getElementById("priceCPID").textContent =
+            prices.cpid ? "Rs " + prices.cpid : "Not Available";
 
-document.getElementById("priceFRP").textContent=
-p.frp ? `Rs ${p.frp}` : "Contact";
+        document.getElementById("priceSignal").textContent =
+            prices.bypassSignal ? "Rs " + prices.bypassSignal : "Not Available";
 
-document.getElementById("priceIMEI").textContent=
-p.imei ? `Rs ${p.imei}` : "Not Available";
+        document.getElementById("priceNoSignal").textContent =
+            prices.bypassNoSignal ? "Rs " + prices.bypassNoSignal : "Not Available";
 
-document.getElementById("priceCPID").textContent=
-p.cpid ? `Rs ${p.cpid}` : "Not Available";
+        const list = document.getElementById("solutionList");
 
-document.getElementById("priceSignal").textContent=
-p.bypassSignal ? `Rs ${p.bypassSignal}` : "Not Available";
+        list.innerHTML = "";
 
-document.getElementById("priceNoSignal").textContent=
-p.bypassNoSignal ? `Rs ${p.bypassNoSignal}` : "Not Available";
-const list=document.getElementById("solutionList");
+        const solutions = this.data.solutions || {};
 
-list.innerHTML="";
+        let found = false;
 
-const s=this.data.solutions || {};
+        Object.keys(solutions).forEach(key => {
 
-Object.keys(s).forEach(key=>{
+            if (solutions[key]) {
 
-if(s[key]){
+                found = true;
 
-const li=document.createElement("li");
+                const li = document.createElement("li");
 
-li.textContent=key;
+                li.textContent = key;
 
-list.appendChild(li);
+                list.appendChild(li);
 
-}
+            }
 
-});
+        });
 
-if(list.innerHTML===""){
+        if (!found) {
 
-list.innerHTML="<li>No Solutions Available</li>";
+            list.innerHTML = "<li>No Solutions Available</li>";
 
-}
+        }
 
-const firmware=document.getElementById("firmwareBtn");
+        const firmware = document.getElementById("firmwareBtn");
 
-firmware.onclick=(e)=>{
+        firmware.addEventListener("click", function (e) {
 
-e.preventDefault();
+            e.preventDefault();
 
-alert("Firmware download will be available soon.");
+            alert("Firmware download will be available soon.");
+
+        });
+
+    },
+
+    notFound() {
+
+        document.getElementById("modelName").textContent = "Model Not Found";
+
+        document.getElementById("modelBrand").textContent = "";
+
+        document.getElementById("modelSeries").textContent = "";
+
+    }
 
 };
 
-},
+document.addEventListener("DOMContentLoaded", function () {
 
-notFound(){
-
-document.getElementById("modelName").textContent="Model Not Found";
-
-document.getElementById("modelBrand").textContent="";
-
-document.getElementById("modelSeries").textContent="";
-
-}
-
-};
-
-document.addEventListener("DOMContentLoaded",()=>{
-
-TechFixModel.init();
+    TechFixModel.init();
 
 });
 
-window.TechFixModel=TechFixModel;
-const list=document.getElementById("solutionList");
-
-list.innerHTML="";
-
-const s=this.data.solutions || {};
-
-Object.keys(s).forEach(key=>{
-
-if(s[key]){
-
-const li=document.createElement("li");
-
-li.textContent=key;
-
-list.appendChild(li);
-
-}
-
-});
-
-if(list.innerHTML===""){
-
-list.innerHTML="<li>No Solutions Available</li>";
-
-}
-
-const firmware=document.getElementById("firmwareBtn");
-
-firmware.onclick=(e)=>{
-
-e.preventDefault();
-
-alert("Firmware download will be available soon.");
-
-};
-
-},
-
-notFound(){
-
-document.getElementById("modelName").textContent="Model Not Found";
-
-document.getElementById("modelBrand").textContent="";
-
-document.getElementById("modelSeries").textContent="";
-
-}
-
-};
-
-document.addEventListener("DOMContentLoaded",()=>{
-
-TechFixModel.init();
-
-});
-
-window.TechFixModel=TechFixModel;
+window.TechFixModel = TechFixModel;
