@@ -75,15 +75,21 @@ solutions:{FRP:true,IMEI:true,CPID:true,Firmware:true}
 
 search(keyword){
 
-keyword=keyword.toLowerCase().trim();
+keyword = keyword.toLowerCase().trim();
 
-return this.models.filter(item=>
+return this.models.filter(item=>{
 
-item.brand.toLowerCase().includes(keyword)||
-item.series.toLowerCase().includes(keyword)||
-item.model.toLowerCase().includes(keyword)
+const brand = (item.brand || "").toLowerCase();
+const series = (item.series || "").toLowerCase();
+const model = (item.model || "").toLowerCase();
 
+return (
+brand.includes(keyword) ||
+series.includes(keyword) ||
+model.includes(keyword)
 );
+
+});
 
 },
 
