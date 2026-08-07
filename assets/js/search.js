@@ -1,7 +1,7 @@
 "use strict";
 
 /*
-    TECHFIX SOFTWARE EXP v12
+    TECHFIX SOFTWARE EXP v13
     GLOBAL SEARCH ENGINE
 */
 
@@ -35,14 +35,20 @@ const TechFixSearch = {
 
         let data=[];
 
-        if(window.MobileSystem){
+        // MOBILES
+        if(window.MobileSystem && typeof window.MobileSystem.getAll==="function"){
 
             data=data.concat(
-                window.MobileSystem.search(keyword)
+                window.MobileSystem.getAll().filter(item=>
+                    item.brand.toLowerCase().includes(keyword) ||
+                    item.series.toLowerCase().includes(keyword) ||
+                    item.model.toLowerCase().includes(keyword)
+                )
             );
 
         }
 
+        // SOFTWARE
         if(window.SoftwareSystem){
 
             data=data.concat(
@@ -51,6 +57,7 @@ const TechFixSearch = {
 
         }
 
+        // SERVICES
         if(window.TechFixPrices){
 
             data=data.concat(
@@ -67,26 +74,53 @@ const TechFixSearch = {
 
         }
 
-        data.forEach(item=>{
+        data.slice(0,10).forEach(item=>{
 
             const div=document.createElement("div");
 
             div.className="search-result-item";
 
+            const title=item.model || item.name || item.service || "Unknown";
+            const subtitle=item.brand || item.category || "";
+
             div.innerHTML=`
-                <strong>${item.model || item.name || item.service || "Unknown"}</strong>
+                <strong>${title}</strong>
                 <br>
-                <small>${item.brand || ""}</small>
+                <small>${subtitle}</small>
             `;
+
+            div.style.cursor="pointer";
 
             div.onclick=()=>{
 
-                localStorage.setItem(
-                    "TechFixSelected",
-                    JSON.stringify(item)
-                );
+                // Mobile result
+                if(item.model){
 
-                window.location.href="model.html";
+                    localStorage.setItem(
+                        "TechFixSelected",
+                        JSON.stringify(item)
+                    );
+
+                    window.location.href="model.html";
+                    return;
+
+                }
+
+                // Software result
+                if(item.name){
+
+                    alert("Software page coming soon: " + item.name);
+                    return;
+
+                }
+
+                // Service result
+                if(item.service){
+
+                    alert("Service selected: " + item.service);
+                    return;
+
+                }
 
             };
 
