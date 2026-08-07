@@ -1263,3 +1263,10 @@ console.log("Search Box Missing");
 console.log("===== TEST COMPLETE =====");
 
 });
+TechFix.openModel = function(id){
+
+    localStorage.setItem("TechFixModelID", id);
+
+    window.location.href = "pages/model.html";
+
+};
