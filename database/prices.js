@@ -1,326 +1,398 @@
-/* =========================================================
-   TECHFIX SOFTWARE
-   SERVICE PRICING DATABASE
-   ========================================================= */
+/*
+ * TechFix Software EXP v11
+ * Service & Solution Pricing Database
+ */
 
-const TECHFIX_PRICES = {
+const pricesDatabase = [
 
-    currency: "SAR",
+    // =========================
+    // ANDROID SERVICES
+    // =========================
 
-    lastUpdated: "2026-08-07",
+    {
+        id: "android-frp",
+        platform: "Android",
+        service: "FRP",
+        category: "Android",
+        priceFrom: 1000,
+        priceTo: 1500,
+        price: "1000 - 1500",
+        currency: "SAR",
+        rating: "4.9"
+    },
 
-    generalServices: [
+    {
+        id: "android-flash",
+        platform: "Android",
+        service: "Flash",
+        category: "Android",
+        priceFrom: 1000,
+        priceTo: 2000,
+        price: "1000 - 2000",
+        currency: "SAR",
+        rating: "4.9"
+    },
 
-        {
-            id: "diagnostics",
-            name: "Mobile Diagnostics",
-            category: "General",
-            priceFrom: 100,
-            priceTo: 250,
-            unit: "SAR"
-        },
+    {
+        id: "android-imei",
+        platform: "Android",
+        service: "IMEI Repair",
+        category: "Android",
+        priceFrom: 2500,
+        priceTo: 4000,
+        price: "2500 - 4000",
+        currency: "SAR",
+        rating: "4.8"
+    },
 
-        {
-            id: "software-installation",
-            name: "Software Installation",
-            category: "Software",
-            priceFrom: 100,
-            priceTo: 300,
-            unit: "SAR"
-        },
+    {
+        id: "android-network",
+        platform: "Android",
+        service: "Network Repair",
+        category: "Android",
+        priceFrom: 2500,
+        priceTo: 3500,
+        price: "2500 - 3500",
+        currency: "SAR",
+        rating: "4.8"
+    },
 
-        {
-            id: "firmware-flash",
-            name: "Firmware Flash / Installation",
-            category: "Firmware",
-            priceFrom: 150,
-            priceTo: 400,
-            unit: "SAR"
-        },
-
-        {
-            id: "driver-setup",
-            name: "Driver & Tool Setup",
-            category: "Software",
-            priceFrom: 100,
-            priceTo: 250,
-            unit: "SAR"
-        },
-
-        {
-            id: "boot-repair",
-            name: "Boot / Software Repair",
-            category: "Repair",
-            priceFrom: 200,
-            priceTo: 600,
-            unit: "SAR"
-        },
-
-        {
-            id: "data-backup",
-            name: "Data Backup / Restore",
-            category: "Data",
-            priceFrom: 150,
-            priceTo: 500,
-            unit: "SAR"
-        },
-
-        {
-            id: "network-diagnostics",
-            name: "Network Diagnostics",
-            category: "Network",
-            priceFrom: 150,
-            priceTo: 400,
-            unit: "SAR"
-        }
-
-    ],
-
-
-    appleServices: [
-
-        {
-            id: "apple-restore",
-            name: "iPhone / iPad Restore",
-            category: "Apple",
-            priceFrom: 150,
-            priceTo: 350,
-            unit: "SAR"
-        },
-
-        {
-            id: "apple-recovery",
-            name: "Recovery Mode Assistance",
-            category: "Apple",
-            priceFrom: 150,
-            priceTo: 350,
-            unit: "SAR"
-        },
-
-        {
-            id: "apple-dfu",
-            name: "DFU Restore Assistance",
-            category: "Apple",
-            priceFrom: 150,
-            priceTo: 350,
-            unit: "SAR"
-        },
-
-        {
-            id: "apple-backup",
-            name: "Apple Data Backup / Restore",
-            category: "Apple",
-            priceFrom: 200,
-            priceTo: 500,
-            unit: "SAR"
-        },
-
-        {
-            id: "apple-software",
-            name: "Apple Software Support",
-            category: "Apple",
-            priceFrom: 150,
-            priceTo: 400,
-            unit: "SAR"
-        }
-
-    ],
-
-
-    androidServices: [
-
-        {
-            id: "android-flash",
-            name: "Android Firmware Flash",
-            category: "Android",
-            priceFrom: 150,
-            priceTo: 400,
-            unit: "SAR"
-        },
-
-        {
-            id: "android-recovery",
-            name: "Android Recovery Repair",
-            category: "Android",
-            priceFrom: 200,
-            priceTo: 500,
-            unit: "SAR"
-        },
-
-        {
-            id: "android-software",
-            name: "Android Software Installation",
-            category: "Android",
-            priceFrom: 100,
-            priceTo: 300,
-            unit: "SAR"
-        },
-
-        {
-            id: "android-driver",
-            name: "Android Driver / Tool Setup",
-            category: "Android",
-            priceFrom: 100,
-            priceTo: 250,
-            unit: "SAR"
-        }
-
-    ],
-
-
-    iphoneModelServices: [
-
-        {
-            model: "iPhone X",
-            software: {
-                priceFrom: 150,
-                priceTo: 350
-            },
-            restore: {
-                priceFrom: 150,
-                priceTo: 300
-            }
-        },
-
-        {
-            model: "iPhone XR",
-            software: {
-                priceFrom: 150,
-                priceTo: 350
-            },
-            restore: {
-                priceFrom: 150,
-                priceTo: 300
-            }
-        },
-
-        {
-            model: "iPhone XS",
-            software: {
-                priceFrom: 150,
-                priceTo: 350
-            },
-            restore: {
-                priceFrom: 150,
-                priceTo: 300
-            }
-        },
-
-        {
-            model: "iPhone 11",
-            software: {
-                priceFrom: 175,
-                priceTo: 400
-            },
-            restore: {
-                priceFrom: 175,
-                priceTo: 350
-            }
-        },
-
-        {
-            model: "iPhone 12",
-            software: {
-                priceFrom: 200,
-                priceTo: 450
-            },
-            restore: {
-                priceFrom: 200,
-                priceTo: 400
-            }
-        },
-
-        {
-            model: "iPhone 13",
-            software: {
-                priceFrom: 225,
-                priceTo: 500
-            },
-            restore: {
-                priceFrom: 225,
-                priceTo: 450
-            }
-        },
-
-        {
-            model: "iPhone 14",
-            software: {
-                priceFrom: 250,
-                priceTo: 550
-            },
-            restore: {
-                priceFrom: 250,
-                priceTo: 500
-            }
-        },
-
-        {
-            model: "iPhone 15",
-            software: {
-                priceFrom: 300,
-                priceTo: 650
-            },
-            restore: {
-                priceFrom: 300,
-                priceTo: 550
-            }
-        },
-
-        {
-            model: "iPhone 16",
-            software: {
-                priceFrom: 350,
-                priceTo: 750
-            },
-            restore: {
-                priceFrom: 350,
-                priceTo: 650
-            }
-        },
-
-        {
-            model: "iPhone 17",
-            software: {
-                priceFrom: 400,
-                priceTo: 800
-            },
-            restore: {
-                priceFrom: 400,
-                priceTo: 700
-            }
-        }
-
-    ],
-
-
-    getService(serviceId) {
-
-        const allServices = [
-            ...this.generalServices,
-            ...this.appleServices,
-            ...this.androidServices
-        ];
-
-        return allServices.find(
-            service => service.id === serviceId
-        ) || null;
+    {
+        id: "android-boot",
+        platform: "Android",
+        service: "Boot Repair",
+        category: "Android",
+        priceFrom: 2000,
+        priceTo: 3000,
+        price: "2000 - 3000",
+        currency: "SAR",
+        rating: "4.8"
     },
 
 
-    getIPhonePricing(model) {
+    // =========================
+    // APPLE SERVICES
+    // =========================
 
-        return this.iphoneModelServices.find(
-            item =>
-                item.model.toLowerCase() ===
-                model.toLowerCase()
-        ) || null;
+    {
+        id: "apple-restore",
+        platform: "Apple",
+        service: "Restore",
+        category: "Apple",
+        priceFrom: 1500,
+        priceTo: 1500,
+        price: "1500",
+        currency: "SAR",
+        rating: "4.9"
+    },
+
+    {
+        id: "apple-flash",
+        platform: "Apple",
+        service: "Flash",
+        category: "Apple",
+        priceFrom: 2000,
+        priceTo: 2000,
+        price: "2000",
+        currency: "SAR",
+        rating: "4.9"
+    },
+
+    {
+        id: "apple-passcode",
+        platform: "Apple",
+        service: "Passcode",
+        category: "Apple",
+        priceFrom: 3000,
+        priceTo: 3000,
+        price: "3000",
+        currency: "SAR",
+        rating: "4.8"
+    },
+
+    {
+        id: "apple-activation",
+        platform: "Apple",
+        service: "Activation Support",
+        category: "Apple",
+        priceFrom: 3500,
+        priceTo: 3500,
+        price: "3500",
+        currency: "SAR",
+        rating: "4.8"
+    },
+
+    {
+        id: "apple-icloud",
+        platform: "Apple",
+        service: "iCloud Related Service",
+        category: "Apple",
+        priceFrom: 6000,
+        priceTo: null,
+        price: "6000+",
+        currency: "SAR",
+        rating: "4.7"
+    },
+
+
+    // =========================
+    // IPHONE MODEL SERVICE GUIDE
+    // =========================
+
+    {
+        id: "iphone-x",
+        brand: "Apple",
+        model: "iPhone X",
+        service: "Software Service",
+        category: "Apple",
+        priceFrom: 1500,
+        priceTo: 2500,
+        price: "1500 - 2500",
+        currency: "SAR",
+        rating: "4.8"
+    },
+
+    {
+        id: "iphone-xs",
+        brand: "Apple",
+        model: "iPhone XS",
+        service: "Software Service",
+        category: "Apple",
+        priceFrom: 1600,
+        priceTo: 2700,
+        price: "1600 - 2700",
+        currency: "SAR",
+        rating: "4.8"
+    },
+
+    {
+        id: "iphone-11",
+        brand: "Apple",
+        model: "iPhone 11",
+        service: "Software Service",
+        category: "Apple",
+        priceFrom: 1800,
+        priceTo: 3000,
+        price: "1800 - 3000",
+        currency: "SAR",
+        rating: "4.8"
+    },
+
+    {
+        id: "iphone-12",
+        brand: "Apple",
+        model: "iPhone 12",
+        service: "Software Service",
+        category: "Apple",
+        priceFrom: 2200,
+        priceTo: 3500,
+        price: "2200 - 3500",
+        currency: "SAR",
+        rating: "4.8"
+    },
+
+    {
+        id: "iphone-13",
+        brand: "Apple",
+        model: "iPhone 13",
+        service: "Software Service",
+        category: "Apple",
+        priceFrom: 2500,
+        priceTo: 4000,
+        price: "2500 - 4000",
+        currency: "SAR",
+        rating: "4.9"
+    },
+
+    {
+        id: "iphone-14",
+        brand: "Apple",
+        model: "iPhone 14",
+        service: "Software Service",
+        category: "Apple",
+        priceFrom: 3000,
+        priceTo: 5000,
+        price: "3000 - 5000",
+        currency: "SAR",
+        rating: "4.9"
+    },
+
+    {
+        id: "iphone-15",
+        brand: "Apple",
+        model: "iPhone 15",
+        service: "Software Service",
+        category: "Apple",
+        priceFrom: 3500,
+        priceTo: 5500,
+        price: "3500 - 5500",
+        currency: "SAR",
+        rating: "4.9"
+    },
+
+    {
+        id: "iphone-16",
+        brand: "Apple",
+        model: "iPhone 16",
+        service: "Software Service",
+        category: "Apple",
+        priceFrom: 4500,
+        priceTo: 6500,
+        price: "4500 - 6500",
+        currency: "SAR",
+        rating: "4.9"
+    },
+
+    {
+        id: "iphone-17",
+        brand: "Apple",
+        model: "iPhone 17",
+        service: "Software Service",
+        category: "Apple",
+        priceFrom: 5500,
+        priceTo: 8000,
+        price: "5500 - 8000",
+        currency: "SAR",
+        rating: "4.9"
+    },
+
+
+    // =========================
+    // PROFESSIONAL HARDWARE / REPAIR
+    // =========================
+
+    {
+        id: "path-repair",
+        platform: "Android",
+        service: "Path Repair",
+        category: "Hardware / Software",
+        priceFrom: 2500,
+        priceTo: 5000,
+        price: "2500 - 5000",
+        currency: "SAR",
+        rating: "4.8"
+    },
+
+    {
+        id: "cpid-service",
+        platform: "Android",
+        service: "CPID Service",
+        category: "Samsung",
+        priceFrom: 2500,
+        priceTo: 5000,
+        price: "2500 - 5000",
+        currency: "SAR",
+        rating: "4.8"
+    },
+
+    {
+        id: "network-unlock",
+        platform: "Android",
+        service: "Network Unlock",
+        category: "Network",
+        priceFrom: 1500,
+        priceTo: 3500,
+        price: "1500 - 3500",
+        currency: "SAR",
+        rating: "4.8"
+    },
+
+    {
+        id: "boot-repair",
+        platform: "Android",
+        service: "Boot Repair",
+        category: "Repair",
+        priceFrom: 2000,
+        priceTo: 3000,
+        price: "2000 - 3000",
+        currency: "SAR",
+        rating: "4.8"
     }
+
+];
+
+
+/*
+ * Global database access
+ */
+
+window.pricesDatabase = pricesDatabase;
+
+
+/*
+ * Backward-compatible aliases
+ */
+
+window.priceDatabase = pricesDatabase;
+window.prices = pricesDatabase;
+window.servicePrices = pricesDatabase;
+
+
+/*
+ * Search prices
+ */
+
+window.searchPrices = function (query) {
+
+    const search =
+        String(query || "")
+            .trim()
+            .toLowerCase();
+
+    if (!search) {
+        return pricesDatabase;
+    }
+
+    return pricesDatabase.filter((item) => {
+
+        const searchableText = [
+
+            item.id,
+            item.platform,
+            item.brand,
+            item.model,
+            item.service,
+            item.category,
+            item.price
+
+        ]
+            .join(" ")
+            .toLowerCase();
+
+        return searchableText.includes(search);
+
+    });
 
 };
 
 
-/* =========================================================
-   GLOBAL DATABASE EXPORT
-   ========================================================= */
+/*
+ * Get prices for a specific model
+ */
 
-window.TECHFIX_PRICES = TECHFIX_PRICES;
+window.getModelPrices = function (modelName) {
+
+    const search =
+        String(modelName || "")
+            .trim()
+            .toLowerCase();
+
+    if (!search) {
+        return [];
+    }
+
+    return pricesDatabase.filter((item) => {
+
+        const model =
+            String(item.model || "")
+                .toLowerCase();
+
+        return (
+            model === search ||
+            model.includes(search) ||
+            search.includes(model)
+        );
+
+    });
+
+};
