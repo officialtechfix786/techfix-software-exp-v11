@@ -10,11 +10,9 @@ const mobilesDatabase = [
         brand: "Samsung",
         model: "Galaxy S24",
         image: "../assets/images/logo.png",
-
         androidVersion: "Android 14",
         chipset: "Snapdragon 8 Gen 3",
         bootType: "A/B",
-
         frp: "Supported",
         firmware: "Available",
         flash: "Supported",
@@ -22,12 +20,8 @@ const mobilesDatabase = [
         networkRepair: "Contact TechFix",
         unlock: "Contact TechFix",
         drivers: "Samsung USB Driver",
-
         rating: "4.9",
-
-        description:
-            "Samsung Galaxy S24 software information, firmware, flashing and professional repair solutions.",
-
+        description: "Samsung Galaxy S24 software information, firmware, flashing and professional repair solutions.",
         solutions: [
             {
                 name: "FRP",
@@ -52,17 +46,14 @@ const mobilesDatabase = [
         ]
     },
 
-
     {
         id: "samsung-galaxy-a15",
         brand: "Samsung",
         model: "Galaxy A15",
         image: "../assets/images/logo.png",
-
         androidVersion: "Android 14",
         chipset: "MediaTek Helio G99",
         bootType: "A/B",
-
         frp: "Supported",
         firmware: "Available",
         flash: "Supported",
@@ -70,12 +61,8 @@ const mobilesDatabase = [
         networkRepair: "Contact TechFix",
         unlock: "Contact TechFix",
         drivers: "Samsung USB Driver",
-
         rating: "4.8",
-
-        description:
-            "Samsung Galaxy A15 software and technical database information.",
-
+        description: "Samsung Galaxy A15 software and technical database information.",
         solutions: [
             {
                 name: "FRP",
@@ -95,17 +82,14 @@ const mobilesDatabase = [
         ]
     },
 
-
     {
         id: "xiaomi-redmi-note-13",
         brand: "Xiaomi",
         model: "Redmi Note 13",
         image: "../assets/images/logo.png",
-
         androidVersion: "Android 13",
         chipset: "Snapdragon 685",
         bootType: "A/B",
-
         frp: "Supported",
         firmware: "Available",
         flash: "Supported",
@@ -113,12 +97,8 @@ const mobilesDatabase = [
         networkRepair: "Contact TechFix",
         unlock: "Contact TechFix",
         drivers: "Xiaomi USB Driver",
-
         rating: "4.8",
-
-        description:
-            "Redmi Note 13 firmware, flashing and mobile software information.",
-
+        description: "Redmi Note 13 firmware, flashing and mobile software information.",
         solutions: [
             {
                 name: "FRP",
@@ -138,17 +118,14 @@ const mobilesDatabase = [
         ]
     },
 
-
     {
         id: "xiaomi-poco-x6",
         brand: "POCO",
         model: "POCO X6",
         image: "../assets/images/logo.png",
-
         androidVersion: "Android 13",
         chipset: "Snapdragon 7s Gen 2",
         bootType: "A/B",
-
         frp: "Supported",
         firmware: "Available",
         flash: "Supported",
@@ -156,12 +133,8 @@ const mobilesDatabase = [
         networkRepair: "Contact TechFix",
         unlock: "Contact TechFix",
         drivers: "Xiaomi USB Driver",
-
         rating: "4.8",
-
-        description:
-            "POCO X6 mobile software and firmware information.",
-
+        description: "POCO X6 mobile software and firmware information.",
         solutions: [
             {
                 name: "FRP",
@@ -176,17 +149,14 @@ const mobilesDatabase = [
         ]
     },
 
-
     {
         id: "oppo-reno-11",
         brand: "OPPO",
         model: "Reno 11",
         image: "../assets/images/logo.png",
-
         androidVersion: "Android 14",
         chipset: "MediaTek Dimensity 7050",
         bootType: "A/B",
-
         frp: "Supported",
         firmware: "Available",
         flash: "Supported",
@@ -194,12 +164,8 @@ const mobilesDatabase = [
         networkRepair: "Contact TechFix",
         unlock: "Contact TechFix",
         drivers: "OPPO USB Driver",
-
         rating: "4.8",
-
-        description:
-            "OPPO Reno 11 software and technical repair information.",
-
+        description: "OPPO Reno 11 software and technical repair information.",
         solutions: [
             {
                 name: "FRP",
@@ -214,17 +180,14 @@ const mobilesDatabase = [
         ]
     },
 
-
     {
         id: "vivo-v30",
         brand: "Vivo",
         model: "Vivo V30",
         image: "../assets/images/logo.png",
-
         androidVersion: "Android 14",
         chipset: "Snapdragon 7 Gen 3",
         bootType: "A/B",
-
         frp: "Supported",
         firmware: "Available",
         flash: "Supported",
@@ -232,12 +195,8 @@ const mobilesDatabase = [
         networkRepair: "Contact TechFix",
         unlock: "Contact TechFix",
         drivers: "Vivo USB Driver",
-
         rating: "4.8",
-
-        description:
-            "Vivo V30 mobile software and firmware information.",
-
+        description: "Vivo V30 mobile software and firmware information.",
         solutions: [
             {
                 name: "FRP",
@@ -252,17 +211,14 @@ const mobilesDatabase = [
         ]
     },
 
-
     {
         id: "realme-12-pro",
         brand: "Realme",
         model: "Realme 12 Pro",
         image: "../assets/images/logo.png",
-
         androidVersion: "Android 14",
         chipset: "Snapdragon 6 Gen 1",
         bootType: "A/B",
-
         frp: "Supported",
         firmware: "Available",
         flash: "Supported",
@@ -270,16 +226,12 @@ const mobilesDatabase = [
         networkRepair: "Contact TechFix",
         unlock: "Contact TechFix",
         drivers: "Realme USB Driver",
-
         rating: "4.7",
-
-        description:
-            "Realme 12 Pro software and technical database information.",
-
+        description: "Realme 12 Pro software and technical database information.",
         solutions: [
             {
                 name: "FRP",
-                description: "Professional FRP service information.",
+                description: "Professional service information.",
                 price: "Contact for Price"
             },
             {
@@ -289,18 +241,15 @@ const mobilesDatabase = [
             }
         ]
     },
-
 
     {
         id: "tecno-camon-30",
         brand: "Tecno",
         model: "Camon 30",
         image: "../assets/images/logo.png",
-
         androidVersion: "Android 14",
         chipset: "MediaTek Helio G99",
         bootType: "A/B",
-
         frp: "Supported",
         firmware: "Available",
         flash: "Supported",
@@ -308,12 +257,8 @@ const mobilesDatabase = [
         networkRepair: "Contact TechFix",
         unlock: "Contact TechFix",
         drivers: "MediaTek USB Driver",
-
         rating: "4.7",
-
-        description:
-            "Tecno Camon 30 mobile software and firmware information.",
-
+        description: "Tecno Camon 30 mobile software and firmware information.",
         solutions: [
             {
                 name: "FRP",
@@ -327,18 +272,15 @@ const mobilesDatabase = [
             }
         ]
     },
-
 
     {
         id: "infinix-note-40",
         brand: "Infinix",
         model: "Note 40",
         image: "../assets/images/logo.png",
-
         androidVersion: "Android 14",
         chipset: "MediaTek Helio G99 Ultimate",
         bootType: "A/B",
-
         frp: "Supported",
         firmware: "Available",
         flash: "Supported",
@@ -346,12 +288,8 @@ const mobilesDatabase = [
         networkRepair: "Contact TechFix",
         unlock: "Contact TechFix",
         drivers: "MediaTek USB Driver",
-
         rating: "4.7",
-
-        description:
-            "Infinix Note 40 software and technical information.",
-
+        description: "Infinix Note 40 software and technical information.",
         solutions: [
             {
                 name: "FRP",
@@ -366,17 +304,14 @@ const mobilesDatabase = [
         ]
     },
 
-
     {
         id: "google-pixel-8",
         brand: "Google",
         model: "Pixel 8",
         image: "../assets/images/logo.png",
-
         androidVersion: "Android 14",
         chipset: "Google Tensor G3",
         bootType: "A/B",
-
         frp: "Supported",
         firmware: "Available",
         flash: "Supported",
@@ -384,12 +319,8 @@ const mobilesDatabase = [
         networkRepair: "Contact TechFix",
         unlock: "Contact TechFix",
         drivers: "Google USB Driver",
-
         rating: "4.9",
-
-        description:
-            "Google Pixel 8 firmware and professional software information.",
-
+        description: "Google Pixel 8 firmware and professional software information.",
         solutions: [
             {
                 name: "Firmware",
@@ -404,17 +335,14 @@ const mobilesDatabase = [
         ]
     },
 
-
     {
         id: "oneplus-12",
         brand: "OnePlus",
         model: "OnePlus 12",
         image: "../assets/images/logo.png",
-
         androidVersion: "Android 14",
         chipset: "Snapdragon 8 Gen 3",
         bootType: "A/B",
-
         frp: "Supported",
         firmware: "Available",
         flash: "Supported",
@@ -422,12 +350,8 @@ const mobilesDatabase = [
         networkRepair: "Contact TechFix",
         unlock: "Contact TechFix",
         drivers: "OnePlus USB Driver",
-
         rating: "4.9",
-
-        description:
-            "OnePlus 12 software and firmware database information.",
-
+        description: "OnePlus 12 software and firmware database information.",
         solutions: [
             {
                 name: "Firmware / Flash",
@@ -442,17 +366,14 @@ const mobilesDatabase = [
         ]
     },
 
-
     {
         id: "iphone-15",
         brand: "Apple",
         model: "iPhone 15",
         image: "../assets/images/logo.png",
-
         androidVersion: "iOS 17",
         chipset: "Apple A16 Bionic",
         bootType: "Secure Boot",
-
         frp: "N/A",
         firmware: "Available",
         flash: "Restore",
@@ -460,12 +381,8 @@ const mobilesDatabase = [
         networkRepair: "Contact TechFix",
         unlock: "Contact TechFix",
         drivers: "Apple Mobile Device Driver",
-
         rating: "4.9",
-
-        description:
-            "iPhone 15 Apple software, restore and firmware information.",
-
+        description: "iPhone 15 Apple software, restore and firmware information.",
         solutions: [
             {
                 name: "Restore",
@@ -485,17 +402,14 @@ const mobilesDatabase = [
         ]
     },
 
-
     {
         id: "iphone-17",
         brand: "Apple",
         model: "iPhone 17",
         image: "../assets/images/logo.png",
-
         androidVersion: "iOS 26",
         chipset: "Apple Silicon",
         bootType: "Secure Boot",
-
         frp: "N/A",
         firmware: "Available",
         flash: "Restore",
@@ -503,12 +417,8 @@ const mobilesDatabase = [
         networkRepair: "Contact TechFix",
         unlock: "Contact TechFix",
         drivers: "Apple Mobile Device Driver",
-
         rating: "4.9",
-
-        description:
-            "iPhone 17 software and Apple firmware information.",
-
+        description: "iPhone 17 software and Apple firmware information.",
         solutions: [
             {
                 name: "Restore",
@@ -526,18 +436,11 @@ const mobilesDatabase = [
 ];
 
 
-
 /*
- * Global access for TechFix pages
+ * Global database access
  */
 
 window.mobilesDatabase = mobilesDatabase;
-
-
-/*
- * Backward-compatible aliases
- */
-
 window.mobileDatabase = mobilesDatabase;
 window.mobiles = mobilesDatabase;
 
@@ -548,22 +451,20 @@ window.mobiles = mobilesDatabase;
 
 window.searchMobiles = function (query) {
 
-    const search =
-        String(query || "")
-            .trim()
-            .toLowerCase();
+    const search = String(query || "")
+        .trim()
+        .toLowerCase();
 
     if (!search) {
         return mobilesDatabase;
     }
 
-    return mobilesDatabase.filter((mobile) => {
+    return mobilesDatabase.filter(function (mobile) {
 
         const searchableText = [
-
+            mobile.id,
             mobile.brand,
             mobile.model,
-            mobile.id,
             mobile.androidVersion,
             mobile.chipset,
             mobile.bootType,
@@ -574,60 +475,70 @@ window.searchMobiles = function (query) {
             mobile.networkRepair,
             mobile.unlock,
             mobile.drivers
-
         ]
             .join(" ")
             .toLowerCase();
 
         return searchableText.includes(search);
-
     });
-
 };
-/* =========================================================
-   TECHFIX MOBILE BRAND LOGOS
-   ========================================================= */
+
+
+/*
+ * Local brand display names
+ *
+ * No external logo URLs.
+ * This prevents external 404 requests.
+ */
 
 const TECHFIX_BRAND_LOGOS = {
-    Samsung: "https://cdn.simpleicons.org/samsung",
-    Xiaomi: "https://cdn.simpleicons.org/xiaomi",
-    POCO: "https://cdn.simpleicons.org/poco",
-    OPPO: "https://cdn.simpleicons.org/oppo",
-    Vivo: "https://cdn.simpleicons.org/vivo",
-    Realme: "https://cdn.simpleicons.org/realme",
-    Tecno: "https://cdn.simpleicons.org/tecno",
-    Infinix: "https://cdn.simpleicons.org/infinix",
-    itel: "https://cdn.simpleicons.org/itel",
-    Motorola: "https://cdn.simpleicons.org/motorola",
-    Google: "https://cdn.simpleicons.org/google",
-    OnePlus: "https://cdn.simpleicons.org/oneplus",
-    LG: "https://cdn.simpleicons.org/lg",
-    Nokia: "https://cdn.simpleicons.org/nokia",
-    Huawei: "https://cdn.simpleicons.org/huawei",
-    Honor: "https://cdn.simpleicons.org/honor",
-    Sony: "https://cdn.simpleicons.org/sony",
-    Asus: "https://cdn.simpleicons.org/asus",
-    Lenovo: "https://cdn.simpleicons.org/lenovo",
-    Apple: "https://cdn.simpleicons.org/apple"
+
+    Samsung: "",
+    Xiaomi: "",
+    POCO: "",
+    OPPO: "",
+    Vivo: "",
+    Realme: "",
+    Tecno: "",
+    Infinix: "",
+    Google: "",
+    OnePlus: "",
+    Apple: ""
+
 };
 
 
-/* Add logo to every mobile automatically */
-
-if (Array.isArray(window.mobilesDatabase)) {
-
-    window.mobilesDatabase.forEach((mobile) => {
-
-        const brand = String(mobile.brand || "").trim();
-
-        mobile.brandLogo =
-            TECHFIX_BRAND_LOGOS[brand] || "";
-
-    });
-
-}
-
-
-/* Make logo database available globally */
-
 window.TechFixBrandLogos = TECHFIX_BRAND_LOGOS;
+
+
+/*
+ * Add local-safe logo property
+ */
+
+mobilesDatabase.forEach(function (mobile) {
+
+    mobile.brandLogo =
+        TECHFIX_BRAND_LOGOS[mobile.brand] || "";
+
+});
+
+
+/*
+ * Database information
+ */
+
+window.TechFixMobileDatabaseInfo = {
+    totalModels: mobilesDatabase.length,
+    brands: [
+        ...new Set(
+            mobilesDatabase.map(function (mobile) {
+                return mobile.brand;
+            })
+        )
+    ]
+};
+
+
+console.log(
+    `TechFix Mobile Database: ${mobilesDatabase.length} models loaded`
+);
