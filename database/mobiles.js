@@ -584,3 +584,50 @@ window.searchMobiles = function (query) {
     });
 
 };
+/* =========================================================
+   TECHFIX MOBILE BRAND LOGOS
+   ========================================================= */
+
+const TECHFIX_BRAND_LOGOS = {
+    Samsung: "https://cdn.simpleicons.org/samsung",
+    Xiaomi: "https://cdn.simpleicons.org/xiaomi",
+    POCO: "https://cdn.simpleicons.org/poco",
+    OPPO: "https://cdn.simpleicons.org/oppo",
+    Vivo: "https://cdn.simpleicons.org/vivo",
+    Realme: "https://cdn.simpleicons.org/realme",
+    Tecno: "https://cdn.simpleicons.org/tecno",
+    Infinix: "https://cdn.simpleicons.org/infinix",
+    itel: "https://cdn.simpleicons.org/itel",
+    Motorola: "https://cdn.simpleicons.org/motorola",
+    Google: "https://cdn.simpleicons.org/google",
+    OnePlus: "https://cdn.simpleicons.org/oneplus",
+    LG: "https://cdn.simpleicons.org/lg",
+    Nokia: "https://cdn.simpleicons.org/nokia",
+    Huawei: "https://cdn.simpleicons.org/huawei",
+    Honor: "https://cdn.simpleicons.org/honor",
+    Sony: "https://cdn.simpleicons.org/sony",
+    Asus: "https://cdn.simpleicons.org/asus",
+    Lenovo: "https://cdn.simpleicons.org/lenovo",
+    Apple: "https://cdn.simpleicons.org/apple"
+};
+
+
+/* Add logo to every mobile automatically */
+
+if (Array.isArray(window.mobilesDatabase)) {
+
+    window.mobilesDatabase.forEach((mobile) => {
+
+        const brand = String(mobile.brand || "").trim();
+
+        mobile.brandLogo =
+            TECHFIX_BRAND_LOGOS[brand] || "";
+
+    });
+
+}
+
+
+/* Make logo database available globally */
+
+window.TechFixBrandLogos = TECHFIX_BRAND_LOGOS;
