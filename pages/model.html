@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
 
@@ -11,7 +10,7 @@
 
     <meta
         name="description"
-        content="TechFix Software EXP mobile model details, software information, services and pricing."
+        content="TechFix Software EXP mobile model details, software solutions and service pricing."
     >
 
     <title>Model Details | TechFix Software EXP</title>
@@ -29,56 +28,44 @@
 
         <div class="container header-inner">
 
-            <a
-                href="../index.html"
-                class="brand"
-            >
+            <a href="../index.html" class="brand">
+
                 <img
-                    src="../assets/images/techfix-logo.png"
+                    src="../assets/images/logo/techfix-logo.png"
                     alt="TechFix Software EXP"
                 >
 
-                <span>
-                    TechFix Software EXP
-                </span>
+                <span>TechFix Software EXP</span>
+
             </a>
+
 
             <nav class="main-nav">
 
-                <a href="../index.html">
-                    Home
-                </a>
+                <a href="../index.html">Home</a>
 
-                <a href="mobiles.html">
-                    Mobiles
-                </a>
+                <a href="mobiles.html">Mobiles</a>
 
-                <a href="android.html">
-                    Android
-                </a>
+                <a href="android.html">Android</a>
 
-                <a href="apple.html">
-                    Apple
-                </a>
+                <a href="apple.html">Apple</a>
 
-                <a href="downloads.html">
-                    Downloads
-                </a>
+                <a href="downloads.html">Downloads</a>
 
                 <a href="cyber-security.html">
                     Cyber Security
                 </a>
 
-                <a href="contact.html">
-                    Contact
-                </a>
+                <a href="contact.html">Contact</a>
 
             </nav>
+
 
             <button
                 class="mobile-menu-button"
                 type="button"
-                aria-label="Open navigation"
+                aria-label="Open Menu"
+                aria-expanded="false"
             >
                 ☰
             </button>
@@ -88,7 +75,7 @@
     </header>
 
 
-    <!-- MODEL PAGE -->
+    <!-- MODEL HERO -->
     <main>
 
         <section class="page-hero">
@@ -112,24 +99,22 @@
         </section>
 
 
+        <!-- MODEL CONTENT -->
         <section class="section">
 
             <div class="container">
 
-                <!-- MODEL INFORMATION -->
-
                 <div
                     id="model-details"
                     class="glass-card"
-                ></div>
+                >
+                    Loading details...
+                </div>
 
 
                 <!-- SERVICES -->
 
-                <div
-                    class="section-title"
-                    style="margin-top: 55px;"
-                >
+                <div class="section-title">
 
                     <span class="eyebrow">
                         AVAILABLE SERVICES
@@ -140,8 +125,8 @@
                     </h2>
 
                     <p>
-                        Available services and current TechFix
-                        service pricing information.
+                        Available TechFix services and current
+                        pricing information.
                     </p>
 
                 </div>
@@ -150,7 +135,8 @@
                 <div
                     id="service-grid"
                     class="card-grid"
-                ></div>
+                >
+                </div>
 
 
                 <!-- NOT FOUND -->
@@ -166,15 +152,15 @@
                     </h2>
 
                     <p>
-                        The requested model is not currently
-                        available in the TechFix database.
+                        This mobile model is not available
+                        in the TechFix database.
                     </p>
 
                     <a
                         href="mobiles.html"
                         class="btn btn-primary"
                     >
-                        Back to Mobile Database
+                        Back to Mobiles
                     </a>
 
                 </div>
@@ -187,7 +173,6 @@
 
 
     <!-- FOOTER -->
-
     <footer class="site-footer">
 
         <div class="container">
@@ -197,9 +182,8 @@
                 <div>
 
                     <img
-                        src="../assets/images/techfix-logo.png"
+                        src="../assets/images/logo/techfix-logo.png"
                         alt="TechFix Software EXP"
-                        loading="lazy"
                     >
 
                     <h3>
@@ -216,9 +200,7 @@
 
                 <div>
 
-                    <h3>
-                        Quick Links
-                    </h3>
+                    <h3>Quick Links</h3>
 
                     <a href="../index.html">
                         Home
@@ -245,9 +227,7 @@
 
                 <div>
 
-                    <h3>
-                        Contact
-                    </h3>
+                    <h3>Contact</h3>
 
                     <a href="tel:+966568152404">
                         +966568152404
@@ -281,7 +261,8 @@
             <div class="footer-bottom">
 
                 <p>
-                    © 2026 TechFix Software EXP.
+                    © <span data-current-year>2026</span>
+                    TechFix Software EXP.
                     Founder: MIAN AHMAD
                 </p>
 
@@ -292,551 +273,411 @@
     </footer>
 
 
-    <!-- DATABASE FILES -->
-
+    <!-- DATABASE -->
     <script src="../database/mobiles.js"></script>
     <script src="../database/prices.js"></script>
 
+    <!-- GLOBAL JS -->
+    <script src="../assets/js/app.js"></script>
 
-    <!-- MODEL DATABASE CONNECTION -->
 
+    <!-- MODEL LOGIC -->
     <script>
 
-        (() => {
+        "use strict";
 
-            "use strict";
+        document.addEventListener(
+            "DOMContentLoaded",
+            () => {
 
+                const title =
+                    document.getElementById("model-title");
 
-            const title =
-                document.getElementById("model-title");
-
-            const description =
-                document.getElementById("model-description");
-
-            const details =
-                document.getElementById("model-details");
-
-            const services =
-                document.getElementById("service-grid");
-
-            const notFound =
-                document.getElementById("model-not-found");
-
-
-            const mobiles =
-                Array.isArray(window.mobilesDatabase)
-                    ? window.mobilesDatabase
-                    : [];
-
-
-            const prices =
-                Array.isArray(window.pricesDatabase)
-                    ? window.pricesDatabase
-                    : [];
-
-
-            function escapeHTML(value) {
-
-                return String(value ?? "")
-                    .replace(/&/g, "&amp;")
-                    .replace(/</g, "&lt;")
-                    .replace(/>/g, "&gt;")
-                    .replace(/"/g, "&quot;")
-                    .replace(/'/g, "&#039;");
-
-            }
-
-
-            function normalize(value) {
-
-                return String(value ?? "")
-                    .trim()
-                    .toLowerCase();
-
-            }
-
-
-            /*
-             * Get model from URL
-             *
-             * Example:
-             * model.html?model=Galaxy%20S24
-             */
-
-            const params =
-                new URLSearchParams(
-                    window.location.search
-                );
-
-
-            const requestedModel =
-                params.get("model") || "";
-
-
-            /*
-             * Find mobile
-             */
-
-            const mobile =
-                mobiles.find((item) => {
-
-                    return (
-                        normalize(item.model) ===
-                        normalize(requestedModel)
+                const description =
+                    document.getElementById(
+                        "model-description"
                     );
 
-                });
+                const details =
+                    document.getElementById(
+                        "model-details"
+                    );
+
+                const services =
+                    document.getElementById(
+                        "service-grid"
+                    );
+
+                const notFound =
+                    document.getElementById(
+                        "model-not-found"
+                    );
 
 
-            if (!mobile) {
+                /*
+                 * Database detection
+                 */
+
+                const mobiles =
+                    Array.isArray(
+                        window.mobilesDatabase
+                    )
+                        ? window.mobilesDatabase
+                        : [];
+
+
+                const prices =
+                    Array.isArray(
+                        window.pricesDatabase
+                    )
+                        ? window.pricesDatabase
+                        : [];
+
+
+                /*
+                 * URL
+                 *
+                 * model.html?model=Galaxy%20S24
+                 */
+
+                const params =
+                    new URLSearchParams(
+                        window.location.search
+                    );
+
+
+                const requestedModel =
+                    params.get("model") || "";
+
+
+                function normalize(value) {
+
+                    return String(value ?? "")
+                        .trim()
+                        .toLowerCase();
+
+                }
+
+
+                function escapeHTML(value) {
+
+                    return String(value ?? "")
+                        .replace(/&/g, "&amp;")
+                        .replace(/</g, "&lt;")
+                        .replace(/>/g, "&gt;")
+                        .replace(/"/g, "&quot;")
+                        .replace(/'/g, "&#039;");
+
+                }
+
+
+                /*
+                 * Find requested mobile
+                 */
+
+                const mobile =
+                    mobiles.find(
+                        (item) =>
+                            normalize(item.model) ===
+                            normalize(requestedModel)
+                    );
+
+
+                /*
+                 * Model not found
+                 */
+
+                if (!mobile) {
+
+                    title.textContent =
+                        "Model Not Found";
+
+                    description.textContent =
+                        requestedModel
+                            ? `No data found for ${requestedModel}.`
+                            : "No model was selected.";
+
+                    details.hidden = true;
+
+                    services.hidden = true;
+
+                    notFound.hidden = false;
+
+                    return;
+
+                }
+
+
+                /*
+                 * Page title
+                 */
+
+                document.title =
+                    `${mobile.model} | TechFix Software EXP`;
+
 
                 title.textContent =
-                    "Model Not Found";
+                    mobile.model;
+
 
                 description.textContent =
-                    "The requested model could not be found.";
-
-                details.hidden = true;
-                services.hidden = true;
-                notFound.hidden = false;
-
-                return;
-
-            }
+                    mobile.description ||
+                    "Professional mobile software information.";
 
 
-            /*
-             * Page title
-             */
+                /*
+                 * Model image
+                 */
 
-            document.title =
-                `${mobile.model} | TechFix Software EXP`;
-
-
-            title.textContent =
-                mobile.model;
+                const modelImage =
+                    mobile.image ||
+                    "../assets/images/logo/techfix-logo.png";
 
 
-            description.textContent =
-                mobile.description ||
-                "Professional mobile software information.";
+                /*
+                 * Model details
+                 */
 
+                details.innerHTML = `
 
-            /*
-             * Model information
-             */
+                    <div class="model-detail-layout">
 
-            const image =
-                mobile.image ||
-                "../assets/images/techfix-logo.png";
+                        <div class="model-image-box">
 
-
-            details.innerHTML = `
-
-                <div
-                    style="
-                        display:grid;
-                        grid-template-columns:
-                            minmax(220px, 320px) 1fr;
-                        gap:30px;
-                        align-items:center;
-                    "
-                >
-
-                    <div
-                        style="
-                            min-height:260px;
-                            display:flex;
-                            align-items:center;
-                            justify-content:center;
-                            border:1px solid var(--border);
-                            border-radius:16px;
-                            background:#090909;
-                            padding:25px;
-                        "
-                    >
-
-                        <img
-                            id="model-image"
-                            src="${escapeHTML(image)}"
-                            alt="${escapeHTML(mobile.model)}"
-                            style="
-                                width:100%;
-                                height:250px;
-                                object-fit:contain;
-                            "
-                        >
-
-                    </div>
-
-
-                    <div>
-
-                        <span class="eyebrow">
-                            ${escapeHTML(mobile.brand)}
-                        </span>
-
-                        <h2
-                            style="
-                                font-family:Orbitron,sans-serif;
-                                margin-bottom:15px;
-                            "
-                        >
-                            ${escapeHTML(mobile.model)}
-                        </h2>
-
-
-                        <div
-                            style="
-                                color:#ffd166;
-                                margin-bottom:20px;
-                            "
-                        >
-                            ★★★★★
-                            <span
-                                style="
-                                    color:var(--muted);
-                                    margin-left:5px;
-                                "
+                            <img
+                                src="${escapeHTML(modelImage)}"
+                                alt="${escapeHTML(mobile.model)}"
+                                class="model-image"
                             >
-                                ${escapeHTML(mobile.rating || "4.9")}/5
+
+                        </div>
+
+
+                        <div class="model-information">
+
+                            <span class="eyebrow">
+                                ${escapeHTML(
+                                    mobile.brand || "Mobile"
+                                )}
                             </span>
+
+                            <h2>
+                                ${escapeHTML(mobile.model)}
+                            </h2>
+
+
+                            <p>
+                                ${escapeHTML(
+                                    mobile.description ||
+                                    "Professional mobile software information."
+                                )}
+                            </p>
+
+
+                            <div class="mobile-specs">
+
+                                <div>
+                                    <small>OS</small>
+                                    <strong>
+                                        ${escapeHTML(
+                                            mobile.androidVersion || "-"
+                                        )}
+                                    </strong>
+                                </div>
+
+                                <div>
+                                    <small>Chipset</small>
+                                    <strong>
+                                        ${escapeHTML(
+                                            mobile.chipset || "-"
+                                        )}
+                                    </strong>
+                                </div>
+
+                                <div>
+                                    <small>Boot Type</small>
+                                    <strong>
+                                        ${escapeHTML(
+                                            mobile.bootType || "-"
+                                        )}
+                                    </strong>
+                                </div>
+
+                                <div>
+                                    <small>FRP</small>
+                                    <strong>
+                                        ${escapeHTML(
+                                            mobile.frp || "-"
+                                        )}
+                                    </strong>
+                                </div>
+
+                                <div>
+                                    <small>Firmware</small>
+                                    <strong>
+                                        ${escapeHTML(
+                                            mobile.firmware || "-"
+                                        )}
+                                    </strong>
+                                </div>
+
+                                <div>
+                                    <small>Flash</small>
+                                    <strong>
+                                        ${escapeHTML(
+                                            mobile.flash || "-"
+                                        )}
+                                    </strong>
+                                </div>
+
+                            </div>
+
                         </div>
-
-
-                        <div class="mobile-specs">
-
-                            <div>
-                                <small>OS</small>
-                                <strong>
-                                    ${escapeHTML(mobile.androidVersion)}
-                                </strong>
-                            </div>
-
-                            <div>
-                                <small>Chipset</small>
-                                <strong>
-                                    ${escapeHTML(mobile.chipset)}
-                                </strong>
-                            </div>
-
-                            <div>
-                                <small>Boot Type</small>
-                                <strong>
-                                    ${escapeHTML(mobile.bootType)}
-                                </strong>
-                            </div>
-
-                            <div>
-                                <small>FRP</small>
-                                <strong>
-                                    ${escapeHTML(mobile.frp)}
-                                </strong>
-                            </div>
-
-                            <div>
-                                <small>Firmware</small>
-                                <strong>
-                                    ${escapeHTML(mobile.firmware)}
-                                </strong>
-                            </div>
-
-                            <div>
-                                <small>Flash</small>
-                                <strong>
-                                    ${escapeHTML(mobile.flash)}
-                                </strong>
-                            </div>
-
-                            <div>
-                                <small>Drivers</small>
-                                <strong>
-                                    ${escapeHTML(mobile.drivers)}
-                                </strong>
-                            </div>
-
-                            <div>
-                                <small>Rating</small>
-                                <strong>
-                                    ${escapeHTML(mobile.rating || "4.9")}/5
-                                </strong>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            `;
-
-
-            /*
-             * Image fallback
-             */
-
-            const modelImage =
-                document.getElementById("model-image");
-
-
-            modelImage.addEventListener(
-                "error",
-                () => {
-
-                    modelImage.src =
-                        "../assets/images/techfix-logo.png";
-
-                },
-                {
-                    once: true
-                }
-            );
-
-
-            /*
-             * Find model-specific prices
-             */
-
-            const modelPrices =
-                prices.filter((item) => {
-
-                    return (
-                        normalize(item.model) ===
-                        normalize(mobile.model)
-                    );
-
-                });
-
-
-            /*
-             * Combine mobile solutions
-             * with price database
-             */
-
-            const solutionList =
-                Array.isArray(mobile.solutions)
-                    ? mobile.solutions
-                    : [];
-
-
-            const combinedServices =
-                solutionList.map((solution) => {
-
-                    const matchingPrice =
-                        prices.find((item) => {
-
-                            return (
-                                normalize(item.service) ===
-                                normalize(solution.name) &&
-                                (
-                                    !item.platform ||
-                                    normalize(item.platform) ===
-                                    normalize(
-                                        mobile.brand === "Apple"
-                                            ? "Apple"
-                                            : "Android"
-                                    )
-                                )
-                            );
-
-                        });
-
-
-                    return {
-
-                        name:
-                            solution.name,
-
-                        description:
-                            solution.description,
-
-                        price:
-                            matchingPrice
-                                ? matchingPrice.price
-                                : solution.price,
-
-                        rating:
-                            matchingPrice
-                                ? matchingPrice.rating
-                                : mobile.rating
-
-                    };
-
-                });
-
-
-            /*
-             * Add model-specific price entries
-             */
-
-            modelPrices.forEach((item) => {
-
-                const alreadyExists =
-                    combinedServices.some(
-                        (service) =>
-                            normalize(service.name) ===
-                            normalize(item.service)
-                    );
-
-
-                if (!alreadyExists) {
-
-                    combinedServices.push({
-
-                        name: item.service,
-
-                        description:
-                            `${item.service} service for ${mobile.model}.`,
-
-                        price:
-                            item.price,
-
-                        rating:
-                            item.rating
-
-                    });
-
-                }
-
-            });
-
-
-            /*
-             * If no services exist
-             */
-
-            if (!combinedServices.length) {
-
-                services.innerHTML = `
-
-                    <div class="glass-card">
-
-                        <h3>
-                            Service Information
-                        </h3>
-
-                        <p
-                            style="
-                                color:var(--muted);
-                                margin-top:8px;
-                            "
-                        >
-                            Contact TechFix Software EXP
-                            for service availability and
-                            current pricing.
-                        </p>
 
                     </div>
 
                 `;
 
-                return;
 
-            }
+                /*
+                 * Services from mobile database
+                 */
 
-
-            /*
-             * Render services
-             */
-
-            services.innerHTML =
-                combinedServices
-                    .map((service) => {
-
-                        return `
-
-                            <article
-                                class="glass-card"
-                            >
-
-                                <span
-                                    style="
-                                        color:var(--orange);
-                                        font-size:.75rem;
-                                        font-weight:700;
-                                        text-transform:uppercase;
-                                        letter-spacing:.08em;
-                                    "
-                                >
-                                    TECHFIX SERVICE
-                                </span>
+                const solutions =
+                    Array.isArray(
+                        mobile.solutions
+                    )
+                        ? mobile.solutions
+                        : [];
 
 
-                                <h3
-                                    style="
-                                        margin-top:8px;
-                                        font-family:Outfit,sans-serif;
-                                        font-size:1.25rem;
-                                    "
-                                >
-                                    ${escapeHTML(service.name)}
-                                </h3>
+                /*
+                 * Match services with prices
+                 */
+
+                const serviceList =
+                    solutions.map(
+                        (solution) => {
+
+                            const price =
+                                prices.find(
+                                    (item) =>
+                                        normalize(
+                                            item.service
+                                        ) ===
+                                        normalize(
+                                            solution.name
+                                        )
+                                );
 
 
-                                <p
-                                    style="
-                                        margin-top:8px;
-                                        color:var(--muted);
-                                        font-size:.88rem;
-                                    "
-                                >
-                                    ${escapeHTML(service.description)}
-                                </p>
+                            return {
+
+                                name:
+                                    solution.name ||
+                                    "TechFix Service",
+
+                                description:
+                                    solution.description ||
+                                    `Service available for ${mobile.model}.`,
+
+                                price:
+                                    price?.price ??
+                                    solution.price ??
+                                    "Contact",
+
+                                rating:
+                                    price?.rating ??
+                                    mobile.rating ??
+                                    "4.9"
+
+                            };
+
+                        }
+                    );
 
 
-                                <div
-                                    style="
-                                        display:flex;
-                                        justify-content:space-between;
-                                        align-items:center;
-                                        gap:12px;
-                                        margin-top:20px;
-                                        padding-top:15px;
-                                        border-top:1px solid var(--border);
-                                    "
-                                >
+                /*
+                 * Render services
+                 */
 
-                                    <strong
-                                        style="
-                                            color:var(--white);
-                                            font-size:1.05rem;
-                                        "
-                                    >
-                                        ${escapeHTML(service.price)}
-                                        <small
-                                            style="
-                                                color:var(--muted);
-                                                font-size:.7rem;
-                                            "
-                                        >
-                                            SAR
-                                        </small>
-                                    </strong>
+                if (!serviceList.length) {
+
+                    services.innerHTML = `
+
+                        <div class="glass-card">
+
+                            <h3>
+                                Service Information
+                            </h3>
+
+                            <p>
+                                Contact TechFix Software EXP
+                                for current service availability
+                                and pricing.
+                            </p>
+
+                        </div>
+
+                    `;
+
+                    return;
+
+                }
 
 
-                                    <span
-                                        style="
-                                            color:#ffd166;
-                                            font-size:.78rem;
-                                        "
-                                    >
-                                        ★ ${escapeHTML(service.rating || "4.9")}
+                services.innerHTML =
+                    serviceList
+                        .map(
+                            (service) => `
+
+                                <article class="glass-card">
+
+                                    <span class="eyebrow">
+                                        TECHFIX SERVICE
                                     </span>
 
-                                </div>
+                                    <h3>
+                                        ${escapeHTML(
+                                            service.name
+                                        )}
+                                    </h3>
 
-                            </article>
+                                    <p>
+                                        ${escapeHTML(
+                                            service.description
+                                        )}
+                                    </p>
 
-                        `;
+                                    <div class="service-price">
 
-                    })
-                    .join("");
+                                        <strong>
+                                            ${escapeHTML(
+                                                service.price
+                                            )}
+                                            <small>
+                                                SAR
+                                            </small>
+                                        </strong>
 
+                                        <span>
+                                            ★ ${escapeHTML(
+                                                service.rating
+                                            )}
+                                        </span>
 
-        })();
+                                    </div>
+
+                                </article>
+
+                            `
+                        )
+                        .join("");
+
+            }
+        );
 
     </script>
 
 </body>
-
 </html>
