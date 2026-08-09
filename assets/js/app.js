@@ -422,5 +422,19 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log(
         "TechFix Software EXP v11 loaded successfully."
     );
+    
+// =====================================================
+// PRELOADER
+// =====================================================
+
+const preloader = document.getElementById("preloader");
+
+if (preloader) {
+    preloader.classList.add("preloader-hidden");
+
+    setTimeout(() => {
+        preloader.style.display = "none";
+    }, 500);
+}
 
 });
