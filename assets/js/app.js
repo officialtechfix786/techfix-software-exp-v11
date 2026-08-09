@@ -437,4 +437,146 @@ if (preloader) {
     }, 500);
 }
 
+/* =====================================================
+   DOWNLOAD + CYBER SECURITY SEARCH
+   ===================================================== */
+
+function setupCardSearch(inputId, containerId, clearButtonId, countId) {
+
+    const input = document.getElementById(inputId);
+    const container = document.getElementById(containerId);
+    const clearButton = document.getElementById(clearButtonId);
+    const count = countId
+        ? document.getElementById(countId)
+        : null;
+
+    if (!input || !container) return;
+
+    const cards = Array.from(
+        container.querySelectorAll(".tool-card")
+    );
+
+    function filterCards() {
+
+        const query = normalize(input.value);
+
+        let visible = 0;
+
+        cards.forEach((card) => {
+
+            const text = normalize(card.textContent);
+
+            const match =
+                !query ||
+                text.includes(query);
+
+            card.style.display =
+                match ? "" : "none";
+
+            if (match) {
+                visible++;
+            }
+
+        });
+
+        if (count) {
+            count.textContent =
+                `${visible} resource${visible === 1 ? "" : "s"} found`;
+        }
+
+    }
+
+    input.addEventListener(
+        "input",
+        filterCards
+    );
+
+    if (clearButton) {
+
+        clearButton.addEventListener(
+            "click",
+            () => {
+
+                input.value = "";
+
+                filterCards();
+
+                input.focus();
+
+            }
+        );
+
+    }
+
+    filterCards();
+}
+
+
+/* DOWNLOAD SEARCH */
+
+setupCardSearch(
+    "download-search",
+    "software-results",
+    "clear-download-search",
+    "software-count"
+);
+
+
+/* CYBER SECURITY SEARCH */
+
+setupCardSearch(
+    "cyber-search",
+    "cyber-tools",
+    "clear-cyber-search",
+    null
+);
+
+
+/* CATEGORY FILTERS ON DOWNLOAD PAGE */
+
+document
+    .querySelectorAll(".category-button")
+    .forEach((button) => {
+
+        button.addEventListener(
+            "click",
+            () => {
+
+                const filter =
+                    normalize(
+                        button.dataset.filter
+                    );
+
+                const cards =
+                    document.querySelectorAll(
+                        "#software-results .tool-card"
+                    );
+
+                const searchInput =
+                    document.getElementById(
+                        "download-search"
+                    );
+
+                if (searchInput) {
+                    searchInput.value =
+                        button.dataset.filter || "";
+                }
+
+                cards.forEach((card) => {
+
+                    const text =
+                        normalize(card.textContent);
+
+                    card.style.display =
+                        text.includes(filter)
+                            ? ""
+                            : "none";
+
+                });
+
+            }
+        );
+
+    });
+
 });
