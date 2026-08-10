@@ -3361,3 +3361,1401 @@ button {
     }
 
 }
+/* =========================================================
+   TECHFIX V11 — FINAL UI OVERRIDE
+   HOME + MOBILE + ANDROID + APPLE + DOWNLOADS + CYBER
+   RESPONSIVE / PREMIUM / COLORFUL
+========================================================= */
+
+/* ---------- GLOBAL ---------- */
+
+:root {
+    --tf-cyan: #21e6ff;
+    --tf-blue: #3978ff;
+    --tf-purple: #9b5cff;
+    --tf-pink: #ff38b8;
+    --tf-green: #28ff9a;
+    --tf-orange: #ff9d3d;
+    --tf-red: #ff5577;
+
+    --tf-card: rgba(8, 15, 29, .88);
+    --tf-card-2: rgba(14, 18, 38, .92);
+    --tf-line: rgba(255,255,255,.12);
+}
+
+body {
+    background:
+        radial-gradient(circle at 8% 12%, rgba(33,230,255,.13), transparent 26%),
+        radial-gradient(circle at 92% 16%, rgba(155,92,255,.14), transparent 28%),
+        radial-gradient(circle at 50% 65%, rgba(255,56,184,.08), transparent 30%),
+        #03050b !important;
+}
+
+/* ---------- HEADER ---------- */
+
+.site-header {
+    position: sticky !important;
+    top: 0;
+    z-index: 5000;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(2,7,15,.97),
+            rgba(7,10,23,.96),
+            rgba(3,8,16,.97)
+        ) !important;
+
+    border-bottom: 1px solid rgba(33,230,255,.18) !important;
+
+    box-shadow:
+        0 10px 45px rgba(0,0,0,.45),
+        0 0 35px rgba(33,230,255,.05);
+}
+
+.header-container {
+    min-height: 78px !important;
+}
+
+.brand {
+    display: flex !important;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-logo {
+    width: 54px !important;
+    height: 54px !important;
+    min-width: 54px;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(0 0 8px rgba(33,230,255,.55))
+        drop-shadow(0 0 20px rgba(155,92,255,.25));
+}
+
+.brand-name {
+    font-family: Orbitron, sans-serif !important;
+    font-weight: 700 !important;
+    letter-spacing: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #fff,
+            var(--tf-cyan),
+            var(--tf-purple),
+            var(--tf-pink)
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent !important;
+}
+
+/* NAV */
+
+.desktop-navigation {
+    gap: 6px !important;
+}
+
+.nav-link {
+    position: relative;
+
+    padding: 12px 15px !important;
+    border-radius: 12px;
+
+    color: #9eafc5 !important;
+    font-weight: 700;
+
+    transition:
+        transform .2s ease,
+        color .2s ease,
+        background .2s ease;
+}
+
+.nav-link:hover {
+    color: white !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(33,230,255,.10),
+            rgba(155,92,255,.12)
+        );
+
+    transform: translateY(-2px);
+}
+
+.nav-link.active {
+    color: white !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(33,230,255,.13),
+            rgba(155,92,255,.16)
+        ) !important;
+
+    box-shadow:
+        inset 0 0 20px rgba(33,230,255,.05),
+        0 0 20px rgba(33,230,255,.08);
+}
+
+.nav-link.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 18%;
+    right: 18%;
+    bottom: 4px;
+
+    height: 2px;
+
+    border-radius: 99px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--tf-cyan),
+            var(--tf-purple),
+            var(--tf-pink)
+        );
+
+    box-shadow: 0 0 10px var(--tf-cyan);
+}
+
+/* HEADER BUTTONS */
+
+.search-button,
+.whatsapp-button {
+    border-radius: 13px !important;
+    min-height: 44px;
+    padding: 0 18px !important;
+
+    font-weight: 800 !important;
+}
+
+.search-button {
+    color: white !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(33,230,255,.08),
+            rgba(155,92,255,.10)
+        ) !important;
+
+    border: 1px solid rgba(33,230,255,.30) !important;
+}
+
+.search-button:hover {
+    border-color: var(--tf-cyan) !important;
+    box-shadow: 0 0 20px rgba(33,230,255,.18);
+}
+
+.whatsapp-button {
+    color: #02120b !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #28ff9a,
+            #21e6ff
+        ) !important;
+
+    border: none !important;
+
+    box-shadow:
+        0 0 20px rgba(40,255,154,.18);
+}
+
+.whatsapp-button:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 0 30px rgba(40,255,154,.35);
+}
+
+
+/* =========================================================
+   ALL PAGE CONTENT
+========================================================= */
+
+main,
+.page-main,
+.page-content,
+.site-main {
+    position: relative;
+}
+
+main::before,
+.page-main::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            rgba(33,230,255,.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(155,92,255,.025) 1px,
+            transparent 1px
+        );
+
+    background-size: 55px 55px;
+}
+
+
+/* =========================================================
+   HOME HERO
+========================================================= */
+
+.hero,
+.hero-section,
+.home-hero {
+    min-height: 720px !important;
+
+    padding:
+        clamp(80px, 10vw, 150px)
+        0
+        100px !important;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 75% 45%,
+            rgba(33,230,255,.10),
+            transparent 24%
+        ),
+        radial-gradient(
+            circle at 85% 60%,
+            rgba(255,56,184,.10),
+            transparent 28%
+        ) !important;
+}
+
+.hero::after,
+.hero-section::after,
+.home-hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 600px;
+    height: 600px;
+
+    right: -180px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(33,230,255,.16);
+
+    box-shadow:
+        0 0 80px rgba(33,230,255,.08),
+        inset 0 0 80px rgba(155,92,255,.06);
+
+    pointer-events: none;
+}
+
+.hero h1,
+.hero-title,
+.home-hero h1 {
+    max-width: 850px !important;
+
+    font-family: Orbitron, sans-serif !important;
+
+    font-size:
+        clamp(48px, 7vw, 100px) !important;
+
+    line-height: .95 !important;
+    letter-spacing: -3px;
+
+    margin: 25px 0 !important;
+
+    color: white !important;
+
+    text-shadow:
+        0 0 30px rgba(33,230,255,.08);
+}
+
+.hero h1 span,
+.hero-title span {
+    background:
+        linear-gradient(
+            90deg,
+            var(--tf-purple),
+            var(--tf-pink),
+            var(--tf-cyan)
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent !important;
+}
+
+.hero p,
+.hero-description {
+    max-width: 700px !important;
+
+    color: #a6b5ca !important;
+
+    font-size: 18px !important;
+    line-height: 1.8 !important;
+}
+
+
+/* =========================================================
+   GENERAL SECTION
+========================================================= */
+
+section {
+    position: relative;
+}
+
+.section,
+.content-section,
+.page-section {
+    padding-top: 80px !important;
+    padding-bottom: 80px !important;
+}
+
+.section-title,
+.page-title {
+    font-family: Orbitron, sans-serif !important;
+
+    font-size:
+        clamp(32px, 5vw, 64px) !important;
+
+    line-height: 1.05 !important;
+
+    color: white !important;
+
+    margin-bottom: 18px !important;
+}
+
+.section-subtitle,
+.page-description {
+    color: #9cafc6 !important;
+    font-size: 17px !important;
+    line-height: 1.8 !important;
+}
+
+
+/* =========================================================
+   UNIVERSAL CARDS
+========================================================= */
+
+.card,
+.tool-card,
+.service-card,
+.category-card,
+.brand-card,
+.model-card,
+.resource-card,
+.download-card,
+.security-card,
+.contact-card,
+.feature-card {
+    position: relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(13,22,39,.94),
+            rgba(10,13,29,.92)
+        ) !important;
+
+    border:
+        1px solid rgba(255,255,255,.11) !important;
+
+    border-radius: 22px !important;
+
+    padding: 28px !important;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 20px 55px rgba(0,0,0,.25),
+        inset 0 1px 0 rgba(255,255,255,.04);
+
+    transition:
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+}
+
+.card::before,
+.tool-card::before,
+.service-card::before,
+.category-card::before,
+.brand-card::before,
+.model-card::before,
+.resource-card::before,
+.download-card::before,
+.security-card::before,
+.feature-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    top: -100px;
+    right: -80px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(33,230,255,.18),
+            transparent 68%
+        );
+
+    pointer-events: none;
+}
+
+.card::after,
+.tool-card::after,
+.service-card::after,
+.category-card::after,
+.brand-card::after,
+.model-card::after,
+.resource-card::after,
+.download-card::after,
+.security-card::after,
+.feature-card::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--tf-cyan),
+            var(--tf-purple),
+            var(--tf-pink)
+        );
+
+    transform: scaleX(0);
+    transform-origin: left;
+
+    transition: transform .3s ease;
+}
+
+.card:hover,
+.tool-card:hover,
+.service-card:hover,
+.category-card:hover,
+.brand-card:hover,
+.model-card:hover,
+.resource-card:hover,
+.download-card:hover,
+.security-card:hover,
+.feature-card:hover {
+    transform: translateY(-7px);
+
+    border-color:
+        rgba(33,230,255,.35) !important;
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.42),
+        0 0 35px rgba(33,230,255,.08);
+}
+
+.card:hover::after,
+.tool-card:hover::after,
+.service-card:hover::after,
+.category-card:hover::after,
+.brand-card:hover::after,
+.model-card:hover::after,
+.resource-card:hover::after,
+.download-card:hover::after,
+.security-card:hover::after,
+.feature-card:hover::after {
+    transform: scaleX(1);
+}
+
+
+/* =========================================================
+   HOME GRID
+========================================================= */
+
+.cards-grid,
+.card-grid,
+.features-grid,
+.services-grid,
+.category-grid,
+.home-grid {
+    display: grid !important;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 22px !important;
+}
+
+.cards-grid > *,
+.card-grid > *,
+.features-grid > *,
+.services-grid > *,
+.category-grid > *,
+.home-grid > * {
+    min-width: 0;
+}
+
+
+/* =========================================================
+   MOBILE PAGE
+========================================================= */
+
+.mobile-search,
+.search-panel,
+.database-search,
+.search-box,
+.filters,
+.brand-filters,
+.category-filters {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(10,18,35,.92),
+            rgba(18,10,36,.88)
+        ) !important;
+
+    border: 1px solid rgba(33,230,255,.15) !important;
+
+    border-radius: 20px !important;
+
+    padding: 22px !important;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.25);
+}
+
+
+/* INPUTS */
+
+input,
+textarea,
+select {
+    min-height: 48px;
+
+    color: white !important;
+
+    background:
+        rgba(3,8,18,.92) !important;
+
+    border:
+        1px solid rgba(33,230,255,.22) !important;
+
+    border-radius: 12px !important;
+
+    padding: 0 15px !important;
+
+    outline: none !important;
+
+    box-shadow:
+        inset 0 0 15px rgba(0,0,0,.25);
+}
+
+textarea {
+    padding-top: 14px !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #71839d !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color:
+        var(--tf-cyan) !important;
+
+    box-shadow:
+        0 0 0 3px rgba(33,230,255,.08),
+        0 0 25px rgba(33,230,255,.10);
+}
+
+
+/* ---------- FILTER BUTTONS ---------- */
+
+.category-button,
+.filter-button,
+.brand-button,
+.filter-btn,
+button:not(.menu-toggle):not(.search-button) {
+    color: #dbe8f7 !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(18,28,48,.96),
+            rgba(29,18,50,.92)
+        ) !important;
+
+    border:
+        1px solid rgba(155,92,255,.22) !important;
+
+    border-radius: 10px !important;
+
+    padding: 10px 15px !important;
+
+    font-weight: 700 !important;
+
+    transition: all .2s ease;
+}
+
+.category-button:hover,
+.filter-button:hover,
+.brand-button:hover,
+.filter-btn:hover,
+button:not(.menu-toggle):not(.search-button):hover {
+    color: white !important;
+
+    border-color:
+        var(--tf-cyan) !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(33,230,255,.15),
+            rgba(255,56,184,.13)
+        ) !important;
+
+    box-shadow:
+        0 0 18px rgba(33,230,255,.10);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   BRAND / MODEL CARDS
+========================================================= */
+
+.brand-grid,
+.brands-grid,
+.model-grid,
+.models-grid,
+.mobile-grid {
+    display: grid !important;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 20px !important;
+}
+
+.brand-card h3,
+.model-card h3,
+.mobile-card h3 {
+    color: white !important;
+
+    font-family: Orbitron, sans-serif;
+}
+
+.brand-card p,
+.model-card p,
+.mobile-card p {
+    color: #94a7bf !important;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   ANDROID / APPLE
+========================================================= */
+
+.android-page,
+.apple-page,
+.repair-page {
+    background:
+        radial-gradient(
+            circle at 80% 10%,
+            rgba(155,92,255,.12),
+            transparent 30%
+        );
+}
+
+.android-page h1,
+.apple-page h1,
+.repair-page h1 {
+    font-family: Orbitron, sans-serif !important;
+
+    font-size:
+        clamp(38px, 6vw, 72px) !important;
+
+    color: white !important;
+}
+
+.android-page h2,
+.apple-page h2,
+.repair-page h2 {
+    color: white !important;
+}
+
+.android-page .tool-card:nth-child(3n+1),
+.apple-page .tool-card:nth-child(3n+1) {
+    border-color: rgba(33,230,255,.22) !important;
+}
+
+.android-page .tool-card:nth-child(3n+2),
+.apple-page .tool-card:nth-child(3n+2) {
+    border-color: rgba(155,92,255,.22) !important;
+}
+
+.android-page .tool-card:nth-child(3n),
+.apple-page .tool-card:nth-child(3n) {
+    border-color: rgba(255,56,184,.22) !important;
+}
+
+
+/* =========================================================
+   DOWNLOAD CENTER
+========================================================= */
+
+#software-results,
+#cyber-tools,
+.software-results,
+.cyber-tools {
+    display: grid !important;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 22px !important;
+}
+
+#software-results .tool-card,
+#cyber-tools .tool-card {
+    min-height: 230px;
+}
+
+.tool-card h2,
+.tool-card h3,
+.tool-card h4 {
+    color: white !important;
+}
+
+.tool-card p {
+    color: #91a5bd !important;
+
+    line-height: 1.7;
+}
+
+
+/* DOWNLOAD CATEGORY COLORS */
+
+.tool-card:nth-child(4n+1) {
+    border-top-color:
+        var(--tf-cyan) !important;
+}
+
+.tool-card:nth-child(4n+2) {
+    border-top-color:
+        var(--tf-purple) !important;
+}
+
+.tool-card:nth-child(4n+3) {
+    border-top-color:
+        var(--tf-pink) !important;
+}
+
+.tool-card:nth-child(4n) {
+    border-top-color:
+        var(--tf-green) !important;
+}
+
+
+/* =========================================================
+   SEARCH RESULTS
+========================================================= */
+
+.search-results,
+.search-dropdown,
+#search-results {
+    background:
+        rgba(4,8,18,.97) !important;
+
+    border:
+        1px solid rgba(33,230,255,.20) !important;
+
+    border-radius: 18px !important;
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.55);
+}
+
+.search-result-item {
+    display: block;
+
+    padding: 15px 18px;
+
+    border-bottom:
+        1px solid rgba(255,255,255,.07);
+
+    transition:
+        background .2s ease,
+        padding-left .2s ease;
+}
+
+.search-result-item:hover {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(33,230,255,.08),
+            rgba(155,92,255,.08)
+        );
+
+    padding-left: 24px;
+}
+
+.search-result-item strong {
+    display: block;
+    color: white;
+}
+
+.search-result-item small {
+    color: #8092ab;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-grid,
+.contact-cards,
+.contact-options {
+    display: grid !important;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 22px !important;
+}
+
+.contact-card {
+    min-height: 190px;
+}
+
+.contact-card h3 {
+    color: white !important;
+}
+
+.contact-card p {
+    color: #94a7bf !important;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer,
+.site-footer {
+    margin-top: 80px;
+
+    padding:
+        55px 0 !important;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(3,5,11,.4),
+            rgba(9,8,22,.96)
+        ) !important;
+
+    border-top:
+        1px solid rgba(33,230,255,.14) !important;
+}
+
+footer a,
+.site-footer a {
+    color: #8fa4be;
+
+    transition: color .2s ease;
+}
+
+footer a:hover,
+.site-footer a:hover {
+    color: var(--tf-cyan);
+}
+
+
+/* =========================================================
+   BACK TO TOP
+========================================================= */
+
+#back-to-top,
+.back-to-top {
+    width: 52px !important;
+    height: 52px !important;
+
+    border-radius: 15px !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(33,230,255,.12),
+            rgba(155,92,255,.16)
+        ) !important;
+
+    border:
+        1px solid rgba(33,230,255,.30) !important;
+
+    color: var(--tf-cyan) !important;
+
+    box-shadow:
+        0 0 25px rgba(33,230,255,.10);
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+.mobile-drawer {
+    background:
+        linear-gradient(
+            145deg,
+            #050914,
+            #10091c
+        ) !important;
+
+    border-left:
+        1px solid rgba(33,230,255,.20) !important;
+
+    box-shadow:
+        -25px 0 70px rgba(0,0,0,.55);
+}
+
+.mobile-drawer-header {
+    border-bottom:
+        1px solid rgba(255,255,255,.08);
+}
+
+.mobile-navigation a {
+    display: block;
+
+    padding: 15px 16px;
+
+    color: #b7c7d9 !important;
+
+    border-radius: 12px;
+
+    margin-bottom: 6px;
+
+    transition: all .2s ease;
+}
+
+.mobile-navigation a:hover,
+.mobile-navigation a.active {
+    color: white !important;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(33,230,255,.12),
+            rgba(255,56,184,.10)
+        );
+
+    border-left:
+        3px solid var(--tf-cyan);
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .desktop-navigation {
+        gap: 0 !important;
+    }
+
+    .nav-link {
+        padding-inline: 9px !important;
+        font-size: 13px;
+    }
+
+    .cards-grid,
+    .card-grid,
+    .features-grid,
+    .services-grid,
+    .category-grid,
+    .home-grid,
+    .brand-grid,
+    .brands-grid,
+    .model-grid,
+    .models-grid,
+    .mobile-grid,
+    #software-results,
+    #cyber-tools,
+    .software-results,
+    .cyber-tools,
+    .contact-grid,
+    .contact-cards,
+    .contact-options {
+        grid-template-columns:
+            repeat(2, minmax(0,1fr)) !important;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
+
+@media (max-width: 760px) {
+
+    .container {
+        width:
+            min(
+                calc(100% - 28px),
+                var(--container)
+            );
+    }
+
+    .site-header {
+        position: sticky !important;
+    }
+
+    .header-container {
+        min-height: 68px !important;
+
+        gap: 8px;
+    }
+
+    .brand {
+        gap: 8px;
+    }
+
+    .brand-logo {
+        width: 45px !important;
+        height: 45px !important;
+        min-width: 45px;
+    }
+
+    .brand-name {
+        font-size: 12px !important;
+        letter-spacing: .7px;
+        white-space: nowrap;
+    }
+
+    .desktop-navigation {
+        display: none !important;
+    }
+
+    .header-actions {
+        margin-left: auto;
+        gap: 6px !important;
+    }
+
+    .search-button,
+    .whatsapp-button {
+        min-height: 38px !important;
+        padding: 0 10px !important;
+
+        font-size: 11px !important;
+    }
+
+    .menu-toggle {
+        display: flex !important;
+    }
+
+    /* HOME */
+
+    .hero,
+    .hero-section,
+    .home-hero {
+        min-height: auto !important;
+
+        padding:
+            70px 0
+            65px !important;
+    }
+
+    .hero h1,
+    .hero-title,
+    .home-hero h1 {
+        font-size:
+            clamp(38px, 12vw, 62px) !important;
+
+        letter-spacing: -2px;
+
+        line-height: .98 !important;
+    }
+
+    .hero p,
+    .hero-description {
+        font-size: 15px !important;
+    }
+
+    .hero::after,
+    .hero-section::after,
+    .home-hero::after {
+        width: 330px;
+        height: 330px;
+
+        right: -210px;
+    }
+
+    .section,
+    .content-section,
+    .page-section {
+        padding-top: 55px !important;
+        padding-bottom: 55px !important;
+    }
+
+    .section-title,
+    .page-title {
+        font-size:
+            clamp(30px, 9vw, 46px) !important;
+    }
+
+    /* GRIDS */
+
+    .cards-grid,
+    .card-grid,
+    .features-grid,
+    .services-grid,
+    .category-grid,
+    .home-grid,
+    .brand-grid,
+    .brands-grid,
+    .model-grid,
+    .models-grid,
+    .mobile-grid,
+    #software-results,
+    #cyber-tools,
+    .software-results,
+    .cyber-tools,
+    .contact-grid,
+    .contact-cards,
+    .contact-options {
+        grid-template-columns:
+            1fr !important;
+
+        gap: 16px !important;
+    }
+
+    .card,
+    .tool-card,
+    .service-card,
+    .category-card,
+    .brand-card,
+    .model-card,
+    .resource-card,
+    .download-card,
+    .security-card,
+    .contact-card,
+    .feature-card {
+        padding: 21px !important;
+        border-radius: 18px !important;
+    }
+
+    /* SEARCH */
+
+    .mobile-search,
+    .search-panel,
+    .database-search,
+    .search-box,
+    .filters,
+    .brand-filters,
+    .category-filters {
+        padding: 17px !important;
+    }
+
+    input,
+    textarea,
+    select {
+        width: 100%;
+        min-height: 46px;
+    }
+
+    .category-button,
+    .filter-button,
+    .brand-button,
+    .filter-btn {
+        padding: 9px 12px !important;
+        font-size: 12px !important;
+    }
+
+    /* PREVENT MOBILE HORIZONTAL OVERFLOW */
+
+    body,
+    main,
+    section,
+    header,
+    footer {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .header-container {
+        min-height: 62px !important;
+    }
+
+    .brand-logo {
+        width: 40px !important;
+        height: 40px !important;
+        min-width: 40px;
+    }
+
+    .brand-name {
+        font-size: 10px !important;
+    }
+
+    .search-button {
+        display: none !important;
+    }
+
+    .whatsapp-button {
+        padding-inline: 9px !important;
+        font-size: 10px !important;
+    }
+
+    .hero h1,
+    .hero-title,
+    .home-hero h1 {
+        font-size: 38px !important;
+    }
+
+    .page-title,
+    .section-title {
+        font-size: 31px !important;
+    }
+
+    .tool-card,
+    .card,
+    .service-card,
+    .brand-card,
+    .model-card {
+        padding: 18px !important;
+    }
+}
+
+
+/* =========================================================
+   LOGO MOBILE — NEVER SQUASH / NEVER SCROLL
+========================================================= */
+
+@media (max-width: 760px) {
+
+    .brand-logo {
+        flex: 0 0 auto !important;
+
+        object-fit: contain !important;
+        object-position: center !important;
+
+        border-radius: 12px;
+
+        filter:
+            drop-shadow(0 0 8px rgba(33,230,255,.5))
+            drop-shadow(0 0 18px rgba(155,92,255,.25));
+    }
+
+    .brand {
+        min-width: 0;
+    }
+
+    .brand-name {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+
+/* =========================================================
+   COLOR ACCENTS
+========================================================= */
+
+h1::selection,
+h2::selection,
+h3::selection,
+p::selection,
+a::selection {
+    background: rgba(33,230,255,.30);
+    color: white;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+    width: 9px;
+}
+
+::-webkit-scrollbar-track {
+    background: #03050b;
+}
+
+::-webkit-scrollbar-thumb {
+    background:
+        linear-gradient(
+            180deg,
+            var(--tf-cyan),
+            var(--tf-purple),
+            var(--tf-pink)
+        );
+
+    border-radius: 99px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background:
+        linear-gradient(
+            180deg,
+            var(--tf-green),
+            var(--tf-cyan),
+            var(--tf-pink)
+        );
+}
