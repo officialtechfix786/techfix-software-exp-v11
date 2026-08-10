@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="TechFix Software EXP Download Center - Firmware, drivers, flash tools, ADB, Fastboot, Qualcomm, MTK, Samsung and Apple resources."
+    >
+
+    <meta name="author" content="MIAN AHMAD">
+    <meta name="theme-color" content="#050505">
+
+    <title>Download Center | TechFix Software EXP</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@500;600;700;800&family=Outfit:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="site-header" id="site-header">
+
+        <div class="container header-container">
+
+            <a href="../index.html" class="brand">
+
+                <img
+                    src="../assets/images/logo/techfix-logo.png"
+                    alt="TechFix Software EXP Logo"
+                    class="brand-logo"
+                >
+
+                <span class="brand-name">
+                    TechFix Software
+                </span>
+
+            </a>
+
+
+            <nav
+                class="desktop-navigation"
+                aria-label="Main Navigation"
+            >
+
+                <a href="../index.html" class="nav-link">
+                    Home
+                </a>
+
+                <a href="mobiles.html" class="nav-link">
+                    Mobiles
+                </a>
+
+                <a href="android.html" class="nav-link">
+                    Android
+                </a>
+
+                <a href="apple.html" class="nav-link">
+                    Apple
+                </a>
+
+                <a href="downloads.html" class="nav-link active">
+                    Downloads
+                </a>
+
+                <a href="cyber-security.html" class="nav-link">
+                    Cyber Security
+                </a>
+
+                <a href="contact.html" class="nav-link">
+                    Contact
+                </a>
+
+            </nav>
+
+
+            <div class="header-actions">
+
+                <button
+                    type="button"
+                    class="search-button"
+                    id="search-button"
+                >
+                    Search
+                </button>
+
+                <a
+                    href="https://wa.me/966568152404"
+                    class="whatsapp-button"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    WhatsApp
+                </a>
+
+                <button
+                    type="button"
+                    class="menu-toggle"
+                    id="menu-toggle"
+                    aria-label="Open menu"
+                    aria-expanded="false"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- MOBILE DRAWER -->
+
+    <aside
+        class="mobile-drawer"
+        id="mobile-drawer"
+        aria-hidden="true"
+    >
+
+        <div class="mobile-drawer-header">
+
+            <strong>
+                TECHFIX MENU
+            </strong>
+
+            <button
+                type="button"
+                id="close-menu"
+                aria-label="Close menu"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <nav class="mobile-navigation">
+
+            <a href="../index.html">
+                Home
+            </a>
+
+            <a href="mobiles.html">
+                Mobiles
+            </a>
+
+            <a href="android.html">
+                Android
+            </a>
+
+            <a href="apple.html">
+                Apple
+            </a>
+
+            <a href="downloads.html">
+                Downloads
+            </a>
+
+            <a href="cyber-security.html">
+                Cyber Security
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <div
+        class="menu-overlay"
+        id="menu-overlay"
+        aria-hidden="true"
+    ></div>
+
+
+    <!-- GLOBAL SEARCH -->
+
+    <section
+        class="global-search-panel"
+        id="global-search-panel"
+        aria-hidden="true"
+    >
+
+        <div class="container search-container">
+
+            <div class="search-header">
+
+                <div>
+
+                    <span class="search-label">
+                        TECHFIX GLOBAL SEARCH
+                    </span>
+
+                    <h2>
+                        Search Downloads
+                    </h2>
+
+                </div>
+
+                <button
+                    type="button"
+                    id="close-search"
+                    aria-label="Close search"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <input
+                type="search"
+                id="global-search"
+                class="global-search-input"
+                placeholder="Search software, firmware, drivers..."
+                autocomplete="off"
+            >
+
+            <div
+                id="search-results"
+                class="search-results"
+                aria-live="polite"
+            ></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MAIN -->
+
+    <main>
+
+        <!-- HERO -->
+
+        <section class="page-hero">
+
+            <div class="container">
+
+                <span class="hero-label">
+                    TECHFIX DOWNLOAD CENTER
+                </span>
+
+                <h1>
+                    Download
+                    <span>Center</span>
+                </h1>
+
+                <p>
+                    Organized software, firmware, drivers and
+                    technical resources for mobile servicing.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- DOWNLOAD SEARCH -->
+
+        <section class="download-search-section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span>
+                        RESOURCE SEARCH
+                    </span>
+
+                    <h2>
+                        Find Software & Resources
+                    </h2>
+
+                    <p>
+                        Search the centralized TechFix software
+                        database.
+                    </p>
+
+                </div>
+
+
+                <div class="mobile-search-box">
+
+                    <label
+                        for="download-search"
+                        class="sr-only"
+                    >
+                        Search download resources
+                    </label>
+
+                    <input
+                        type="search"
+                        id="download-search"
+                        class="mobile-database-search"
+                        placeholder="Search Odin, 3uTools, QFIL, firmware, drivers..."
+                        autocomplete="off"
+                    >
+
+                    <button
+                        type="button"
+                        id="clear-download-search"
+                        class="clear-search"
+                    >
+                        Clear
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CATEGORIES -->
+
+        <section class="download-categories">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span>
+                        RESOURCE CATEGORIES
+                    </span>
+
+                    <h2>
+                        Browse Downloads
+                    </h2>
+
+                </div>
+
+
+                <div class="info-grid">
+
+
+                    <article
+                        class="info-card"
+                        data-category="firmware"
+                    >
+
+                        <span>01</span>
+
+                        <h3>
+                            Firmware
+                        </h3>
+
+                        <p>
+                            Official firmware and supported
+                            software resources.
+                        </p>
+
+                        <button
+                            type="button"
+                            class="category-button"
+                            data-filter="Firmware"
+                        >
+                            Explore
+                        </button>
+
+                    </article>
+
+
+                    <article
+                        class="info-card"
+                        data-category="drivers"
+                    >
+
+                        <span>02</span>
+
+                        <h3>
+                            Drivers
+                        </h3>
+
+                        <p>
+                            Android USB, ADB, Fastboot and
+                            manufacturer drivers.
+                        </p>
+
+                        <button
+                            type="button"
+                            class="category-button"
+                            data-filter="Drivers"
+                        >
+                            Explore
+                        </button>
+
+                    </article>
+
+
+                    <article
+                        class="info-card"
+                        data-category="flash"
+                    >
+
+                        <span>03</span>
+
+                        <h3>
+                            Flash Tools
+                        </h3>
+
+                        <p>
+                            Tools used for supported firmware
+                            and software operations.
+                        </p>
+
+                        <button
+                            type="button"
+                            class="category-button"
+                            data-filter="Flash Tools"
+                        >
+                            Explore
+                        </button>
+
+                    </article>
+
+
+                    <article
+                        class="info-card"
+                        data-category="android"
+                    >
+
+                        <span>04</span>
+
+                        <h3>
+                            ADB & Fastboot
+                        </h3>
+
+                        <p>
+                            Android platform tools and command
+                            line resources.
+                        </p>
+
+                        <button
+                            type="button"
+                            class="category-button"
+                            data-filter="ADB"
+                        >
+                            Explore
+                        </button>
+
+                    </article>
+
+
+                    <article
+                        class="info-card"
+                        data-category="qualcomm"
+                    >
+
+                        <span>05</span>
+
+                        <h3>
+                            Qualcomm
+                        </h3>
+
+                        <p>
+                            Qualcomm service and diagnostic
+                            software resources.
+                        </p>
+
+                        <button
+                            type="button"
+                            class="category-button"
+                            data-filter="Qualcomm"
+                        >
+                            Explore
+                        </button>
+
+                    </article>
+
+
+                    <article
+                        class="info-card"
+                        data-category="mtk"
+                    >
+
+                        <span>06</span>
+
+                        <h3>
+                            MediaTek
+                        </h3>
+
+                        <p>
+                            MTK software, drivers and supported
+                            technical resources.
+                        </p>
+
+                        <button
+                            type="button"
+                            class="category-button"
+                            data-filter="MTK"
+                        >
+                            Explore
+                        </button>
+
+                    </article>
+
+
+                    <article
+                        class="info-card"
+                        data-category="samsung"
+                    >
+
+                        <span>07</span>
+
+                        <h3>
+                            Samsung
+                        </h3>
+
+                        <p>
+                            Samsung firmware, drivers and
+                            official software resources.
+                        </p>
+
+                        <button
+                            type="button"
+                            class="category-button"
+                            data-filter="Samsung"
+                        >
+                            Explore
+                        </button>
+
+                    </article>
+
+
+                    <article
+                        class="info-card"
+                        data-category="apple"
+                    >
+
+                        <span>08</span>
+
+                        <h3>
+                            Apple
+                        </h3>
+
+                        <p>
+                            Apple software and official support
+                            resources.
+                        </p>
+
+                        <button
+                            type="button"
+                            class="category-button"
+                            data-filter="Apple"
+                        >
+                            Explore
+                        </button>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SOFTWARE RESULTS -->
+
+        <section class="download-results-section">
+
+            <div class="container">
+
+                <div class="brand-filter-header">
+
+                    <div>
+
+                        <span class="section-mini-label">
+                            SOFTWARE DATABASE
+                        </span>
+
+                        <h2>
+                            Available Resources
+                        </h2>
+
+                    </div>
+
+                    <span
+                        class="result-count"
+                        id="software-count"
+                    >
+                        Database Ready
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="tool-grid"
+                    id="software-results"
+                >
+
+                    <article class="tool-card">
+
+                        <span class="tool-number">
+                            01
+                        </span>
+
+                        <h3>
+                            3uTools
+                        </h3>
+
+                        <p>
+                            Apple device management and
+                            software utility.
+                        </p>
+
+                        <span>
+                            Apple
+                        </span>
+
+                        <a
+                            href="https://www.3u.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Official Website
+                        </a>
+
+                    </article>
+
+
+                    <article class="tool-card">
+
+                        <span class="tool-number">
+                            02
+                        </span>
+
+                        <h3>
+                            iMazing
+                        </h3>
+
+                        <p>
+                            Apple device management,
+                            backup and data resources.
+                        </p>
+
+                        <span>
+                            Apple
+                        </span>
+
+                        <a
+                            href="https://imazing.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Official Website
+                        </a>
+
+                    </article>
+
+
+                    <article class="tool-card">
+
+                        <span class="tool-number">
+                            03
+                        </span>
+
+                        <h3>
+                            iTunes
+                        </h3>
+
+                        <p>
+                            Apple software and supported
+                            device management resources.
+                        </p>
+
+                        <span>
+                            Apple
+                        </span>
+
+                        <a
+                            href="https://support.apple.com/itunes"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Official Apple Support
+                        </a>
+
+                    </article>
+
+
+                    <article class="tool-card">
+
+                        <span class="tool-number">
+                            04
+                        </span>
+
+                        <h3>
+                            Android Platform Tools
+                        </h3>
+
+                        <p>
+                            Official ADB and Fastboot tools
+                            for Android development.
+                        </p>
+
+                        <span>
+                            Android
+                        </span>
+
+                        <a
+                            href="https://developer.android.com/tools/releases/platform-tools"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Official Website
+                        </a>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SAFETY / OFFICIAL LINKS -->
+
+        <section class="page-cta">
+
+            <div class="container">
+
+                <span>
+                    OFFICIAL SOURCES
+                </span>
+
+                <h2>
+                    Trusted Software Resources
+                </h2>
+
+                <p>
+                    TechFix will prioritize official developer
+                    websites and verified sources instead of
+                    fake or misleading download links.
+                </p>
+
+                <a
+                    href="contact.html"
+                    class="cta-button"
+                >
+                    Contact TechFix
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div class="footer-brand">
+
+                    <img
+                        src="../assets/images/logo/techfix-logo.png"
+                        alt="TechFix Software EXP Logo"
+                    >
+
+                    <p>
+                        Professional mobile software,
+                        solutions and technical resources.
+                    </p>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3>
+                        Quick Links
+                    </h3>
+
+                    <a href="../index.html">
+                        Home
+                    </a>
+
+                    <a href="mobiles.html">
+                        Mobiles
+                    </a>
+
+                    <a href="android.html">
+                        Android
+                    </a>
+
+                    <a href="apple.html">
+                        Apple
+                    </a>
+
+                    <a href="downloads.html">
+                        Downloads
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3>
+                        Contact
+                    </h3>
+
+                    <a href="mailto:officialtechfix786@gmail.com">
+                        officialtechfix786@gmail.com
+                    </a>
+
+                    <a
+                        href="https://wa.me/966568152404"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        +966568152404
+                    </a>
+
+                    <span>
+                        Telegram: @MIAN361
+                    </span>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3>
+                        Social
+                    </h3>
+
+                    <a
+                        href="https://www.tiktok.com/@techfixsoft"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        TikTok
+                    </a>
+
+                    <a
+                        href="https://www.facebook.com/share/1BgXiWBiWg/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Facebook
+                    </a>
+
+                    <a
+                        href="https://youtube.com/@techfixsoftwareexp"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        YouTube
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <p>
+                    © 2026 TechFix Software EXP.
+                </p>
+
+                <p>
+                    Founder:
+                    <strong>
+                        MIAN AHMAD
+                    </strong>
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <button
+        type="button"
+        id="back-to-top"
+        class="back-to-top"
+        aria-label="Back to top"
+    >
+        ↑
+    </button>
+
+
+    <script src="../database/mobiles.js"></script>
+    <script src="../database/prices.js"></script>
+    <script src="../database/catalog-loader.js" defer></script>
+    <script
+        src="../assets/js/app.js"
+        defer
+    ></script>
+
+</body>
+</html>
