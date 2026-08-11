@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | TechFix Software EXP</title>
+<meta name="description" content="Contact TechFix Software EXP via WhatsApp, email, Telegram, Facebook, YouTube or TikTok.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="grid-bg"></div>
+<div id="site-header"></div>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">GET IN TOUCH</span>
+    <h1>Contact <span class="hl">TechFix Software EXP</span></h1>
+    <p>Reach us directly on WhatsApp for the fastest response, or use any of the channels below. Founder: MIAN AHMAD.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="contact-grid" id="contact-grid"></div>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="container">
+    <div class="banner">
+      <div>
+        <h4>Fastest response is always on WhatsApp</h4>
+        <div class="flags"><span>⚡ Usually replies within minutes</span></div>
+      </div>
+      <a href="https://wa.me/966568152404" class="banner-btn" target="_blank" rel="noopener">Contact on WhatsApp →</a>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="js/icons.js"></script>
+<script src="js/app.js"></script>
+<script>
+renderHeader("contact");
+renderFooter();
+
+const CONTACTS = [
+  {ico:"whatsapp", bg:"rgba(37,211,102,0.18)", h:"WhatsApp", s:"+966 56 815 2404", url:"https://wa.me/966568152404"},
+  {ico:"mail", bg:"rgba(34,227,255,0.14)", h:"Email", s:"officialtechfix786@gmail.com", url:"mailto:officialtechfix786@gmail.com"},
+  {ico:"telegram", bg:"rgba(34,158,255,0.18)", h:"Telegram", s:"@Technologi786", url:"https://t.me/Technologi786"},
+  {ico:"facebook", bg:"rgba(24,119,242,0.18)", h:"Facebook", s:"TechFix Software EXP", url:"https://www.facebook.com/share/1BgXiWBiWg/"},
+  {ico:"youtube", bg:"rgba(255,0,0,0.16)", h:"YouTube", s:"@techfixsoftwareexp", url:"https://youtube.com/@techfixsoftwareexp?si=Yh2g7NzPrJ7un-Mm"},
+  {ico:"tiktok", bg:"rgba(255,255,255,0.1)", h:"TikTok", s:"@techfixsoft", url:"https://www.tiktok.com/@techfixsoft?_r=1&_t=ZS-98fviSwDtGD"},
+];
+document.getElementById("contact-grid").innerHTML = CONTACTS.map(c=>`
+  <a class="contact-card" href="${c.url}" target="_blank" rel="noopener">
+    <div class="c-ico" style="background:${c.bg}">${ICON[c.ico]}</div>
+    <div><h5>${c.h}</h5><span>${c.s}</span></div>
+  </a>`).join("");
+</script>
+</body>
+</html>

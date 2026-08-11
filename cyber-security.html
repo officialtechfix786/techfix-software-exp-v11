@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cyber Security & Kali Linux | TechFix Software EXP</title>
+<meta name="description" content="Authorized cyber security education, Kali Linux resources and a professional cyber security course.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+<style>
+.cyber-hero{background:radial-gradient(800px 400px at 20% 0%, rgba(62,240,124,0.14), transparent 60%),radial-gradient(700px 350px at 90% 10%, rgba(34,227,255,0.1), transparent 60%);}
+.course-banner{border-radius:16px;padding:30px;background:linear-gradient(135deg, rgba(62,240,124,0.12), rgba(34,227,255,0.08));border:1px solid rgba(62,240,124,0.3);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;}
+.course-banner h3{font-size:20px;font-weight:900;color:#3ef07c;margin-bottom:6px;}
+.roadmap{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:20px;}
+.rm-step{background:var(--surface-glass);border:1px solid var(--border);border-radius:12px;padding:18px;}
+.rm-step .n{font-size:11px;font-weight:800;color:#3ef07c;letter-spacing:1px;margin-bottom:6px;}
+.rm-step h6{font-size:14px;font-weight:800;margin-bottom:6px;}
+.rm-step p{font-size:12px;color:var(--muted);line-height:1.5;}
+@media(max-width:900px){.roadmap{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.roadmap{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+<div id="site-header"></div>
+
+<section class="page-hero cyber-hero">
+  <div class="container">
+    <span class="eyebrow" style="color:#3ef07c;">CYBER SECURITY</span>
+    <h1>Cyber Security & <span class="hl">Kali Linux</span></h1>
+    <p>Authorized security education covering networking, Linux, web security and defensive security fundamentals. All content is intended for legal, ethical and authorized learning only.</p>
+  </div>
+</section>
+
+<section style="padding-bottom:0;">
+  <div class="container"><div class="trust-strip" id="trust-strip"></div></div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head"><div><div class="section-title">Security <span class="hl">Focus Areas</span></div></div></div>
+    <div class="res-grid">
+      <div class="res-card"><div class="r-cat">SECURITY TESTING</div><h5>Authorized Security Testing</h5><p>Concepts and methodology for testing systems you own or have explicit written permission to test.</p></div>
+      <div class="res-card"><div class="r-cat">NETWORKING</div><h5>Networking Fundamentals</h5><p>Core networking concepts that underpin most security work — protocols, routing and traffic analysis.</p></div>
+      <div class="res-card"><div class="r-cat">WEB SECURITY</div><h5>Web Application Security</h5><p>Common web vulnerability classes and secure development practices for building safer applications.</p></div>
+      <div class="res-card"><div class="r-cat">DEFENSIVE SECURITY</div><h5>Defensive Security</h5><p>Monitoring, hardening and incident-response fundamentals for protecting systems and networks.</p></div>
+      <div class="res-card"><div class="r-cat">KALI LINUX</div><h5>Kali Linux Fundamentals</h5><p>Linux fundamentals and the security-tooling ecosystem, used strictly for authorized and educational purposes.</p></div>
+      <div class="res-card"><div class="r-cat">SECURITY RESEARCH</div><h5>Security Research</h5><p>Staying current with published vulnerabilities, advisories and responsible-disclosure practices.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="course-banner">
+      <div>
+        <h3>🎓 PAID CYBER SECURITY COURSE AVAILABLE</h3>
+        <p style="color:var(--muted);font-size:13px;max-width:520px;">A structured, practical learning path covering networking, Linux, web security and defensive security — built for legal, authorized and ethical learning.</p>
+      </div>
+      <a href="contact.html" class="cta-primary" style="padding:14px 26px;border-radius:10px;font-weight:800;font-size:13.5px;color:#04101a;background:linear-gradient(90deg,#3ef07c,#22e3ff);">Enroll — Contact Us →</a>
+    </div>
+    <div class="roadmap">
+      <div class="rm-step"><div class="n">STEP 01</div><h6>Networking & Linux</h6><p>Build a solid base in networking concepts and Linux command-line fundamentals.</p></div>
+      <div class="rm-step"><div class="n">STEP 02</div><h6>Security Fundamentals</h6><p>Core security principles, threat models and the ethical/legal framework for testing.</p></div>
+      <div class="rm-step"><div class="n">STEP 03</div><h6>Web & Practical Security</h6><p>Hands-on practice against authorized lab environments and common vulnerability classes.</p></div>
+      <div class="rm-step"><div class="n">STEP 04</div><h6>Defensive Security</h6><p>Monitoring, hardening and response — securing systems, not just testing them.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="notice-box">
+      ⚠ Only test systems that you own or have explicit permission to test. TechFix Software EXP does not provide, and will not provide, illegal access instructions. All cyber security content is educational and intended for authorized, legal use only.
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="js/icons.js"></script>
+<script src="js/app.js"></script>
+<script>
+renderHeader("cyber");
+renderFooter();
+renderTrustStrip("trust-strip");
+</script>
+</body>
+</html>
