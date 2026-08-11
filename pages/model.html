@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="TechFix Software EXP mobile model details, software solutions and service pricing."
+    >
+
+    <title>Model Details | TechFix Software EXP</title>
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/style.css"
+    >
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+
+        <div class="container header-inner">
+
+            <a href="../index.html" class="brand">
+
+                <img
+                    src="../assets/images/logo/techfix-logo.png"
+                    alt="TechFix Software EXP"
+                >
+
+                <span>TechFix Software EXP</span>
+
+            </a>
+
+
+            <nav class="main-nav">
+
+                <a href="../index.html">Home</a>
+
+                <a href="mobiles.html">Mobiles</a>
+
+                <a href="android.html">Android</a>
+
+                <a href="apple.html">Apple</a>
+
+                <a href="downloads.html">Downloads</a>
+
+                <a href="cyber-security.html">
+                    Cyber Security
+                </a>
+
+                <a href="contact.html">Contact</a>
+
+            </nav>
+
+
+            <button
+                class="mobile-menu-button"
+                type="button"
+                aria-label="Open Menu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- MODEL HERO -->
+    <main>
+
+        <section class="page-hero">
+
+            <div class="container">
+
+                <span class="eyebrow">
+                    TECHFIX MOBILE DATABASE
+                </span>
+
+                <h1 id="model-title">
+                    Loading Model...
+                </h1>
+
+                <p id="model-description">
+                    Loading mobile information...
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- MODEL CONTENT -->
+        <section class="section">
+
+            <div class="container">
+
+                <div
+                    id="model-details"
+                    class="glass-card"
+                >
+                    Loading details...
+                </div>
+
+
+                <!-- SERVICES -->
+
+                <div class="section-title">
+
+                    <span class="eyebrow">
+                        AVAILABLE SERVICES
+                    </span>
+
+                    <h2>
+                        Software & Repair Services
+                    </h2>
+
+                    <p>
+                        Available TechFix services and current
+                        pricing information.
+                    </p>
+
+                </div>
+
+
+                <div
+                    id="service-grid"
+                    class="card-grid"
+                >
+                </div>
+
+
+                <!-- NOT FOUND -->
+
+                <div
+                    id="model-not-found"
+                    class="empty-state"
+                    hidden
+                >
+
+                    <h2>
+                        Model Not Found
+                    </h2>
+
+                    <p>
+                        This mobile model is not available
+                        in the TechFix database.
+                    </p>
+
+                    <a
+                        href="mobiles.html"
+                        class="btn btn-primary"
+                    >
+                        Back to Mobiles
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <div class="footer-main">
+
+                <div>
+
+                    <img
+                        src="../assets/images/logo/techfix-logo.png"
+                        alt="TechFix Software EXP"
+                    >
+
+                    <h3>
+                        TechFix Software EXP
+                    </h3>
+
+                    <p>
+                        Professional mobile software
+                        solutions and technical information.
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <h3>Quick Links</h3>
+
+                    <a href="../index.html">
+                        Home
+                    </a>
+
+                    <a href="mobiles.html">
+                        Mobiles
+                    </a>
+
+                    <a href="android.html">
+                        Android
+                    </a>
+
+                    <a href="apple.html">
+                        Apple
+                    </a>
+
+                    <a href="downloads.html">
+                        Downloads
+                    </a>
+
+                </div>
+
+
+                <div>
+
+                    <h3>Contact</h3>
+
+                    <a href="tel:+966568152404">
+                        +966568152404
+                    </a>
+
+                    <a href="mailto:officialtechfix786@gmail.com">
+                        officialtechfix786@gmail.com
+                    </a>
+
+                    <a
+                        href="https://youtube.com/@techfixsoftwareexp?si=Yh2g7NzPrJ7un-Mm"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        YouTube
+                    </a>
+
+                    <a
+                        href="https://www.tiktok.com/@techfixsoft"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        TikTok
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <p>
+                    © <span data-current-year>2026</span>
+                    TechFix Software EXP.
+                    Founder: MIAN AHMAD
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- DATABASE -->
+    <script src="../database/mobiles.js"></script>
+<script src="../database/prices.js"></script>
+<script src="../database/catalog-loader.js" defer></script>
+
+    <!-- GLOBAL JS -->
+    <script src="../assets/js/app.js"></script>
+
+
+    <!-- MODEL LOGIC -->
+    <script>
+
+        "use strict";
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            () => {
+
+                const title =
+                    document.getElementById("model-title");
+
+                const description =
+                    document.getElementById(
+                        "model-description"
+                    );
+
+                const details =
+                    document.getElementById(
+                        "model-details"
+                    );
+
+                const services =
+                    document.getElementById(
+                        "service-grid"
+                    );
+
+                const notFound =
+                    document.getElementById(
+                        "model-not-found"
+                    );
+
+
+                /*
+                 * Database detection
+                 */
+
+                const mobiles =
+                    Array.isArray(
+                        window.mobilesDatabase
+                    )
+                        ? window.mobilesDatabase
+                        : [];
+
+
+                const prices =
+                    Array.isArray(
+                        window.pricesDatabase
+                    )
+                        ? window.pricesDatabase
+                        : [];
+
+
+                /*
+                 * URL
+                 *
+                 * model.html?model=Galaxy%20S24
+                 */
+
+                const params =
+                    new URLSearchParams(
+                        window.location.search
+                    );
+
+
+                const requestedModel =
+                    params.get("model") || "";
+
+
+                function normalize(value) {
+
+                    return String(value ?? "")
+                        .trim()
+                        .toLowerCase();
+
+                }
+
+
+                function escapeHTML(value) {
+
+                    return String(value ?? "")
+                        .replace(/&/g, "&amp;")
+                        .replace(/</g, "&lt;")
+                        .replace(/>/g, "&gt;")
+                        .replace(/"/g, "&quot;")
+                        .replace(/'/g, "&#039;");
+
+                }
+
+
+                /*
+                 * Find requested mobile
+                 */
+
+                const mobile =
+                    mobiles.find(
+                        (item) =>
+                            normalize(item.model) ===
+                            normalize(requestedModel)
+                    );
+
+
+                /*
+                 * Model not found
+                 */
+
+                if (!mobile) {
+
+                    title.textContent =
+                        "Model Not Found";
+
+                    description.textContent =
+                        requestedModel
+                            ? `No data found for ${requestedModel}.`
+                            : "No model was selected.";
+
+                    details.hidden = true;
+
+                    services.hidden = true;
+
+                    notFound.hidden = false;
+
+                    return;
+
+                }
+
+
+                /*
+                 * Page title
+                 */
+
+                document.title =
+                    `${mobile.model} | TechFix Software EXP`;
+
+
+                title.textContent =
+                    mobile.model;
+
+
+                description.textContent =
+                    mobile.description ||
+                    "Professional mobile software information.";
+
+
+                /*
+                 * Model image
+                 */
+
+                const modelImage =
+                    mobile.image ||
+                    "../assets/images/logo/techfix-logo.png";
+
+
+                /*
+                 * Model details
+                 */
+
+                details.innerHTML = `
+
+                    <div class="model-detail-layout">
+
+                        <div class="model-image-box">
+
+                            <img
+                                src="${escapeHTML(modelImage)}"
+                                alt="${escapeHTML(mobile.model)}"
+                                class="model-image"
+                            >
+
+                        </div>
+
+
+                        <div class="model-information">
+
+                            <span class="eyebrow">
+                                ${escapeHTML(
+                                    mobile.brand || "Mobile"
+                                )}
+                            </span>
+
+                            <h2>
+                                ${escapeHTML(mobile.model)}
+                            </h2>
+
+
+                            <p>
+                                ${escapeHTML(
+                                    mobile.description ||
+                                    "Professional mobile software information."
+                                )}
+                            </p>
+
+
+                            <div class="mobile-specs">
+
+                                <div>
+                                    <small>OS</small>
+                                    <strong>
+                                        ${escapeHTML(
+                                            mobile.androidVersion || "-"
+                                        )}
+                                    </strong>
+                                </div>
+
+                                <div>
+                                    <small>Chipset</small>
+                                    <strong>
+                                        ${escapeHTML(
+                                            mobile.chipset || "-"
+                                        )}
+                                    </strong>
+                                </div>
+
+                                <div>
+                                    <small>Boot Type</small>
+                                    <strong>
+                                        ${escapeHTML(
+                                            mobile.bootType || "-"
+                                        )}
+                                    </strong>
+                                </div>
+
+                                <div>
+                                    <small>FRP</small>
+                                    <strong>
+                                        ${escapeHTML(
+                                            mobile.frp || "-"
+                                        )}
+                                    </strong>
+                                </div>
+
+                                <div>
+                                    <small>Firmware</small>
+                                    <strong>
+                                        ${escapeHTML(
+                                            mobile.firmware || "-"
+                                        )}
+                                    </strong>
+                                </div>
+
+                                <div>
+                                    <small>Flash</small>
+                                    <strong>
+                                        ${escapeHTML(
+                                            mobile.flash || "-"
+                                        )}
+                                    </strong>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                `;
+
+
+                /*
+                 * Services from mobile database
+                 */
+
+                const solutions =
+                    Array.isArray(
+                        mobile.solutions
+                    )
+                        ? mobile.solutions
+                        : [];
+
+
+                /*
+                 * Match services with prices
+                 */
+
+                const serviceList =
+                    solutions.map(
+                        (solution) => {
+
+                            const price =
+                                prices.find(
+                                    (item) =>
+                                        normalize(
+                                            item.service
+                                        ) ===
+                                        normalize(
+                                            solution.name
+                                        )
+                                );
+
+
+                            return {
+
+                                name:
+                                    solution.name ||
+                                    "TechFix Service",
+
+                                description:
+                                    solution.description ||
+                                    `Service available for ${mobile.model}.`,
+
+                                price:
+                                    price?.price ??
+                                    solution.price ??
+                                    "Contact",
+
+                                rating:
+                                    price?.rating ??
+                                    mobile.rating ??
+                                    "4.9"
+
+                            };
+
+                        }
+                    );
+
+
+                /*
+                 * Render services
+                 */
+
+                if (!serviceList.length) {
+
+                    services.innerHTML = `
+
+                        <div class="glass-card">
+
+                            <h3>
+                                Service Information
+                            </h3>
+
+                            <p>
+                                Contact TechFix Software EXP
+                                for current service availability
+                                and pricing.
+                            </p>
+
+                        </div>
+
+                    `;
+
+                    return;
+
+                }
+
+
+                services.innerHTML =
+                    serviceList
+                        .map(
+                            (service) => `
+
+                                <article class="glass-card">
+
+                                    <span class="eyebrow">
+                                        TECHFIX SERVICE
+                                    </span>
+
+                                    <h3>
+                                        ${escapeHTML(
+                                            service.name
+                                        )}
+                                    </h3>
+
+                                    <p>
+                                        ${escapeHTML(
+                                            service.description
+                                        )}
+                                    </p>
+
+                                    <div class="service-price">
+
+                                        <strong>
+                                            ${escapeHTML(
+                                                service.price
+                                            )}
+                                            <small>
+                                                SAR
+                                            </small>
+                                        </strong>
+
+                                        <span>
+                                            ★ ${escapeHTML(
+                                                service.rating
+                                            )}
+                                        </span>
+
+                                    </div>
+
+                                </article>
+
+                            `
+                        )
+                        .join("");
+
+            }
+        );
+
+    </script>
+
+</body>
+</html>
