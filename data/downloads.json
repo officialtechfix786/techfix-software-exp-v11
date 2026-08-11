@@ -1,0 +1,51 @@
+[
+  {
+    "category": "Firmware",
+    "name": "Samsung Support",
+    "description": "Official Samsung product support and firmware/update resources.",
+    "source": "samsung.com",
+    "url": "https://www.samsung.com/support/"
+  },
+  {
+    "category": "Firmware",
+    "name": "Apple Support",
+    "description": "Official Apple support, restore and software update resources.",
+    "source": "support.apple.com",
+    "url": "https://support.apple.com/"
+  },
+  {
+    "category": "Drivers",
+    "name": "Android USB Driver Documentation",
+    "description": "Official Android developer documentation for USB/device connectivity.",
+    "source": "developer.android.com",
+    "url": "https://developer.android.com/studio/run/oem-usb"
+  },
+  {
+    "category": "ADB & Fastboot",
+    "name": "Android Platform Tools",
+    "description": "Official Android SDK Platform-Tools from Google.",
+    "source": "developer.android.com",
+    "url": "https://developer.android.com/tools/releases/platform-tools"
+  },
+  {
+    "category": "Diagnostics",
+    "name": "Samsung Smart Switch",
+    "description": "Official Samsung device transfer and support software.",
+    "source": "samsung.com",
+    "url": "https://www.samsung.com/us/apps/smart-switch/"
+  },
+  {
+    "category": "Tools",
+    "name": "Android Developers",
+    "description": "Official Android developer resources and documentation.",
+    "source": "developer.android.com",
+    "url": "https://developer.android.com/"
+  },
+  {
+    "category": "Security",
+    "name": "Kali Linux",
+    "description": "Official Kali Linux project site and documentation.",
+    "source": "kali.org",
+    "url": "https://www.kali.org/"
+  }
+]
