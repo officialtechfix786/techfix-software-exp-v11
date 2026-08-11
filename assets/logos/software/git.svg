@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 120">
+<defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#ef4444"/><stop offset="1" stop-color="#111827"/></linearGradient></defs>
+<rect width="240" height="120" rx="24" fill="url(#g)"/>
+<circle cx="120" cy="42" r="25" fill="#fff" opacity=".12"/>
+<text x="120" y="50" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="25" fill="#fff">GIT</text>
+</svg>

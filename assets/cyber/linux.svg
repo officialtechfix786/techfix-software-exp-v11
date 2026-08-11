@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420">
+<rect width="800" height="420" fill="#020617"/>
+<path d="M0 350 L180 250 L320 310 L470 150 L650 250 L800 110" fill="none" stroke="#38bdf8" stroke-width="2" opacity=".45"/>
+<circle cx="400" cy="205" r="105" fill="#38bdf8" opacity=".08" stroke="#38bdf8" stroke-width="2"/>
+<text x="400" y="215" text-anchor="middle" font-family="Arial,sans-serif" font-size="42" font-weight="700" fill="#38bdf8">KALI LINUX</text>
+<text x="400" y="255" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#cbd5e1">TECHFIX SECURITY LAB</text>
+</svg>

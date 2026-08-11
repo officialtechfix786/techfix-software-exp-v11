@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 520">
+<defs><linearGradient id="g"><stop stop-color="#0f172a"/><stop offset=".5" stop-color="#312e81"/><stop offset="1" stop-color="#0891b2"/></linearGradient></defs>
+<rect width="360" height="520" rx="40" fill="#020617"/>
+<rect x="24" y="18" width="312" height="484" rx="34" fill="url(#g)" stroke="#334155" stroke-width="5"/>
+<rect x="122" y="30" width="116" height="24" rx="12" fill="#020617"/>
+<circle cx="180" cy="270" r="68" fill="#fff" opacity=".08"/>
+<text x="180" y="278" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#fff">APPLE</text>
+<text x="180" y="310" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" fill="#cbd5e1">MODEL DATABASE</text>
+</svg>
