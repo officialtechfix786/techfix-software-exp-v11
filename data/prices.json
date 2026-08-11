@@ -1,0 +1,38 @@
+[
+  {
+    "service": "FRP Service",
+    "category": "Android",
+    "price": "Contact for current price",
+    "notes": "Authorized device service only."
+  },
+  {
+    "service": "Firmware / Flash Service",
+    "category": "Android",
+    "price": "Contact for current price",
+    "notes": "Device and software dependent."
+  },
+  {
+    "service": "iCloud Service Information",
+    "category": "Apple",
+    "price": "PKR 6,000\u20137,000 approx.",
+    "notes": "Subject to device/case; ownership verification required."
+  },
+  {
+    "service": "Software Installation",
+    "category": "Software",
+    "price": "Contact for current price",
+    "notes": "Professional setup."
+  },
+  {
+    "service": "Driver / Diagnostics",
+    "category": "Diagnostics",
+    "price": "Contact for current price",
+    "notes": "Device dependent."
+  },
+  {
+    "service": "Cyber Security Course",
+    "category": "Education",
+    "price": "Contact for course fee",
+    "notes": "Legal and authorized learning."
+  }
+]
