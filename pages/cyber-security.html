@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="TechFix Software EXP Cyber Security learning center featuring Kali Linux and professional security tools."
+    >
+
+    <meta name="author" content="MIAN AHMAD">
+    <meta name="theme-color" content="#050505">
+
+    <title>Cyber Security | TechFix Software EXP</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@500;600;700;800&family=Outfit:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+</head>
+
+<body class="cyber-security-page">
+
+    <!-- HEADER -->
+
+    <header class="site-header" id="site-header">
+
+        <div class="container header-container">
+
+            <a href="../index.html" class="brand">
+
+                <img
+                    src="../assets/images/logo/techfix-logo.png"
+                    alt="TechFix Software EXP Logo"
+                    class="brand-logo"
+                >
+
+                <span class="brand-name">
+                    TechFix Software
+                </span>
+
+            </a>
+
+
+            <nav
+                class="desktop-navigation"
+                aria-label="Main Navigation"
+            >
+
+                <a href="../index.html" class="nav-link">
+                    Home
+                </a>
+
+                <a href="mobiles.html" class="nav-link">
+                    Mobiles
+                </a>
+
+                <a href="android.html" class="nav-link">
+                    Android
+                </a>
+
+                <a href="apple.html" class="nav-link">
+                    Apple
+                </a>
+
+                <a href="downloads.html" class="nav-link">
+                    Downloads
+                </a>
+
+                <a
+                    href="cyber-security.html"
+                    class="nav-link active"
+                >
+                    Cyber Security
+                </a>
+
+                <a href="contact.html" class="nav-link">
+                    Contact
+                </a>
+
+            </nav>
+
+
+            <div class="header-actions">
+
+                <button
+                    type="button"
+                    class="search-button"
+                    id="search-button"
+                >
+                    Search
+                </button>
+
+                <a
+                    href="https://wa.me/966568152404"
+                    class="whatsapp-button"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    WhatsApp
+                </a>
+
+                <button
+                    type="button"
+                    class="menu-toggle"
+                    id="menu-toggle"
+                    aria-label="Open menu"
+                    aria-expanded="false"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- MOBILE DRAWER -->
+
+    <aside
+        class="mobile-drawer"
+        id="mobile-drawer"
+        aria-hidden="true"
+    >
+
+        <div class="mobile-drawer-header">
+
+            <strong>
+                TECHFIX MENU
+            </strong>
+
+            <button
+                type="button"
+                id="close-menu"
+                aria-label="Close menu"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <nav class="mobile-navigation">
+
+            <a href="../index.html">
+                Home
+            </a>
+
+            <a href="mobiles.html">
+                Mobiles
+            </a>
+
+            <a href="android.html">
+                Android
+            </a>
+
+            <a href="apple.html">
+                Apple
+            </a>
+
+            <a href="downloads.html">
+                Downloads
+            </a>
+
+            <a href="cyber-security.html">
+                Cyber Security
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <div
+        class="menu-overlay"
+        id="menu-overlay"
+        aria-hidden="true"
+    ></div>
+
+
+    <!-- GLOBAL SEARCH -->
+
+    <section
+        class="global-search-panel"
+        id="global-search-panel"
+        aria-hidden="true"
+    >
+
+        <div class="container search-container">
+
+            <div class="search-header">
+
+                <div>
+
+                    <span class="search-label">
+                        TECHFIX GLOBAL SEARCH
+                    </span>
+
+                    <h2>
+                        Search Security Tools
+                    </h2>
+
+                </div>
+
+                <button
+                    type="button"
+                    id="close-search"
+                    aria-label="Close search"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <input
+                type="search"
+                id="global-search"
+                class="global-search-input"
+                placeholder="Search Kali, Nmap, Wireshark, Burp Suite..."
+                autocomplete="off"
+            >
+
+            <div
+                id="search-results"
+                class="search-results"
+                aria-live="polite"
+            ></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MAIN -->
+
+    <main>
+
+        <!-- HERO -->
+
+        <section class="page-hero">
+
+            <div class="container cyber-hero-grid">
+
+                <div class="cyber-hero-copy">
+
+                    <span class="hero-label">
+                        TECHFIX SECURITY LAB
+                    </span>
+
+                    <h1>
+                        Cyber
+                        <span>Security</span>
+                    </h1>
+
+                    <p>
+                        Professional cybersecurity learning
+                        resources, security tools and technical
+                        information.
+                    </p>
+
+                </div>
+
+
+                <!-- Original terminal visual — no stock photography,
+                     built entirely from CSS/HTML so there's no
+                     licensing risk. -->
+                <div class="cyber-hero-terminal" aria-hidden="true">
+
+                    <div class="cyber-terminal-topbar">
+                        <span class="cyber-terminal-dot"></span>
+                        <span class="cyber-terminal-dot"></span>
+                        <span class="cyber-terminal-dot"></span>
+                        <span class="cyber-terminal-title">root@techfix:~</span>
+                    </div>
+
+                    <div class="cyber-terminal-body">
+                        <p><span class="cyber-prompt">$</span> nmap -sV target.local</p>
+                        <p class="cyber-line-dim">Scanning 4 hosts...</p>
+                        <p class="cyber-line-dim">Host is up (0.004s latency)</p>
+                        <p><span class="cyber-prompt">$</span> whoami</p>
+                        <p class="cyber-line-accent">techfix-security</p>
+                        <p><span class="cyber-prompt">$</span> status --check</p>
+                        <p class="cyber-line-ok">[OK] All systems monitored</p>
+                        <p><span class="cyber-cursor">_</span></p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- KALI LINUX -->
+
+        <section class="cyber-intro">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span>
+                        SECURITY PLATFORM
+                    </span>
+
+                    <div class="kali-heading-row">
+
+                        <img
+                            src="../assets/images/cyber/kali-linux.svg"
+                            alt="Kali Linux"
+                            class="kali-logo"
+                        >
+
+                        <h2>
+                            Kali Linux
+                        </h2>
+
+                    </div>
+
+                    <p>
+                        A professional Linux distribution
+                        designed for security testing,
+                        research and cybersecurity education.
+                    </p>
+
+                </div>
+
+
+                <div class="info-grid">
+
+                    <article class="info-card">
+
+                        <span>01</span>
+
+                        <h3>
+                            Security Testing
+                        </h3>
+
+                        <p>
+                            Learn how security professionals
+                            evaluate systems in authorized
+                            environments.
+                        </p>
+
+                    </article>
+
+
+                    <article class="info-card">
+
+                        <span>02</span>
+
+                        <h3>
+                            Networking
+                        </h3>
+
+                        <p>
+                            Study network discovery,
+                            monitoring and defensive analysis.
+                        </p>
+
+                    </article>
+
+
+                    <article class="info-card">
+
+                        <span>03</span>
+
+                        <h3>
+                            Web Security
+                        </h3>
+
+                        <p>
+                            Learn web application security
+                            concepts using legal training
+                            environments.
+                        </p>
+
+                    </article>
+
+
+                    <article class="info-card">
+
+                        <span>04</span>
+
+                        <h3>
+                            Ethical Learning
+                        </h3>
+
+                        <p>
+                            Use security tools only on systems
+                            you own or have explicit permission
+                            to test.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- TOOL SEARCH -->
+
+        <section class="cyber-tools-section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span>
+                        SECURITY TOOL DATABASE
+                    </span>
+
+                    <h2>
+                        Explore Security Tools
+                    </h2>
+
+                    <p>
+                        Search tools by name or category.
+                    </p>
+
+                </div>
+
+
+                <div class="mobile-search-box">
+
+                    <label
+                        for="cyber-search"
+                        class="sr-only"
+                    >
+                        Search cybersecurity tools
+                    </label>
+
+                    <input
+                        type="search"
+                        id="cyber-search"
+                        class="mobile-database-search"
+                        placeholder="Search Nmap, Burp Suite, Metasploit..."
+                        autocomplete="off"
+                    >
+
+                    <button
+                        type="button"
+                        id="clear-cyber-search"
+                        class="clear-search"
+                    >
+                        Clear
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="tool-grid"
+                    id="cyber-tools"
+                >
+
+                    <article class="tool-card">
+
+                        <span class="tool-number">
+                            01
+                        </span>
+
+                        <h3>
+                            Burp Suite
+                        </h3>
+
+                        <p>
+                            Web application security testing
+                            and analysis platform.
+                        </p>
+
+                        <span>
+                            Web Security
+                        </span>
+
+                        <a
+                            href="https://portswigger.net/burp"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Official Website
+                        </a>
+
+                    </article>
+
+
+                    <article class="tool-card">
+
+                        <span class="tool-number">
+                            02
+                        </span>
+
+                        <h3>
+                            Metasploit
+                        </h3>
+
+                        <p>
+                            Security research and authorized
+                            penetration-testing framework.
+                        </p>
+
+                        <span>
+                            Security Testing
+                        </span>
+
+                        <a
+                            href="https://www.metasploit.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Official Website
+                        </a>
+
+                    </article>
+
+
+                    <article class="tool-card">
+
+                        <span class="tool-number">
+                            03
+                        </span>
+
+                        <h3>
+                            Nmap
+                        </h3>
+
+                        <p>
+                            Network discovery and security
+                            auditing tool.
+                        </p>
+
+                        <span>
+                            Networking
+                        </span>
+
+                        <a
+                            href="https://nmap.org/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Official Website
+                        </a>
+
+                    </article>
+
+
+                    <article class="tool-card">
+
+                        <span class="tool-number">
+                            04
+                        </span>
+
+                        <h3>
+                            Wireshark
+                        </h3>
+
+                        <p>
+                            Network protocol analysis and
+                            traffic inspection tool.
+                        </p>
+
+                        <span>
+                            Network Analysis
+                        </span>
+
+                        <a
+                            href="https://www.wireshark.org/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Official Website
+                        </a>
+
+                    </article>
+
+
+                    <article class="tool-card">
+
+                        <span class="tool-number">
+                            05
+                        </span>
+
+                        <h3>
+                            SQLMap
+                        </h3>
+
+                        <p>
+                            Open-source tool for authorized
+                            SQL injection testing and research.
+                        </p>
+
+                        <span>
+                            Web Security
+                        </span>
+
+                        <a
+                            href="https://sqlmap.org/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Official Website
+                        </a>
+
+                    </article>
+
+
+                    <article class="tool-card">
+
+                        <span class="tool-number">
+                            06
+                        </span>
+
+                        <h3>
+                            Hashcat
+                        </h3>
+
+                        <p>
+                            Password recovery and security
+                            auditing software for authorized
+                            testing.
+                        </p>
+
+                        <span>
+                            Security Research
+                        </span>
+
+                        <a
+                            href="https://hashcat.net/hashcat/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Official Website
+                        </a>
+
+                    </article>
+
+
+                    <article class="tool-card">
+
+                        <span class="tool-number">
+                            07
+                        </span>
+
+                        <h3>
+                            Aircrack-ng
+                        </h3>
+
+                        <p>
+                            Wireless network security auditing
+                            suite for authorized environments.
+                        </p>
+
+                        <span>
+                            Wireless Security
+                        </span>
+
+                        <a
+                            href="https://www.aircrack-ng.org/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Official Website
+                        </a>
+
+                    </article>
+
+
+                    <article class="tool-card">
+
+                        <span class="tool-number">
+                            08
+                        </span>
+
+                        <h3>
+                            John the Ripper
+                        </h3>
+
+                        <p>
+                            Password security auditing and
+                            recovery tool.
+                        </p>
+
+                        <span>
+                            Security Research
+                        </span>
+
+                        <a
+                            href="https://www.openwall.com/john/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Official Website
+                        </a>
+
+                    </article>
+
+
+                    <article class="tool-card">
+
+                        <span class="tool-number">
+                            09
+                        </span>
+
+                        <h3>
+                            Gobuster
+                        </h3>
+
+                        <p>
+                            Security enumeration utility for
+                            authorized testing environments.
+                        </p>
+
+                        <span>
+                            Enumeration
+                        </span>
+
+                        <a
+                            href="https://github.com/OJ/gobuster"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Official Project
+                        </a>
+
+                    </article>
+
+
+                    <article class="tool-card">
+
+                        <span class="tool-number">
+                            10
+                        </span>
+
+                        <h3>
+                            FFUF
+                        </h3>
+
+                        <p>
+                            Fast web fuzzing tool for
+                            authorized security research.
+                        </p>
+
+                        <span>
+                            Web Security
+                        </span>
+
+                        <a
+                            href="https://github.com/ffuf/ffuf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Official Project
+                        </a>
+
+                    </article>
+
+
+                    <article class="tool-card">
+
+                        <span class="tool-number">
+                            11
+                        </span>
+
+                        <h3>
+                            Nikto
+                        </h3>
+
+                        <p>
+                            Web server security scanner for
+                            authorized security assessment.
+                        </p>
+
+                        <span>
+                            Web Security
+                        </span>
+
+                        <a
+                            href="https://github.com/sullo/nikto"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Official Project
+                        </a>
+
+                    </article>
+
+
+                    <article class="tool-card">
+
+                        <span class="tool-number">
+                            12
+                        </span>
+
+                        <h3>
+                            Subfinder
+                        </h3>
+
+                        <p>
+                            Passive subdomain discovery tool
+                            for authorized reconnaissance.
+                        </p>
+
+                        <span>
+                            Reconnaissance
+                        </span>
+
+                        <a
+                            href="https://github.com/projectdiscovery/subfinder"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Official Project
+                        </a>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- LEARNING -->
+
+        <section class="cyber-learning">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span>
+                        PROFESSIONAL LEARNING
+                    </span>
+
+                    <h2>
+                        Learn Cyber Security
+                    </h2>
+
+                    <p>
+                        TechFix focuses on responsible,
+                        authorized and educational security
+                        research.
+                    </p>
+
+                </div>
+
+
+                <div class="workflow-grid">
+
+                    <div class="workflow-step">
+
+                        <span>01</span>
+
+                        <h3>
+                            Fundamentals
+                        </h3>
+
+                        <p>
+                            Learn networking, Linux,
+                            operating systems and security
+                            fundamentals.
+                        </p>
+
+                    </div>
+
+
+                    <div class="workflow-step">
+
+                        <span>02</span>
+
+                        <h3>
+                            Practice
+                        </h3>
+
+                        <p>
+                            Use legal labs and controlled
+                            environments for hands-on learning.
+                        </p>
+
+                    </div>
+
+
+                    <div class="workflow-step">
+
+                        <span>03</span>
+
+                        <h3>
+                            Tools
+                        </h3>
+
+                        <p>
+                            Understand what professional
+                            security tools do and when they
+                            should be used.
+                        </p>
+
+                    </div>
+
+
+                    <div class="workflow-step">
+
+                        <span>04</span>
+
+                        <h3>
+                            Professional Support
+                        </h3>
+
+                        <p>
+                            To learn these tools professionally,
+                            contact TechFix Software EXP.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CTA -->
+
+        <section class="page-cta">
+
+            <div class="container">
+
+                <span>
+                    TECHFIX SECURITY LAB
+                </span>
+
+                <h2>
+                    Want to Learn Professionally?
+                </h2>
+
+                <p>
+                    Contact TechFix Software EXP for
+                    cybersecurity learning information.
+                </p>
+
+                <a
+                    href="contact.html"
+                    class="cta-button"
+                >
+                    Contact TechFix
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div class="footer-brand">
+
+                    <img
+                        src="../assets/images/logo/techfix-logo.png"
+                        alt="TechFix Software EXP Logo"
+                    >
+
+                    <p>
+                        Professional mobile software,
+                        solutions and technical resources.
+                    </p>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3>
+                        Quick Links
+                    </h3>
+
+                    <a href="../index.html">
+                        Home
+                    </a>
+
+                    <a href="mobiles.html">
+                        Mobiles
+                    </a>
+
+                    <a href="android.html">
+                        Android
+                    </a>
+
+                    <a href="apple.html">
+                        Apple
+                    </a>
+
+                    <a href="downloads.html">
+                        Downloads
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3>
+                        Contact
+                    </h3>
+
+                    <a href="mailto:officialtechfix786@gmail.com">
+                        officialtechfix786@gmail.com
+                    </a>
+
+                    <a
+                        href="https://wa.me/966568152404"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        +966568152404
+                    </a>
+
+                    <span>
+                        Telegram: @Technologi786
+                    </span>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3>
+                        Social
+                    </h3>
+
+                    <a
+                        href="https://www.tiktok.com/@techfixsoft"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        TikTok
+                    </a>
+
+                    <a
+                        href="https://www.facebook.com/share/1BgXiWBiWg/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Facebook
+                    </a>
+
+                    <a
+                        href="https://youtube.com/@techfixsoftwareexp"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        YouTube
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <p>
+                    © 2026 TechFix Software EXP.
+                </p>
+
+                <p>
+                    Founder:
+                    <strong>
+                        MIAN AHMAD
+                    </strong>
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <button
+        type="button"
+        id="back-to-top"
+        class="back-to-top"
+        aria-label="Back to top"
+    >
+        ↑
+    </button>
+
+
+    <script
+        src="../assets/js/app.js"
+        defer
+    ></script>
+
+</body>
+</html>
