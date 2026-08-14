@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="TechFix Software EXP Apple solutions for iPhone, iPad and Mac software, firmware, recovery and diagnostics."
+    >
+
+    <meta
+        name="keywords"
+        content="TechFix Apple, iPhone, iPad, Mac, iOS, firmware, restore, recovery, DFU, software"
+    >
+
+    <meta
+        name="author"
+        content="MIAN AHMAD"
+    >
+
+    <meta
+        name="theme-color"
+        content="#050505"
+    >
+
+    <title>Apple Solutions | TechFix Software</title>
+
+    <!-- Google Fonts -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@500;600;700;800&family=Outfit:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Main CSS -->
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/style.css"
+    >
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+</head>
+
+<body class="apple-page">
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
+    <header
+        id="site-header"
+        class="site-header"
+    >
+
+        <div class="container header-container">
+
+            <a
+                href="../index.html"
+                class="brand"
+                aria-label="TechFix Software Home"
+            >
+
+                <img
+                    src="../assets/images/logo/techfix-logo.svg"
+                    alt="TechFix Software Logo"
+                    class="brand-logo"
+                >
+
+                <span class="brand-name">
+                    TechFix Software
+                </span>
+
+            </a>
+
+
+            <nav
+                class="desktop-navigation"
+                aria-label="Main Navigation"
+            >
+
+                <a
+                    href="../index.html"
+                    class="nav-link"
+                >
+                    Home
+                </a>
+
+                <a
+                    href="mobiles.html"
+                    class="nav-link"
+                >
+                    Mobiles
+                </a>
+
+                <a
+                    href="android.html"
+                    class="nav-link"
+                >
+                    Android
+                </a>
+
+                <a
+                    href="apple.html"
+                    class="nav-link active"
+                >
+                    Apple
+                </a>
+
+                <a
+                    href="downloads.html"
+                    class="nav-link"
+                >
+                    Downloads
+                </a>
+
+                <a
+                    href="cyber-security.html"
+                    class="nav-link"
+                >
+                    Cyber Security
+                </a>
+
+                <a
+                    href="contact.html"
+                    class="nav-link"
+                >
+                    Contact
+                </a>
+
+            </nav>
+
+
+            <div class="header-actions">
+
+                <button
+                    type="button"
+                    id="search-button"
+                    class="search-button"
+                    aria-label="Open global search"
+                >
+                    Search
+                </button>
+
+
+                <button
+                    type="button"
+                    id="menu-toggle"
+                    class="menu-toggle"
+                    aria-label="Open mobile menu"
+                    aria-expanded="false"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================
+         MOBILE DRAWER
+    ========================================== -->
+
+    <aside
+        id="mobile-drawer"
+        class="mobile-drawer"
+        aria-hidden="true"
+    >
+
+        <div class="mobile-drawer-header">
+
+            <span>
+                TECHFIX MENU
+            </span>
+
+            <button
+                type="button"
+                id="close-menu"
+                aria-label="Close mobile menu"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <nav
+            class="mobile-navigation"
+            aria-label="Mobile Navigation"
+        >
+
+            <a href="../index.html">
+                Home
+            </a>
+
+            <a href="mobiles.html">
+                Mobiles
+            </a>
+
+            <a href="android.html">
+                Android
+            </a>
+
+            <a href="apple.html">
+                Apple
+            </a>
+
+            <a href="downloads.html">
+                Downloads
+            </a>
+
+            <a href="cyber-security.html">
+                Cyber Security
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <div
+        id="menu-overlay"
+        class="menu-overlay"
+        aria-hidden="true"
+    ></div>
+
+
+    <!-- =========================================
+         GLOBAL SEARCH
+    ========================================== -->
+
+    <section
+        id="global-search-panel"
+        class="global-search-panel"
+        aria-hidden="true"
+    >
+
+        <div class="container search-container">
+
+            <div class="search-header">
+
+                <div>
+
+                    <span class="search-label">
+                        TECHFIX GLOBAL SEARCH
+                    </span>
+
+                    <h2>
+                        Search Apple
+                    </h2>
+
+                </div>
+
+                <button
+                    type="button"
+                    id="close-search"
+                    aria-label="Close search"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <label
+                for="global-search"
+                class="sr-only"
+            >
+                Search Apple devices
+            </label>
+
+            <input
+                type="search"
+                id="global-search"
+                class="global-search-input"
+                placeholder="Search iPhone, iPad or Mac..."
+                autocomplete="off"
+            >
+
+
+            <div
+                id="search-results"
+                class="search-results"
+                aria-live="polite"
+            >
+
+                <p>
+                    Apple database search will be connected
+                    during the JavaScript phase.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         MAIN
+    ========================================== -->
+
+    <main>
+
+
+        <!-- =====================================
+             APPLE HERO
+        ====================================== -->
+
+        <section class="page-hero">
+
+            <div class="container">
+
+                <span class="hero-label">
+                    TECHFIX APPLE LAB
+                </span>
+
+                <h1>
+                    Apple
+                    <span>
+                        Solutions
+                    </span>
+                </h1>
+
+                <p>
+                    Professional Apple software resources
+                    covering iPhone, iPad and Mac devices,
+                    firmware, recovery and diagnostics.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             APPLE DEVICE CATEGORIES
+        ====================================== -->
+
+        <section class="apple-categories">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span>
+                        APPLE DEVICES
+                    </span>
+
+                    <h2>
+                        Select Your Device
+                    </h2>
+
+                    <p>
+                        Explore Apple software information
+                        and supported service categories.
+                    </p>
+
+                </div>
+
+
+                <div class="apple-device-grid">
+
+
+                    <article
+                        class="apple-device-card"
+                        data-device="iphone"
+                    >
+
+                        <span class="device-number">
+                            01
+                        </span>
+
+                        <div class="device-icon">
+                            i
+                        </div>
+
+                        <h3>
+                            iPhone
+                        </h3>
+
+                        <p>
+                            iPhone firmware, restore, recovery
+                            and software support.
+                        </p>
+
+                        <span class="device-status">
+                            SUPPORTED
+                        </span>
+
+                    </article>
+
+
+                    <article
+                        class="apple-device-card"
+                        data-device="ipad"
+                    >
+
+                        <span class="device-number">
+                            02
+                        </span>
+
+                        <div class="device-icon">
+                            iP
+                        </div>
+
+                        <h3>
+                            iPad
+                        </h3>
+
+                        <p>
+                            iPad software, firmware and recovery
+                            information.
+                        </p>
+
+                        <span class="device-status">
+                            SUPPORTED
+                        </span>
+
+                    </article>
+
+
+                    <article
+                        class="apple-device-card"
+                        data-device="mac"
+                    >
+
+                        <span class="device-number">
+                            03
+                        </span>
+
+                        <div class="device-icon">
+                            M
+                        </div>
+
+                        <h3>
+                            Mac
+                        </h3>
+
+                        <p>
+                            macOS recovery, restore and
+                            software information.
+                        </p>
+
+                        <span class="device-status">
+                            SUPPORTED
+                        </span>
+
+                    </article>
+
+
+                    <article
+                        class="apple-device-card"
+                        data-device="watch"
+                    >
+
+                        <span class="device-number">
+                            04
+                        </span>
+
+                        <div class="device-icon">
+                            W
+                        </div>
+
+                        <h3>
+                            Apple Watch
+                        </h3>
+
+                        <p>
+                            Apple Watch software and recovery
+                            information.
+                        </p>
+
+                        <span class="device-status">
+                            SUPPORTED
+                        </span>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             APPLE SERVICES
+        ====================================== -->
+
+        <section class="apple-services">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span>
+                        SOFTWARE SERVICES
+                    </span>
+
+                    <h2>
+                        Apple Service Center
+                    </h2>
+
+                    <p>
+                        Professional Apple software service
+                        categories with centralized pricing.
+                    </p>
+
+                </div>
+
+
+                <div class="apple-service-grid">
+
+
+                    <article class="apple-service-card">
+
+                        <span>
+                            01
+                        </span>
+
+                        <h3>
+                            Restore
+                        </h3>
+
+                        <p>
+                            Software restoration and supported
+                            Apple recovery workflows.
+                        </p>
+
+                        <strong>
+                            From 1,500
+                        </strong>
+
+                    </article>
+
+
+                    <article class="apple-service-card">
+
+                        <span>
+                            02
+                        </span>
+
+                        <h3>
+                            Firmware
+                        </h3>
+
+                        <p>
+                            Official firmware information and
+                            restore resources.
+                        </p>
+
+                        <strong>
+                            From 2,000
+                        </strong>
+
+                    </article>
+
+
+                    <article class="apple-service-card">
+
+                        <span>
+                            03
+                        </span>
+
+                        <h3>
+                            Recovery
+                        </h3>
+
+                        <p>
+                            Recovery and DFU-mode diagnostic
+                            information.
+                        </p>
+
+                        <strong>
+                            From 1,500
+                        </strong>
+
+                    </article>
+
+
+                    <article class="apple-service-card">
+
+                        <span>
+                            04
+                        </span>
+
+                        <h3>
+                            Passcode
+                        </h3>
+
+                        <p>
+                            Professional service information
+                            for supported situations.
+                        </p>
+
+                        <strong>
+                            From 3,000
+                        </strong>
+
+                    </article>
+
+
+                    <article class="apple-service-card">
+
+                        <span>
+                            05
+                        </span>
+
+                        <h3>
+                            Activation
+                        </h3>
+
+                        <p>
+                            Apple activation-related service
+                            information.
+                        </p>
+
+                        <strong>
+                            From 3,500
+                        </strong>
+
+                    </article>
+
+
+                    <article class="apple-service-card">
+
+                        <span>
+                            06
+                        </span>
+
+                        <h3>
+                            iCloud Related
+                        </h3>
+
+                        <p>
+                            Professional information for
+                            supported account and device
+                            service cases.
+                        </p>
+
+                        <strong>
+                            From 6,000+
+                        </strong>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             APPLE SOFTWARE TOOLS
+        ====================================== -->
+
+        <section class="apple-tools">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span>
+                        APPLE SOFTWARE
+                    </span>
+
+                    <h2>
+                        Recommended Tools
+                    </h2>
+
+                    <p>
+                        Official software resources will be
+                        connected to the TechFix software database.
+                    </p>
+
+                </div>
+
+
+                <div class="tool-grid">
+
+
+                    <article class="tool-card">
+
+                        <span class="tool-number">
+                            01
+                        </span>
+
+                        <h3>
+                            3uTools
+                        </h3>
+
+                        <p>
+                            Apple device management and
+                            software utility.
+                        </p>
+
+                        <a
+                            href="https://www.3u.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Official Website
+                        </a>
+
+                    </article>
+
+
+                    <article class="tool-card">
+
+                        <span class="tool-number">
+                            02
+                        </span>
+
+                        <h3>
+                            iMazing
+                        </h3>
+
+                        <p>
+                            Apple device management,
+                            backup and data tools.
+                        </p>
+
+                        <a
+                            href="https://imazing.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Official Website
+                        </a>
+
+                    </article>
+
+
+                    <article class="tool-card">
+
+                        <span class="tool-number">
+                            03
+                        </span>
+
+                        <h3>
+                            iTunes
+                        </h3>
+
+                        <p>
+                            Apple device synchronization and
+                            supported restoration resources.
+                        </p>
+
+                        <a
+                            href="https://support.apple.com/itunes"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Apple Support
+                        </a>
+
+                    </article>
+
+
+                    <article class="tool-card">
+
+                        <span class="tool-number">
+                            04
+                        </span>
+
+                        <h3>
+                            Apple Devices
+                        </h3>
+
+                        <p>
+                            Apple's current Windows device
+                            management application.
+                        </p>
+
+                        <a
+                            href="https://support.apple.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Apple Support
+                        </a>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             APPLE WORKFLOW
+        ====================================== -->
+
+        <section class="apple-workflow">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span>
+                        TECHFIX WORKFLOW
+                    </span>
+
+                    <h2>
+                        Apple Software Process
+                    </h2>
+
+                </div>
+
+
+                <div class="workflow-grid">
+
+
+                    <div class="workflow-step">
+
+                        <span>
+                            01
+                        </span>
+
+                        <h3>
+                            Identify Device
+                        </h3>
+
+                        <p>
+                            Select the Apple product and
+                            model generation.
+                        </p>
+
+                    </div>
+
+
+                    <div class="workflow-step">
+
+                        <span>
+                            02
+                        </span>
+
+                        <h3>
+                            Check Software
+                        </h3>
+
+                        <p>
+                            Review firmware, recovery and
+                            available software information.
+                        </p>
+
+                    </div>
+
+
+                    <div class="workflow-step">
+
+                        <span>
+                            03
+                        </span>
+
+                        <h3>
+                            Check Service
+                        </h3>
+
+                        <p>
+                            View the applicable TechFix
+                            service and price.
+                        </p>
+
+                    </div>
+
+
+                    <div class="workflow-step">
+
+                        <span>
+                            04
+                        </span>
+
+                        <h3>
+                            Contact TechFix
+                        </h3>
+
+                        <p>
+                            Contact TechFix for professional
+                            assistance.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <div class="footer-grid">
+
+
+                <div class="footer-brand">
+
+                    <img
+                        src="../assets/images/logo/techfix-logo.svg"
+                        alt="TechFix Software Logo"
+                    >
+
+                    <p>
+                        Professional mobile software,
+                        solutions and technical resources.
+                    </p>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3>
+                        Quick Links
+                    </h3>
+
+                    <a href="../index.html">
+                        Home
+                    </a>
+
+                    <a href="mobiles.html">
+                        Mobiles
+                    </a>
+
+                    <a href="android.html">
+                        Android
+                    </a>
+
+                    <a href="apple.html">
+                        Apple
+                    </a>
+
+                    <a href="downloads.html">
+                        Downloads
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3>
+                        Contact
+                    </h3>
+
+                    <a
+                        href="mailto:officialtechfix786@gmail.com"
+                    >
+                        officialtechfix786@gmail.com
+                    </a>
+
+                    <a
+                        href="https://wa.me/966568152404"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        +966568152404
+                    </a>
+
+                    <span>
+                        Telegram: @Technologi786
+                    </span>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h3>
+                        Social
+                    </h3>
+
+                    <a
+                        href="https://www.tiktok.com/@techfixsoft"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        TikTok
+                    </a>
+
+                    <a
+                        href="https://www.facebook.com/share/1BgXiWBiWg/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Facebook
+                    </a>
+
+                    <a
+                        href="https://youtube.com/@techfixsoftwareexp"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        YouTube
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <p>
+                    © 2026 TechFix Software.
+                    All rights reserved.
+                </p>
+
+                <p>
+                    Founder:
+                    <strong>
+                        MIAN AHMAD
+                    </strong>
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================================
+         BACK TO TOP
+    ========================================== -->
+
+    <button
+        type="button"
+        id="back-to-top"
+        class="back-to-top"
+        aria-label="Back to top"
+    >
+        ↑
+    </button>
+
+
+    <!-- JavaScript connection comes later -->
+
+    <script src="../database/mobiles.js" defer></script>
+    <script src="../database/prices.js" defer></script>
+    <script
+        src="../assets/js/app.js"
+        defer
+    ></script>
+    <script src="../assets/js/search-upgrade.js" defer></script>
+
+<!-- =====================================================
+     WHATSAPP FLOATING WIDGET
+     Lives at the end of <body> (a sibling of <header>, not a
+     child of it) so its position:fixed is relative to the
+     viewport. Previously it was nested inside a header that
+     has backdrop-filter, which creates a new containing block
+     for fixed descendants in every major browser -- that's
+     why it rendered pinned near the top-right search box
+     instead of floating at the bottom-right of the page.
+     ===================================================== -->
+<a
+    href="https://wa.me/966568152404"
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat with TechFix on WhatsApp"
+>
+    <span class="whatsapp-float-icon" aria-hidden="true">&#9993;</span>
+    <span class="whatsapp-float-label">WhatsApp</span>
+</a>
+</body>
+</html>
