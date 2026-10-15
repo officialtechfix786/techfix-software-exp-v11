@@ -13,7 +13,7 @@
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
     });
   };
-  var icon = '<img class="brand-logo" src="' + url('assets/images/logo.svg?v=technician1') + '" alt="" width="42" height="42">';
+  var icon = '<img class="brand-logo" src="' + url('assets/images/logo.svg?v=technician2') + '" alt="" width="48" height="48">';
   var themes = ['ember','violet','mint','coral','teal','berry','amber','ice'];
   var themeIndex = -1;
   function rotateTheme() {
@@ -269,4 +269,3 @@
     if (root) root.innerHTML = '<div class="empty">The catalogue could not load. Check the network connection and refresh.</div>';
   });
 }());
-
