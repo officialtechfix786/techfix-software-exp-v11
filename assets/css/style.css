@@ -37,3 +37,4 @@ body:before{opacity:1;background-image:radial-gradient(ellipse at 13% 20%,color-
 /* Reserve a separate row for navigation so it never overlaps the centered name. */
 @media(min-width:761px){.nav{display:grid;grid-template-columns:1fr;grid-template-rows:58px 30px;justify-items:center;align-items:center;height:auto;min-height:96px;padding:4px 0 8px;gap:0}.nav>.brand{position:static;left:auto;transform:none;grid-row:1}.navlinks{grid-row:2;margin:0 auto;justify-content:center;width:100%;gap:clamp(12px,1.7vw,25px)}}
 @media(max-width:760px){.nav{display:flex;min-height:70px;height:70px;padding:0;justify-content:center}.nav>.brand{position:absolute;left:50%;transform:translateX(-50%)}}
+.brand-name{font-size:24px}.brand:after{position:absolute;left:50%;bottom:-3px;width:82%;height:2px;margin:0;transform:translateX(-50%)}@media(max-width:760px){.brand-name{font-size:20px}}
