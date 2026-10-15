@@ -28,3 +28,7 @@ body[data-theme="ember"]{--cyan:#ff9b5f;--blue:#ff6b88;--purple:#c28cff;--orange
 /* Make hidden image placeholders stay hidden until an actual load error. */
 [hidden]{display:none!important}
 .featured-device-photo,.model-photo,.detail-photo{display:block;opacity:1;visibility:visible}
+/* Keep each featured phone, its photo credit, and its details in one valid card. */
+.featured-device-card{min-height:440px;display:flex;flex-direction:column;gap:10px}.featured-device-main{display:flex;flex:1;flex-direction:column;gap:8px}.featured-device-main h3,.featured-device-main p{margin:0}.featured-device-main p{min-height:50px}.featured-device-card .featured-detail-link{margin-top:auto}.featured-device-card .image-credit{margin-top:2px}
+/* Increase the animated cyber colour wash so the changing background reads clearly. */
+body:before{opacity:1;background-image:radial-gradient(ellipse at 13% 20%,color-mix(in srgb,var(--cyan) 34%,transparent),transparent 56%),radial-gradient(ellipse at 86% 15%,color-mix(in srgb,var(--purple) 32%,transparent),transparent 54%),radial-gradient(ellipse at 67% 88%,color-mix(in srgb,var(--orange) 24%,transparent),transparent 52%),linear-gradient(#80c9ff08 1px,transparent 1px),linear-gradient(90deg,#80c9ff08 1px,transparent 1px);background-size:auto,auto,auto,54px 54px,54px 54px;background-position:center,center,center,0 0,0 0}
