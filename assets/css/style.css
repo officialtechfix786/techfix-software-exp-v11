@@ -25,3 +25,6 @@ body[data-theme="amber"]{--cyan:#ffd45d;--blue:#ff9e66;--purple:#c39aff;--orange
 body[data-theme="ember"]{--cyan:#ff9b5f;--blue:#ff6b88;--purple:#c28cff;--orange:#ffd166}
 @keyframes cyberGlow{0%{transform:translate3d(-1.5%,0,0) scale(1);filter:hue-rotate(-10deg)}100%{transform:translate3d(1.5%,1%,0) scale(1.04);filter:hue-rotate(18deg)}}
 @media(prefers-reduced-motion:reduce){body:before{animation:none!important}}
+/* Make hidden image placeholders stay hidden until an actual load error. */
+[hidden]{display:none!important}
+.featured-device-photo,.model-photo,.detail-photo{display:block;opacity:1;visibility:visible}
