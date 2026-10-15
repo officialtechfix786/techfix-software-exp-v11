@@ -1,0 +1,442 @@
+[
+  {
+    "id": "android-sdk-platform-tools",
+    "name": "Android SDK Platform-Tools",
+    "category": "Android",
+    "publisher": "Google Android Developers",
+    "description": "Official command-line package that includes ADB and Fastboot.",
+    "url": "https://developer.android.com/tools/releases/platform-tools",
+    "source": "https://developer.android.com/tools/releases/platform-tools",
+    "systems": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "caution": "Fastboot can erase data or brick a device when used with an incompatible image."
+  },
+  {
+    "id": "apple-support-itunes",
+    "name": "Apple Support: iTunes",
+    "category": "Apple",
+    "publisher": "Apple",
+    "description": "Apple software and support hub for device management, backups, updates, and restore.",
+    "url": "https://support.apple.com/itunes",
+    "source": "https://support.apple.com/itunes",
+    "systems": [
+      "Windows",
+      "macOS"
+    ],
+    "caution": "Restores erase device data; back up first when possible."
+  },
+  {
+    "id": "3utools",
+    "name": "3uTools",
+    "category": "Apple utility",
+    "publisher": "3uTools",
+    "description": "Third-party iOS device management utility. Review privacy and restore implications.",
+    "url": "https://www.3u.com/",
+    "source": "https://www.3u.com/",
+    "systems": [
+      "Windows"
+    ],
+    "caution": "Not affiliated with Apple. Verify each operation."
+  },
+  {
+    "id": "imazing",
+    "name": "iMazing",
+    "category": "Apple utility",
+    "publisher": "DigiDNA",
+    "description": "Commercial Apple device management and backup software.",
+    "url": "https://imazing.com/",
+    "source": "https://imazing.com/",
+    "systems": [
+      "Windows",
+      "macOS"
+    ],
+    "caution": "Some features require a license."
+  },
+  {
+    "id": "samsung-smart-switch",
+    "name": "Samsung Smart Switch",
+    "category": "Android",
+    "publisher": "Samsung Electronics",
+    "description": "Official support hub for content transfer and software update workflows.",
+    "url": "https://www.samsung.com/us/support/owners/app/smart-switch",
+    "source": "https://www.samsung.com/us/support/owners/app/smart-switch",
+    "systems": [
+      "Windows",
+      "macOS",
+      "Android"
+    ],
+    "caution": "Availability varies by region, device, and OS."
+  },
+  {
+    "id": "nmap",
+    "name": "Nmap",
+    "category": "Security",
+    "publisher": "Nmap Project",
+    "description": "Network discovery and security auditing utility.",
+    "url": "https://nmap.org/download.html",
+    "source": "https://nmap.org/download.html",
+    "systems": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "caution": "Scan only systems you own or are explicitly authorized to test."
+  },
+  {
+    "id": "wireshark",
+    "name": "Wireshark",
+    "category": "Security",
+    "publisher": "Wireshark Foundation",
+    "description": "Network protocol analyzer for authorized troubleshooting and learning.",
+    "url": "https://www.wireshark.org/download.html",
+    "source": "https://www.wireshark.org/download.html",
+    "systems": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "caution": "Packet captures can contain private data; protect capture files."
+  },
+  {
+    "id": "kali-linux",
+    "name": "Kali Linux",
+    "category": "Security",
+    "publisher": "OffSec",
+    "description": "Security-focused Linux distribution for testing, forensics, and education.",
+    "url": "https://www.kali.org/get-kali/",
+    "source": "https://www.kali.org/get-kali/",
+    "systems": [
+      "PC",
+      "virtual machines",
+      "ARM"
+    ],
+    "caution": "Verify images and work only in an authorized lab."
+  },
+  {
+    "id": "burp-suite",
+    "name": "Burp Suite Community Edition",
+    "category": "Web security",
+    "publisher": "PortSwigger",
+    "description": "Manual web application security testing toolkit with proxy, repeater, decoder, and related features.",
+    "url": "https://portswigger.net/burp/communitydownload",
+    "source": "https://portswigger.net/burp/communitydownload",
+    "systems": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "caution": "Use only with applications you own or have explicit authorization to test. Review proxy settings before capturing traffic."
+  },
+  {
+    "id": "metasploit-framework",
+    "name": "Metasploit Framework",
+    "category": "Security testing",
+    "publisher": "Rapid7",
+    "description": "Open-source framework for security research and authorized penetration testing; official documentation and installers are linked.",
+    "url": "https://docs.metasploit.com/",
+    "source": "https://github.com/rapid7/metasploit-framework",
+    "systems": [
+      "Linux",
+      "macOS",
+      "Windows via supported environment"
+    ],
+    "caution": "Exploit modules can disrupt systems or access data. Practice only in isolated labs or within written scope."
+  },
+  {
+    "id": "sqlmap",
+    "name": "sqlmap",
+    "category": "Web security",
+    "publisher": "sqlmap project",
+    "description": "Open-source tool for testing SQL injection and database security in authorized environments.",
+    "url": "https://sqlmap.org/",
+    "source": "https://github.com/sqlmapproject/sqlmap",
+    "systems": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "caution": "Automated testing can alter or expose data. Use a local lab or obtain explicit authorization and scope."
+  },
+  {
+    "id": "hashcat",
+    "name": "Hashcat",
+    "category": "Password auditing",
+    "publisher": "Hashcat project",
+    "description": "Password recovery and password-hash auditing utility with official downloads and documentation.",
+    "url": "https://hashcat.net/hashcat/",
+    "source": "https://hashcat.net/hashcat/",
+    "systems": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "caution": "Use only on password hashes you own or are authorized to audit. Keep recovered credentials private and protected."
+  },
+  {
+    "id": "john-the-ripper",
+    "name": "John the Ripper",
+    "category": "Password auditing",
+    "publisher": "Openwall",
+    "description": "Open-source password security auditing and recovery tool; consult Openwall for source, platform builds, and verification guidance.",
+    "url": "https://www.openwall.com/john/",
+    "source": "https://www.openwall.com/john/",
+    "systems": [
+      "Windows",
+      "macOS",
+      "Linux",
+      "Unix-like"
+    ],
+    "caution": "Audit only credentials and hashes you own or have written permission to assess."
+  },
+  {
+    "id": "aircrack-ng",
+    "name": "Aircrack-ng",
+    "category": "Wireless security",
+    "publisher": "Aircrack-ng project",
+    "description": "Wireless network security assessment suite with project documentation and download resources.",
+    "url": "https://www.aircrack-ng.org/",
+    "source": "https://www.aircrack-ng.org/",
+    "systems": [
+      "Linux",
+      "Windows",
+      "macOS",
+      "BSD"
+    ],
+    "caution": "Wireless capture and testing requires network-owner authorization and compatible hardware. Never target third-party networks."
+  },
+  {
+    "id": "gobuster",
+    "name": "Gobuster",
+    "category": "Web & DNS assessment",
+    "publisher": "OJ and contributors",
+    "description": "Open-source Go utility for authorized web path, DNS, and virtual-host discovery.",
+    "url": "https://github.com/OJ/gobuster",
+    "source": "https://github.com/OJ/gobuster",
+    "systems": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "caution": "Discovery requests can load target services. Restrict use to owned or explicitly authorized systems."
+  },
+  {
+    "id": "dirsearch",
+    "name": "dirsearch",
+    "category": "Web assessment",
+    "publisher": "Mauro Soria and contributors",
+    "description": "Open-source web path discovery tool with installation and usage documentation in its project repository.",
+    "url": "https://github.com/maurosoria/dirsearch",
+    "source": "https://github.com/maurosoria/dirsearch",
+    "systems": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "caution": "Use only within an approved scope. Requests may expose private endpoints or affect service availability."
+  },
+  {
+    "id": "nikto",
+    "name": "Nikto",
+    "category": "Web server assessment",
+    "publisher": "Nikto / CIRT",
+    "description": "Open-source web server scanner; the project and maintainer pages provide current source and usage notes.",
+    "url": "https://cirt.net/nikto/",
+    "source": "https://www.cirt.net/Nikto2",
+    "systems": [
+      "Linux",
+      "macOS",
+      "Windows via supported Perl environment"
+    ],
+    "caution": "Scanning can generate substantial traffic and reveal sensitive server details. Test only authorized hosts."
+  },
+  {
+    "id": "subfinder",
+    "name": "Subfinder",
+    "category": "Asset discovery",
+    "publisher": "ProjectDiscovery",
+    "description": "Passive subdomain discovery tool with official installation and usage documentation.",
+    "url": "https://docs.projectdiscovery.io/opensource/subfinder/overview",
+    "source": "https://github.com/projectdiscovery/subfinder",
+    "systems": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "caution": "Use only for domains within your authorized scope. Passive source APIs may require accounts or keys; do not expose secrets."
+  },
+  {
+    "id": "ffuf",
+    "name": "ffuf",
+    "category": "Web assessment",
+    "publisher": "ffuf project",
+    "description": "Open-source web fuzzer for controlled testing and learning in local labs or explicitly authorized targets.",
+    "url": "https://github.com/ffuf/ffuf",
+    "source": "https://github.com/ffuf/ffuf",
+    "systems": [
+      "Windows",
+      "macOS",
+      "Linux",
+      "BSD"
+    ],
+    "caution": "Fuzzing can create high request volume. Keep rates low and use only within an authorized scope."
+  },
+  {
+    "id": "android-studio",
+    "name": "Android Studio",
+    "category": "Android development",
+    "publisher": "Google Android Developers",
+    "description": "Official integrated development environment for Android application development and Android SDK management.",
+    "url": "https://developer.android.com/studio",
+    "source": "https://developer.android.com/studio",
+    "systems": [
+      "Windows",
+      "macOS",
+      "Linux",
+      "ChromeOS"
+    ],
+    "caution": "Large developer toolchain. Install only from Google and review current system requirements and SDK licenses."
+  },
+  {
+    "id": "google-usb-driver",
+    "name": "Google USB Driver",
+    "category": "Android drivers",
+    "publisher": "Google Android Developers",
+    "description": "Windows USB driver for supported Google Android devices; other brands should use their OEM driver instructions.",
+    "url": "https://developer.android.com/studio/run/win-usb",
+    "source": "https://developer.android.com/studio/run/win-usb",
+    "systems": [
+      "Windows"
+    ],
+    "caution": "Use only for supported Google devices. Driver requirements differ by operating system and manufacturer."
+  },
+  {
+    "id": "android-oem-usb-drivers",
+    "name": "Android OEM USB driver index",
+    "category": "Android drivers",
+    "publisher": "Google Android Developers",
+    "description": "Manufacturer driver links and setup guidance for Android development connections on Windows.",
+    "url": "https://developer.android.com/studio/run/oem-usb",
+    "source": "https://developer.android.com/studio/run/oem-usb",
+    "systems": [
+      "Windows"
+    ],
+    "caution": "Select the exact phone manufacturer and model. Avoid third-party repackaged driver bundles."
+  },
+  {
+    "id": "android-flash-tool",
+    "name": "Android Flash Tool",
+    "category": "Android firmware",
+    "publisher": "Google Android Developers",
+    "description": "Google browser-based flashing tool for supported Pixel devices and listed builds.",
+    "url": "https://flash.android.com/",
+    "source": "https://flash.android.com/",
+    "systems": [
+      "Chrome-compatible desktop browser"
+    ],
+    "caution": "Pixel-only where listed. Flashing or unlocking can erase data; never use with other brands or unlisted variants."
+  },
+  {
+    "id": "apple-devices-windows",
+    "name": "Apple Devices for Windows",
+    "category": "Apple utility",
+    "publisher": "Apple",
+    "description": "Apple Windows app for managing, backing up, updating, and restoring supported iPhone and iPad devices.",
+    "url": "https://support.apple.com/en-us/118290",
+    "source": "https://support.apple.com/en-us/118290",
+    "systems": [
+      "Windows"
+    ],
+    "caution": "A restore erases device contents. Apple Account and Activation Lock remain subject to the owner’s credentials."
+  },
+  {
+    "id": "mtkclient",
+    "name": "MTKClient",
+    "category": "Android / MediaTek",
+    "publisher": "Bjoern Kerler and contributors",
+    "description": "Open-source MediaTek device utility and research project; consult its own repository for documented scope and supported devices.",
+    "url": "https://github.com/bkerler/mtkclient",
+    "source": "https://github.com/bkerler/mtkclient",
+    "systems": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "caution": "Low-level device access may read or write protected storage. Use only on devices you own or are authorized to service; support is device-specific and may be destructive."
+  },
+  {
+    "id": "owasp-zap",
+    "name": "OWASP ZAP",
+    "category": "Web security",
+    "publisher": "OWASP Foundation",
+    "description": "Open-source web application security testing proxy and scanner for development and authorized testing.",
+    "url": "https://www.zaproxy.org/",
+    "source": "https://www.zaproxy.org/",
+    "systems": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "caution": "Active scans generate traffic and may affect services. Use only in local labs or within explicit written scope."
+  },
+  {
+    "id": "google-chrome",
+    "name": "Google Chrome",
+    "category": "Computer software",
+    "publisher": "Google",
+    "description": "Official browser download page for supported desktop operating systems.",
+    "url": "https://www.google.com/chrome/",
+    "source": "https://www.google.com/chrome/",
+    "systems": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "caution": "Download from Google only; review browser permissions and sync settings."
+  },
+  {
+    "id": "vlc-media-player",
+    "name": "VLC media player",
+    "category": "Computer software",
+    "publisher": "VideoLAN",
+    "description": "Free, open-source media player with official installers and checksums.",
+    "url": "https://www.videolan.org/vlc/",
+    "source": "https://www.videolan.org/vlc/",
+    "systems": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "caution": "Use the official VideoLAN download page; avoid bundled third-party installers."
+  },
+  {
+    "id": "libreoffice",
+    "name": "LibreOffice",
+    "category": "Computer software",
+    "publisher": "The Document Foundation",
+    "description": "Free office suite for documents, spreadsheets, presentations, and more.",
+    "url": "https://www.libreoffice.org/download/download-libreoffice/",
+    "source": "https://www.libreoffice.org/download/download-libreoffice/",
+    "systems": [
+      "Windows",
+      "macOS",
+      "Linux"
+    ],
+    "caution": "Choose the correct operating system and language from the official project page."
+  },
+  {
+    "id": "7-zip",
+    "name": "7-Zip",
+    "category": "Computer software",
+    "publisher": "Igor Pavlov / 7-Zip",
+    "description": "Open-source file archiver with official downloads for Windows.",
+    "url": "https://www.7-zip.org/download.html",
+    "source": "https://www.7-zip.org/download.html",
+    "systems": [
+      "Windows"
+    ],
+    "caution": "Choose the correct 64-bit or ARM64 package; never download repackaged builds."
+  }
+]

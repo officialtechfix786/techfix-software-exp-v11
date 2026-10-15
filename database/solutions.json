@@ -1,0 +1,342 @@
+[
+  {
+    "id": "android-identify-device",
+    "title": "Identify the exact Android variant",
+    "category": "Android",
+    "summary": "Record the full model code, region or carrier, build number, and bootloader state before choosing a support path.",
+    "scope": "Android phones and tablets; Settings labels vary by manufacturer and software release.",
+    "prerequisites": "Owner authorization; access to Settings or device label; a second device for source research.",
+    "steps": [
+      "Open Settings → About phone/tablet and copy the model number and build details exactly.",
+      "Compare the full code with the manufacturer support page; the retail name alone is not enough.",
+      "Check carrier, region, chipset, and bootloader state before matching firmware or drivers.",
+      "Stop if the code or source does not match; do not cross-flash a similar model."
+    ],
+    "risks": "Do not post serial numbers, IMEI, account identifiers, or diagnostic dumps publicly. Firmware mismatch can wipe data or prevent boot.",
+    "sourceName": "Android Developers",
+    "sourceUrl": "https://developer.android.com/"
+  },
+  {
+    "id": "android-backup-preflight",
+    "title": "Back up before repair or restore",
+    "category": "Android",
+    "summary": "Confirm the owner’s backup and account access before resets, bootloader changes, or firmware operations.",
+    "scope": "Any Android device; backup features depend on device, account, region, and app.",
+    "prerequisites": "Owner consent and account access; stable Wi-Fi or computer; adequate battery.",
+    "steps": [
+      "Verify the latest cloud or local backup date and ensure photos, messages, and authenticator access are covered.",
+      "Export files not included in backup; verify a sample can be opened on another device.",
+      "Confirm the owner knows the Google account and recovery method currently associated with the phone.",
+      "Only then follow the exact manufacturer instructions for the identified model."
+    ],
+    "risks": "Factory reset, unlocking, restore, and some firmware actions erase data. A backup may not include every app or protected item.",
+    "sourceName": "Google backup and restore help",
+    "sourceUrl": "https://support.google.com/android/answer/2819582"
+  },
+  {
+    "id": "android-adb-fastboot",
+    "title": "ADB, Fastboot, and USB driver basics",
+    "category": "Android",
+    "summary": "Understand the difference between Android Debug Bridge and bootloader Fastboot, then use Google Platform-Tools and device-vendor driver instructions.",
+    "scope": "ADB works on supported running Android devices; Fastboot availability and unlock policy are device-specific.",
+    "prerequisites": "Trusted computer, data-capable USB cable, exact model, owner consent, and verified backup for write operations.",
+    "steps": [
+      "Download Platform-Tools from Google Android Developers, not a repackaged installer.",
+      "Install the OEM driver on Windows when required; macOS and Linux typically use their USB device rules.",
+      "Enable USB debugging only for a task that needs it and approve the computer on the device.",
+      "Use read-only identification first; do not issue erase, unlock, flash, or partition-write operations without exact official instructions."
+    ],
+    "risks": "Unlocking commonly wipes data. Fastboot commands and images are not universal; an incorrect write may brick or erase the device.",
+    "sourceName": "Android Platform-Tools",
+    "sourceUrl": "https://developer.android.com/tools/releases/platform-tools"
+  },
+  {
+    "id": "android-pixel-firmware",
+    "title": "Google Pixel factory images and browser flashing",
+    "category": "Android",
+    "summary": "Use Google device-specific notes and supported factory image or Android Flash Tool workflow for eligible Pixel models.",
+    "scope": "Only Pixel devices and builds explicitly listed by Google. Carrier and regional variants can differ.",
+    "prerequisites": "Exact Pixel model and build, current backup, charged battery, reliable USB cable, compatible browser/computer, and required OEM unlock setting.",
+    "steps": [
+      "Match the device model and carrier/region on Google’s page before selecting an image.",
+      "Read image-specific notes and whether the action wipes data or requires bootloader unlocking.",
+      "Prefer the official Android Flash Tool when the selected model and workflow are supported.",
+      "Follow Google instructions for that build; stop on any mismatch or unexplained tool error."
+    ],
+    "risks": "A factory image restore may erase data. Bootloader unlocking weakens protection while enabled; relocking with the wrong image can make the phone unusable.",
+    "sourceName": "Google Pixel factory images",
+    "sourceUrl": "https://developers.google.com/android/images"
+  },
+  {
+    "id": "android-flash-tool",
+    "title": "Android Flash Tool: safe preflight",
+    "category": "Android",
+    "summary": "Google’s web flasher supports specified Pixel devices and builds; check the compatibility list and instructions before connecting.",
+    "scope": "Only supported Google Pixel devices and listed builds; not a general Android flashing tool.",
+    "prerequisites": "Supported Pixel, current backup, compatible desktop browser, data USB cable, battery charge, and owner authorization.",
+    "steps": [
+      "Use the official Android Flash Tool site and its device selector.",
+      "Read the displayed build, wipe, and bootloader requirements before starting.",
+      "Confirm a backup and account credentials; disconnect unrelated devices.",
+      "Follow the supported on-screen flow and stop if the device identity is unexpected."
+    ],
+    "risks": "Flashing can erase data and change bootloader state. Do not use the Pixel tool with other manufacturers or unlisted variants.",
+    "sourceName": "Google Android Flash Tool",
+    "sourceUrl": "https://flash.android.com/"
+  },
+  {
+    "id": "android-samsung-support",
+    "title": "Samsung updates, backups, and recovery",
+    "category": "Android",
+    "summary": "Start with Samsung Support and Smart Switch for supported backup, transfer, and update workflows; verify model and region first.",
+    "scope": "Samsung Galaxy devices for which Samsung documents the selected feature.",
+    "prerequisites": "Exact model and country, Samsung account where needed, backup destination, stable USB/Wi-Fi connection.",
+    "steps": [
+      "Open the device country-specific Samsung support page and identify the exact model code.",
+      "Use Smart Switch only for its documented transfer, backup, or supported update feature.",
+      "For boot or restore errors, record the displayed error and follow Samsung model-specific support.",
+      "Contact Samsung service when official recovery does not cover the case; do not use a random firmware mirror."
+    ],
+    "risks": "Updates and restores can fail or erase data. Odin is not presented here as an official Samsung consumer download or universal service method.",
+    "sourceName": "Samsung Smart Switch Support",
+    "sourceUrl": "https://www.samsung.com/us/support/owners/app/smart-switch"
+  },
+  {
+    "id": "android-frp-owner-recovery",
+    "title": "Factory Reset Protection: owner recovery",
+    "category": "Android",
+    "summary": "FRP is an ownership safeguard. After a protected reset, the owner should use a previously synced account or recover that account through Google or the manufacturer.",
+    "scope": "Android devices with Google device protection; screens depend on vendor and release.",
+    "prerequisites": "Owner or authorized technician must have the owner present and proof of lawful ownership when required.",
+    "steps": [
+      "Ask the owner to enter an account previously synced to the device before reset.",
+      "If credentials are forgotten, complete Google Account recovery from a trusted device.",
+      "For second-hand devices, ask the prior owner to remove their account through the supported process or contact the manufacturer with proof of purchase.",
+      "Do not accept bypass claims or unofficial services asking for credentials or remote access."
+    ],
+    "risks": "Waiting periods, account checks, and vendor procedures may apply. This guide intentionally provides no bypass steps.",
+    "sourceName": "Google device protection help",
+    "sourceUrl": "https://support.google.com/android/answer/9459346"
+  },
+  {
+    "id": "android-bootloop-triage",
+    "title": "Android bootloop: non-destructive triage",
+    "category": "Android",
+    "summary": "Collect symptoms and try manufacturer-supported, non-erasing recovery steps before any reset or firmware operation.",
+    "scope": "General triage only; button sequences and recovery menus vary by exact model.",
+    "prerequisites": "Owner approval, exact model, known recent changes, and backup status check.",
+    "steps": [
+      "Record whether the device reaches the logo, recovery, or bootloader; note recent updates, drops, liquid exposure, or accessory changes.",
+      "Disconnect accessories and use the manufacturer documented forced restart for the exact model.",
+      "If recovery appears, read the selected menu carefully; avoid Wipe data/Factory reset unless the owner approved data loss.",
+      "Consult manufacturer service or authorized repair before a firmware write."
+    ],
+    "risks": "A factory reset erases data. Repeated failed boots may indicate hardware failure; do not keep flashing to diagnose it.",
+    "sourceName": "Google Pixel phone help",
+    "sourceUrl": "https://support.google.com/pixelphone/"
+  },
+  {
+    "id": "android-chipset-compatibility",
+    "title": "Qualcomm, MediaTek, and Unisoc compatibility",
+    "category": "Android",
+    "summary": "Chipset names alone do not establish compatibility. Use the manufacturer model-specific service path and documented host drivers.",
+    "scope": "Devices with a supported service or developer interface; access and methods vary widely.",
+    "prerequisites": "Exact model/board code, vendor documentation, lawful ownership, current backup, documented tool version.",
+    "steps": [
+      "Identify the complete model and board/region from manufacturer information, not a guessed chipset.",
+      "Find the official support or developer tool for that exact product and region.",
+      "Install drivers only from the OS or device manufacturer; avoid repacked driver bundles.",
+      "Stop if a tool asks for unknown loaders, authorization tokens, or unverified firmware."
+    ],
+    "risks": "Low-level tools can read or write protected partitions and cause permanent loss. This catalogue does not imply chipset support.",
+    "sourceName": "Android OEM USB driver guidance",
+    "sourceUrl": "https://developer.android.com/studio/run/oem-usb"
+  },
+  {
+    "id": "apple-backup-before-restore",
+    "title": "Back up an iPhone before updating or restoring",
+    "category": "Apple",
+    "summary": "Check the latest iCloud or computer backup and confirm the owner can access their Apple Account before restoring.",
+    "scope": "iPhone and iPad; menu labels and backup availability depend on OS, region, and account settings.",
+    "prerequisites": "Owner consent, Apple Account access, adequate storage, stable Wi-Fi or trusted computer.",
+    "steps": [
+      "Check the last successful iCloud backup or make an encrypted computer backup where appropriate.",
+      "Verify photos and important files are synced or copied separately.",
+      "Confirm the owner knows the Apple Account and has access to a trusted phone number or recovery contact.",
+      "Then follow Apple model-specific update or restore guidance."
+    ],
+    "risks": "Restore erases device contents. Some data may not be included in a backup or may require the original account after setup.",
+    "sourceName": "Apple backup support",
+    "sourceUrl": "https://support.apple.com/en-us/108366"
+  },
+  {
+    "id": "apple-recovery-restore",
+    "title": "iPhone recovery mode: update versus restore",
+    "category": "Apple",
+    "summary": "Apple recovery mode can offer Update or Restore on a computer. Try Update when offered; Restore erases the device.",
+    "scope": "iPhone and iPad models covered by Apple recovery-mode instructions.",
+    "prerequisites": "Current computer software, trusted cable, owner approval, backup check, reliable USB connection.",
+    "steps": [
+      "Identify the iPhone model so you use the correct Apple button sequence.",
+      "Connect to Finder or Apple Devices/iTunes as Apple instructions specify.",
+      "Choose Update first when offered and appropriate; choose Restore only after the owner accepts data erasure.",
+      "If recovery fails or repeats, record the error and follow Apple service guidance."
+    ],
+    "risks": "Restore erases content and does not remove Activation Lock. Never use a third-party claim to bypass account ownership.",
+    "sourceName": "Apple recovery mode support",
+    "sourceUrl": "https://support.apple.com/en-us/118106"
+  },
+  {
+    "id": "apple-dfu-diagnostics",
+    "title": "DFU, diagnostics, and restore errors",
+    "category": "Apple",
+    "summary": "DFU is a lower-level device update state sometimes used during service, but steps are model-specific. Use Apple published recovery and diagnostics resources first.",
+    "scope": "Only procedures documented for the exact Apple model; no universal DFU sequence is asserted here.",
+    "prerequisites": "Exact model, backup status, current Apple software, stable power/USB, and owner consent.",
+    "steps": [
+      "Write down the Apple device model and complete error shown by Finder or Apple Devices.",
+      "Check Apple current recovery and repair guidance before changing modes.",
+      "Run Apple diagnostics when available and record its reference code for support.",
+      "Escalate repeated restore failure to Apple or an authorized service provider."
+    ],
+    "risks": "A restore can erase data; repeated DFU attempts or unofficial firmware can complicate diagnosis. DFU does not defeat Activation Lock.",
+    "sourceName": "Apple repair and service",
+    "sourceUrl": "https://support.apple.com/repair"
+  },
+  {
+    "id": "apple-account-activation-lock",
+    "title": "Apple Account recovery and Activation Lock",
+    "category": "Apple",
+    "summary": "The original owner must recover their Apple Account or remove the device from that account. Apple can review eligible proof-of-purchase requests.",
+    "scope": "Apple Account and Activation Lock cases; eligibility and steps are determined by Apple.",
+    "prerequisites": "Original account owner or valid proof of purchase; do not share passwords or one-time codes with a repairer.",
+    "steps": [
+      "Use Apple iforgot from a trusted browser to recover account access.",
+      "For a used device, ask the previous owner to remove it from their account using Apple supported process.",
+      "If the owner has proof of purchase, submit the official Activation Lock support request.",
+      "Decline third-party unlock offers and do not give anyone the account password or verification code."
+    ],
+    "risks": "Recovery can take time and Apple may require proof of ownership. A reset or DFU restore does not remove Activation Lock.",
+    "sourceName": "Apple Activation Lock support",
+    "sourceUrl": "https://support.apple.com/108934"
+  },
+  {
+    "id": "apple-jailbreak-risks",
+    "title": "Jailbreak concepts and compatibility checks",
+    "category": "Apple",
+    "summary": "A jailbreak changes iOS security controls. Compatibility must be checked against exact device, processor, OS build, and maintained project documentation.",
+    "scope": "Educational overview only; TechNex Labs does not assert current jailbreak compatibility.",
+    "prerequisites": "A device the learner owns, verified backup, understanding of security tradeoffs, primary-source release notes.",
+    "steps": [
+      "Record the exact iPhone model and full iOS build.",
+      "Read a project compatibility table and release notes; do not rely on a generic model-family claim.",
+      "Check whether the project is maintained and transparent about risks before considering it.",
+      "Avoid unknown configuration profiles, unsigned downloads, and tools promising Activation Lock removal."
+    ],
+    "risks": "Jailbreaking can reduce security, affect support, expose data, and cause boot/update problems. No ownership bypass is supported.",
+    "sourceName": "Apple Platform Security",
+    "sourceUrl": "https://support.apple.com/guide/security/welcome/web"
+  },
+  {
+    "id": "security-learning-path",
+    "title": "Cybersecurity learning path for beginners",
+    "category": "Cybersecurity",
+    "summary": "Build fundamentals before using security tools: operating systems, networking, web architecture, and clear note-taking.",
+    "scope": "Self-study on your own computer and isolated practice environments.",
+    "prerequisites": "Personal computer, basic command-line familiarity, and commitment to test only authorized systems.",
+    "steps": [
+      "Learn files, permissions, processes, shells, and package managers on a system you own.",
+      "Study IP addressing, DNS, HTTP, TLS, routing, and basic packet capture.",
+      "Learn how web requests, sessions, authentication, and databases work.",
+      "Then use intentionally vulnerable labs and document findings with evidence and remediation."
+    ],
+    "risks": "A scanner or test can disrupt a service. Never scan public IPs, networks, or accounts without explicit authorization.",
+    "sourceName": "PortSwigger Web Security Academy",
+    "sourceUrl": "https://portswigger.net/web-security/getting-started"
+  },
+  {
+    "id": "security-web-labs",
+    "title": "Web security practice in safe labs",
+    "category": "Cybersecurity",
+    "summary": "Use intentionally vulnerable training labs and OWASP guidance to learn controlled testing and defensive fixes.",
+    "scope": "PortSwigger Web Security Academy labs, local toy apps, or systems with written authorization.",
+    "prerequisites": "Read each lab scope and rules; use a separate test browser/profile and never enter real credentials.",
+    "steps": [
+      "Start with the Academy learning path and its dedicated lab targets.",
+      "Reproduce a finding only within the assigned lab and note the request, impact, and fix.",
+      "Use the OWASP Testing Guide as a methodology reference and validate fixes in your own application.",
+      "Stop when a target is outside the lab boundary or an instruction is unclear."
+    ],
+    "risks": "Do not apply lab techniques to third-party services. Report real issues privately through the owner disclosure channel.",
+    "sourceName": "OWASP Web Security Testing Guide",
+    "sourceUrl": "https://owasp.org/www-project-web-security-testing-guide/"
+  },
+  {
+    "id": "security-network-inventory",
+    "title": "Network inventory with Nmap in an owned lab",
+    "category": "Cybersecurity",
+    "summary": "Use Nmap official documentation to inventory a host or isolated lab you administer; understand scope and rate before scanning.",
+    "scope": "Loopback, a private lab network you control, or explicitly authorized assets only.",
+    "prerequisites": "Written scope, test window, target list, permission to send probes, and a record of asset ownership.",
+    "steps": [
+      "Read the Nmap reference guide and understand host discovery and scan impact.",
+      "Begin with one lab host you own and document target and time window.",
+      "Use conservative defaults; avoid scripts or broad scans until the lab owner approves them.",
+      "Save results locally, remove sensitive data, and confirm unexpected services with the asset owner."
+    ],
+    "risks": "Scanning can trigger alerts or degrade fragile systems. Never scan public or workplace networks without explicit authorization.",
+    "sourceName": "Nmap Reference Guide",
+    "sourceUrl": "https://nmap.org/book/man.html"
+  },
+  {
+    "id": "security-wireshark-basics",
+    "title": "Learn packet analysis with Wireshark",
+    "category": "Cybersecurity",
+    "summary": "Practice reading protocol metadata from a sample capture or your own lab traffic and protect private data in packet files.",
+    "scope": "Sample captures, loopback, or traffic you are explicitly allowed to inspect.",
+    "prerequisites": "Wireshark from its official site, a sample capture, or authorization from network owner.",
+    "steps": [
+      "Start with the official User Guide and learn capture/display filter concepts.",
+      "Use public sample captures or a local toy service; avoid collecting other people traffic.",
+      "Identify DNS, TCP, TLS, and HTTP metadata and write down what a packet can and cannot prove.",
+      "Remove secrets and personal data before sharing any capture file."
+    ],
+    "risks": "Captures may contain credentials, identifiers, or private communications. Capture only authorized traffic and protect the output.",
+    "sourceName": "Wireshark User Guide",
+    "sourceUrl": "https://www.wireshark.org/docs/wsug_html_chunked/"
+  },
+  {
+    "id": "security-password-auditing",
+    "title": "Password security and offline auditing",
+    "category": "Cybersecurity",
+    "summary": "Learn password policy and hash concepts with synthetic sample hashes in a local lab; never test accounts without authorization.",
+    "scope": "Synthetic lab data or systems and hashes you own and are authorized to assess.",
+    "prerequisites": "Isolated lab, synthetic accounts, written scope, secure storage for results, remediation plan.",
+    "steps": [
+      "Understand password managers, MFA, rate limiting, and modern password hashing before using an auditor.",
+      "Generate toy test data locally; never download or reuse real credential dumps.",
+      "Run only a tool documented test mode against the lab data.",
+      "Delete test secrets and recommend unique passphrases, MFA, and approved breached-password checks."
+    ],
+    "risks": "Hash or password material is highly sensitive. Do not collect, publish, or attempt to crack real users credentials without explicit authorization.",
+    "sourceName": "NIST Digital Identity Guidelines",
+    "sourceUrl": "https://pages.nist.gov/800-63-4/sp800-63b.html"
+  },
+  {
+    "id": "security-responsible-disclosure",
+    "title": "Responsible disclosure and test authorization",
+    "category": "Cybersecurity",
+    "summary": "Define written scope, allowed methods, time windows, data handling, and a private reporting channel before any security test.",
+    "scope": "Programs and systems whose owner provided explicit authorization.",
+    "prerequisites": "Written permission, exact asset list, and contact details for incident escalation.",
+    "steps": [
+      "Record owner, exact hosts/apps, dates, prohibited actions, and data limits.",
+      "Use test accounts and non-destructive checks unless scope explicitly permits more.",
+      "Stop on access to real user data, service disruption, or scope uncertainty.",
+      "Report a concise reproduction, impact, timestamps, and remediation privately to owner."
+    ],
+    "risks": "Good intent does not replace authorization. Laws and program rules differ; remain within written scope.",
+    "sourceName": "OWASP Web Security Testing Guide",
+    "sourceUrl": "https://owasp.org/www-project-web-security-testing-guide/"
+  }
+]

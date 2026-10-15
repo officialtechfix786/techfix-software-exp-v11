@@ -1,0 +1,68 @@
+[
+  {
+    "id": "frp-recovery",
+    "title": "Google device protection",
+    "category": "Recovery",
+    "description": "Use official account recovery and Google’s guidance for protected Android devices after reset.",
+    "url": "https://support.google.com/android/answer/9459346",
+    "source": "https://support.google.com/android/answer/9459346",
+    "tags": [
+      "FRP",
+      "Android",
+      "account",
+      "recovery"
+    ]
+  },
+  {
+    "id": "account-recovery",
+    "title": "Google Account recovery",
+    "category": "Recovery",
+    "description": "Official account recovery steps for a forgotten password, username, or verification issue.",
+    "url": "https://support.google.com/android/answer/7682439",
+    "source": "https://support.google.com/android/answer/7682439",
+    "tags": [
+      "Android",
+      "account",
+      "recovery"
+    ]
+  },
+  {
+    "id": "apple-recovery",
+    "title": "Apple iPhone recovery",
+    "category": "Apple",
+    "description": "Apple support guidance for recovery mode and restore. Restore erases data.",
+    "url": "https://support.apple.com/en-us/118106",
+    "source": "https://support.apple.com/en-us/118106",
+    "tags": [
+      "iPhone",
+      "recovery",
+      "restore"
+    ]
+  },
+  {
+    "id": "pixel-images",
+    "title": "Pixel factory images",
+    "category": "Firmware",
+    "description": "Google’s official factory images and device-specific flashing notes.",
+    "url": "https://developers.google.com/android/images",
+    "source": "https://developers.google.com/android/images",
+    "tags": [
+      "Pixel",
+      "firmware",
+      "fastboot"
+    ]
+  },
+  {
+    "id": "flash-tool",
+    "title": "Android Flash Tool",
+    "category": "Firmware",
+    "description": "Google browser-based flashing tool for supported Pixel devices. Review prerequisites and data loss notes.",
+    "url": "https://flash.android.com/",
+    "source": "https://flash.android.com/",
+    "tags": [
+      "Pixel",
+      "flash",
+      "firmware"
+    ]
+  }
+]
