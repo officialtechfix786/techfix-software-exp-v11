@@ -27,7 +27,7 @@
   function initChrome() {
     var header = document.querySelector('#site-header');
     if (header) {
-      header.innerHTML = '<div class="wrap nav"><a class="brand" href="' + url('index.html') + '">' + icon + '<span><strong class="brand-name">MIAN AHMAD</strong><small>TECHNEX LABS</small></span></a><button class="menu" aria-expanded="false" aria-controls="navlinks" type="button">☰ <span class="sr-only">Menu</span></button><nav id="navlinks" class="navlinks" aria-label="Main navigation">' + nav.map(function (item) {
+      header.innerHTML = '<div class="wrap nav"><a class="brand" href="' + url('index.html') + '">' + icon + '<span><strong class="brand-name">MIAN AHMAD</strong><small>TECHNEX LABS</small></span></a><span class="manager-tag">Manager: Miss Areeha Rao</span><button class="menu" aria-expanded="false" aria-controls="navlinks" type="button">☰ <span class="sr-only">Menu</span></button><nav id="navlinks" class="navlinks" aria-label="Main navigation">' + nav.map(function (item) {
         return '<a href="' + url(item[1]) + '" ' + (page === item[1].replace('pages/', '').replace('.html', '') ? 'aria-current="page"' : '') + '>' + item[0] + '</a>';
       }).join('') + '</nav></div>';
     }
