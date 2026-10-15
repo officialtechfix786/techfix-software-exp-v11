@@ -13,7 +13,7 @@
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
     });
   };
-  var icon = '<svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M24 3 43 14v20L24 45 5 34V14L24 3Z" stroke="#FF7A00" stroke-width="2"/><path d="M15 30V18l9-5 9 5v12l-9 5-9-5Z" stroke="#C0C7D1" stroke-width="2"/><path d="m19 25 5-3 5 3-5 3-5-3Z" fill="#38BDF8"/></svg>';
+  var icon = '<img class="brand-logo" src="' + url('assets/images/logo.svg?v=technician1') + '" alt="" width="42" height="42">';
   var themes = ['ember','violet','mint','coral','teal','berry','amber','ice'];
   var themeIndex = -1;
   function rotateTheme() {
