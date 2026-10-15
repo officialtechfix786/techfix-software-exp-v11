@@ -253,7 +253,7 @@
     renderResources(resources);
     renderSolutions(solutions);
     var featuredModels = document.querySelector('#featured-models');
-    if (featuredModels) featuredModels.innerHTML = mobiles.filter(function (m) { return ['apple-iphone-18-pro','samsung-galaxy-s26-fe','google-pixel-10-pro','redmi-note-15-pro'].includes(m.id); }).map(function (m) { var image = url(m.image); var alt = m.brand + ' ' + m.name + (m.imageKind === 'illustration' ? ' device illustration' : ' device photograph'); return '<a class="card featured-device-card" href="' + esc(url('pages/mobiles.html?model=' + encodeURIComponent(m.id))) + '"><img class="featured-device-photo" src="' + esc(image) + '" alt="' + esc(alt) + '" width="500" height="330" loading="lazy" decoding="async"><span class="meta">' + esc(m.brand + ' · ' + m.year) + '</span><h3>' + esc(m.name) + '</h3><p>' + esc(m.description) + '</p><span class="source">' + esc(m.os) + ' · view details →</span></a>'; }).join('');
+    if (featuredModels) featuredModels.innerHTML = mobiles.filter(function (m) { return ['apple-iphone-16-pro','samsung-galaxy-s25-ultra','google-pixel-9','oneplus-oneplus-13'].includes(m.id); }).map(function (m) { var image = url(m.image); var alt = m.brand + ' ' + m.name + ' device photograph'; var credit = m.creditUrl ? '<span class="image-credit"><a href="' + esc(m.creditUrl) + '" target="_blank" rel="noopener">Photo: ' + esc(m.author) + '</a> · ' + esc(m.license) + '</span>' : ''; return '<a class="card featured-device-card" href="' + esc(url('pages/mobiles.html?model=' + encodeURIComponent(m.id))) + '"><img class="featured-device-photo" src="' + esc(image) + '" alt="' + esc(alt) + '" width="500" height="330" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="image-status" hidden>Photo unavailable</span><span class="meta">' + esc(m.brand + ' · ' + m.year) + '</span><h3>' + esc(m.name) + '</h3><p>' + esc(m.description) + '</p>' + credit + '<span class="source">' + esc(m.os) + ' · view details →</span></a>'; }).join('');
     var featuredBrands = document.querySelector('#featured-brands');
     if (featuredBrands) featuredBrands.innerHTML = ['Apple','Samsung','Google','Xiaomi','Redmi','POCO','OnePlus','OPPO','vivo','realme','TECNO','Infinix','Huawei','HONOR','Motorola','Nokia / HMD','Nothing','LG'].map(function (name) { return '<a class="brand-chip" href="' + esc(url('pages/mobiles.html?brand=' + encodeURIComponent(name))) + '">' + esc(name) + '</a>'; }).join('');
     var featuredTools = document.querySelector('#featured-tools');
@@ -268,3 +268,4 @@
     if (root) root.innerHTML = '<div class="empty">The catalogue could not load. Check the network connection and refresh.</div>';
   });
 }());
+
