@@ -13,13 +13,8 @@
   };
   var icon = '<svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M24 3 43 14v20L24 45 5 34V14L24 3Z" stroke="#FF7A00" stroke-width="2"/><path d="M15 30V18l9-5 9 5v12l-9 5-9-5Z" stroke="#C0C7D1" stroke-width="2"/><path d="m19 25 5-3 5 3-5 3-5-3Z" fill="#38BDF8"/></svg>';
   var themes = ['ember','violet','mint','coral','teal','berry','amber','ice'];
-  function rotateTheme() {
-    var current = document.body.dataset.theme || '';
-    var choices = themes.filter(function (name) { return name !== current; });
-    document.body.dataset.theme = choices[Math.floor(Math.random() * choices.length)];
-  }
+  function rotateTheme() { document.body.dataset.theme = 'ice'; }
   rotateTheme();
-  window.setInterval(rotateTheme, 8000);
   var nav = [['Home', 'index.html'], ['Mobiles', 'pages/mobiles.html'], ['Services', 'pages/services.html'], ['Android', 'pages/android.html'], ['Apple', 'pages/apple.html'], ['Downloads', 'pages/downloads.html'], ['Cyber Security', 'pages/cyber-security.html'], ['Contact', 'pages/contact.html']];
 
   function initChrome() {
