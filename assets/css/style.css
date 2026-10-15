@@ -12,3 +12,16 @@
 @media(max-width:380px){.hero-stage{min-height:320px}.work-photo{min-height:280px}.laptop-shot{min-height:250px}.work-photo figcaption strong{font-size:13px}.searchbox input{padding-right:138px}.searchbox form button{font-size:12px;padding:9px 11px}.searchbox form .clear-search{right:78px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
 
+/* Animated cyber colour field: restrained neon shifts every eight seconds. */
+body{position:relative;isolation:isolate;background:#07111f}
+body:before{content:"";position:fixed;z-index:-1;pointer-events:none;inset:-12%;background:radial-gradient(ellipse at 18% 25%,color-mix(in srgb,var(--cyan) 23%,transparent),transparent 32%),radial-gradient(ellipse at 76% 12%,color-mix(in srgb,var(--purple) 23%,transparent),transparent 34%),radial-gradient(ellipse at 65% 78%,color-mix(in srgb,var(--orange) 16%,transparent),transparent 33%),linear-gradient(#80c9ff08 1px,transparent 1px),linear-gradient(90deg,#80c9ff08 1px,transparent 1px);background-size:auto,auto,auto,54px 54px,54px 54px;mask-image:linear-gradient(180deg,#000 0%,#000b 55%,transparent 100%);opacity:.88;animation:cyberGlow 22s ease-in-out infinite alternate}
+body[data-theme="ice"]{--cyan:#55eaff;--blue:#6fa8ff;--purple:#a18bff;--orange:#ffb454}
+body[data-theme="violet"]{--cyan:#d39aff;--blue:#8e9dff;--purple:#f178d4;--orange:#ffc26e}
+body[data-theme="mint"]{--cyan:#71f1c3;--blue:#61d9ee;--purple:#94a7ff;--orange:#ffd166}
+body[data-theme="coral"]{--cyan:#ff8fa3;--blue:#ffad72;--purple:#d19cff;--orange:#ffd166}
+body[data-theme="teal"]{--cyan:#45f0d1;--blue:#49c8ff;--purple:#82cfff;--orange:#ffbd69}
+body[data-theme="berry"]{--cyan:#f28aff;--blue:#81d7ff;--purple:#ff78bd;--orange:#ffc46d}
+body[data-theme="amber"]{--cyan:#ffd45d;--blue:#ff9e66;--purple:#c39aff;--orange:#fff08b}
+body[data-theme="ember"]{--cyan:#ff9b5f;--blue:#ff6b88;--purple:#c28cff;--orange:#ffd166}
+@keyframes cyberGlow{0%{transform:translate3d(-1.5%,0,0) scale(1);filter:hue-rotate(-10deg)}100%{transform:translate3d(1.5%,1%,0) scale(1.04);filter:hue-rotate(18deg)}}
+@media(prefers-reduced-motion:reduce){body:before{animation:none!important}}

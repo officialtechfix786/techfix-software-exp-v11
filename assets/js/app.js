@@ -5,6 +5,8 @@
   var base = nested ? '../' : './';
   var page = document.body.dataset.page || 'home';
   var url = function (path) { return base + path; };
+  var assetsBase = new URL(base, location.href);
+  var mediaUrl = function (path) { var value = String(path || ''); return /^https?:/.test(value) ? value : new URL(value.replace(/^\/+/, ''), assetsBase).href; };
   var domainLabel = function (value) { try { return new URL(value, location.href).hostname.replace(/^www\./, ''); } catch (_error) { return 'publisher website'; } };
   var esc = function (value) {
     return String(value == null ? '' : value).replace(/[&<>"']/g, function (c) {
@@ -13,8 +15,13 @@
   };
   var icon = '<svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M24 3 43 14v20L24 45 5 34V14L24 3Z" stroke="#FF7A00" stroke-width="2"/><path d="M15 30V18l9-5 9 5v12l-9 5-9-5Z" stroke="#C0C7D1" stroke-width="2"/><path d="m19 25 5-3 5 3-5 3-5-3Z" fill="#38BDF8"/></svg>';
   var themes = ['ember','violet','mint','coral','teal','berry','amber','ice'];
-  function rotateTheme() { document.body.dataset.theme = 'ice'; }
+  var themeIndex = -1;
+  function rotateTheme() {
+    themeIndex = (themeIndex + 1) % themes.length;
+    document.body.dataset.theme = themes[themeIndex];
+  }
   rotateTheme();
+  window.setInterval(rotateTheme, 8000);
   var nav = [['Home', 'index.html'], ['Mobiles', 'pages/mobiles.html'], ['Services', 'pages/services.html'], ['Android', 'pages/android.html'], ['Apple', 'pages/apple.html'], ['Downloads', 'pages/downloads.html'], ['Cyber Security', 'pages/cyber-security.html'], ['Contact', 'pages/contact.html']];
 
   function initChrome() {
@@ -135,7 +142,7 @@
 
     function imageMarkup(m) {
       if (!m.image) return '<div class="model-icon" aria-hidden="true">' + esc(m.brand.slice(0, 2).toUpperCase()) + '</div><div class="image-status">Image unavailable · branded fallback</div>';
-      var src = /^https?:/.test(m.image) ? m.image : url(m.image);
+      var src = mediaUrl(m.image);
       var isIllustration = m.imageKind === 'illustration';
       var alt = isIllustration ? m.brand + ' ' + m.name + ' device illustration' : m.brand + ' ' + m.name + ' device photograph';
       var credit = isIllustration ? '<span class="image-credit">Original TechNex Labs device illustration</span>' : '<span class="image-credit"><a href="' + esc(m.creditUrl) + '" target="_blank" rel="noopener">Photo: ' + esc(m.author) + '</a> · resized for web · <a href="' + esc(m.licenseUrl) + '" target="_blank" rel="noopener">' + esc(m.license) + '</a></span>' ;
@@ -173,7 +180,7 @@
     var specs = model.specifications ? '<h3>Verified specifications</h3><dl class="spec-list">' + Object.entries(model.specifications).map(function (pair) { return '<div><dt>' + esc(pair[0]) + '</dt><dd>' + esc(pair[1]) + '</dd></div>'; }).join('') + '</dl><a class="source" href="' + esc(model.specSource || model.source) + '" target="_blank" rel="noopener">Specification source ↗</a>' : '<p class="note">Detailed specifications are not verified for this model.</p>';
     var nearby = mobiles.filter(function (m) { return m.brand === model.brand && m.id !== model.id; }).slice(0, 4);
     var otherLinks = model.os === 'iOS' ? [['Apple guides', 'pages/apple.html'], ['Software directory', 'pages/downloads.html']] : [['Android guides', 'pages/android.html'], ['Software directory', 'pages/downloads.html']];
-    var detailImageSrc = model.image && /^https?:/.test(model.image) ? model.image : url(model.image || '');
+    var detailImageSrc = mediaUrl(model.image || '');
     detail.classList.remove('hidden');
     detail.innerHTML = '<div class="eyebrow">Device reference · ' + esc(model.brand) + '</div><h2>' + esc(model.name) + '</h2><p>' + esc(model.description) + '</p><div class="columns"><div><span class="tag">Year ' + esc(model.year) + '</span><span class="tag">' + esc(model.os) + '</span><p><strong>Model identifier:</strong> ' + (model.modelNumber ? esc(model.modelNumber) : 'Not verified; check Settings, the device label, or manufacturer support.') + '</p><p><strong>Compatibility:</strong> Confirm full regional model, carrier, build, and firmware before servicing. This entry does not claim cross-variant support.</p>' + specs + '<h3>Care and data</h3><p>Back up first. Reset, restore, bootloader, and firmware procedures may erase data or prevent boot. Only work with owner authorization and manufacturer-supported instructions.</p><h3>Related resources</h3><ul class="list">' + otherLinks.map(function (item) { return '<li><a href="' + esc(url(item[1])) + '">' + esc(item[0]) + '</a></li>'; }).join('') + nearby.map(function (m) { return '<li><a href="' + esc(url('pages/mobiles.html?model=' + encodeURIComponent(m.id))) + '">' + esc(m.name) + ' · ' + esc(m.brand) + '</a></li>'; }).join('') + '</ul></div><div>' + (model.image ? '<img class="detail-photo" src="' + esc(detailImageSrc) + '" alt="' + esc(model.brand + ' ' + model.name + (model.imageKind === 'illustration' ? ' device illustration' : ' device photograph')) + '" width="500" height="500" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><div class="model-icon detail-fallback" hidden>' + esc(model.brand.slice(0, 2).toUpperCase()) + '<span class="image-status">Image unavailable · branded fallback</span></div>' : '<div class="model-icon detail-fallback">' + esc(model.brand.slice(0, 2).toUpperCase()) + '</div>') + '<a class="button secondary" href="' + esc(model.source) + '" target="_blank" rel="noopener">Manufacturer reference ↗</a><p class="source">Use the official source to verify current support and the exact variant.</p></div></div><button id="close-device-detail" class="secondary" type="button">Close details</button>';
     detail.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -248,7 +255,7 @@
     renderResources(resources);
     renderSolutions(solutions);
     var featuredModels = document.querySelector('#featured-models');
-    if (featuredModels) featuredModels.innerHTML = mobiles.filter(function (m) { return ['apple-iphone-16-pro','samsung-galaxy-s25-ultra','google-pixel-9','oneplus-oneplus-13'].includes(m.id); }).map(function (m) { var image = url(m.image); var alt = m.brand + ' ' + m.name + ' device photograph'; var credit = m.creditUrl ? '<span class="image-credit"><a href="' + esc(m.creditUrl) + '" target="_blank" rel="noopener">Photo: ' + esc(m.author) + '</a> · ' + esc(m.license) + '</span>' : ''; return '<a class="card featured-device-card" href="' + esc(url('pages/mobiles.html?model=' + encodeURIComponent(m.id))) + '"><img class="featured-device-photo" src="' + esc(image) + '" alt="' + esc(alt) + '" width="500" height="330" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="image-status" hidden>Photo unavailable</span><span class="meta">' + esc(m.brand + ' · ' + m.year) + '</span><h3>' + esc(m.name) + '</h3><p>' + esc(m.description) + '</p>' + credit + '<span class="source">' + esc(m.os) + ' · view details →</span></a>'; }).join('');
+    if (featuredModels) featuredModels.innerHTML = mobiles.filter(function (m) { return ['apple-iphone-16-pro','samsung-galaxy-s25-ultra','google-pixel-9','oneplus-oneplus-13'].includes(m.id); }).map(function (m) { var image = mediaUrl(m.image); var alt = m.brand + ' ' + m.name + ' device photograph'; var credit = m.creditUrl ? '<span class="image-credit"><a href="' + esc(m.creditUrl) + '" target="_blank" rel="noopener">Photo: ' + esc(m.author) + '</a> · ' + esc(m.license) + '</span>' : ''; return '<a class="card featured-device-card" href="' + esc(url('pages/mobiles.html?model=' + encodeURIComponent(m.id))) + '"><img class="featured-device-photo" src="' + esc(image) + '" alt="' + esc(alt) + '" width="500" height="330" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="image-status" hidden>Photo unavailable</span><span class="meta">' + esc(m.brand + ' · ' + m.year) + '</span><h3>' + esc(m.name) + '</h3><p>' + esc(m.description) + '</p>' + credit + '<span class="source">' + esc(m.os) + ' · view details →</span></a>'; }).join('');
     var featuredBrands = document.querySelector('#featured-brands');
     if (featuredBrands) featuredBrands.innerHTML = ['Apple','Samsung','Google','Xiaomi','Redmi','POCO','OnePlus','OPPO','vivo','realme','TECNO','Infinix','Huawei','HONOR','Motorola','Nokia / HMD','Nothing','LG'].map(function (name) { return '<a class="brand-chip" href="' + esc(url('pages/mobiles.html?brand=' + encodeURIComponent(name))) + '">' + esc(name) + '</a>'; }).join('');
     var featuredTools = document.querySelector('#featured-tools');
