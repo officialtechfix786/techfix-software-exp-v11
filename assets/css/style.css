@@ -290,3 +290,7 @@ a:hover{color:#d95a12}
 .software-label:hover,.software-label.active{color:#c75311}
 .label-count{color:#74849a}
 .model-icon{background:linear-gradient(145deg,#f1f5fa,#fff);color:#445873}
+
+/* Match the hero form wrapper to the white theme instead of exposing its old dark fill. */
+.searchbox form{background:#fff;border:1px solid #cbd6e5;border-radius:15px;box-shadow:0 5px 18px #253b5b0c}
+.searchbox form input{border-color:transparent;background:transparent;box-shadow:none}
