@@ -24,7 +24,7 @@
       }).join('') + '</nav></div>';
     }
     var footer = document.querySelector('#site-footer');
-    if (footer) footer.innerHTML = '<div class="wrap footgrid"><div><a class="brand" href="' + url('index.html') + '">' + icon + '<span>TECHNEX LABS<small>FOUNDED BY MIAN AHMAD</small></span></a><p>Mobile knowledge, device support resources, responsible security learning.</p></div><div class="footlinks"><a href="' + url('pages/contact.html') + '">Contact</a><a href="https://www.tiktok.com/@technexlab?is_from_webapp=1&amp;sender_device=pc" target="_blank" rel="noopener">TikTok ↗</a><a href="https://www.facebook.com/share/19GR9nnWdt/" target="_blank" rel="noopener">Facebook ↗</a><a href="mailto:officialtechfix786@gmail.com">Email ↗</a></div><div>© ' + new Date().getFullYear() + ' TechNex Labs · MIAN AHMAD</div></div>';
+    if (footer) footer.innerHTML = '<div class="wrap footgrid"><div><a class="brand" href="' + url('index.html') + '">' + icon + '<span>TECHNEX LABS<small>FOUNDED BY MIAN AHMAD</small></span></a><p>Mobile knowledge, device support resources, responsible security learning.</p></div><div class="footlinks"><a href="' + url('pages/contact.html') + '">Contact</a><a href=\"https://wa.me/97477955297\" target=\"_blank\" rel=\"noopener\">WhatsApp ↗</a><a href="https://www.tiktok.com/@technexlab?is_from_webapp=1&amp;sender_device=pc" target="_blank" rel="noopener">TikTok ↗</a><a href="https://www.facebook.com/share/19GR9nnWdt/" target="_blank" rel="noopener">Facebook ↗</a><a href="mailto:officialtechfix786@gmail.com">Email ↗</a></div><div>© ' + new Date().getFullYear() + ' TechNex Labs · MIAN AHMAD</div></div>';
 
     var menu = document.querySelector('.menu');
     var links = document.querySelector('#navlinks');
