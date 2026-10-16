@@ -14,14 +14,6 @@
     });
   };
   var icon = '<img class="brand-logo" src="' + url('assets/images/logo.svg?v=technician2') + '" alt="" width="48" height="48">';
-  var themes = ['ember','violet','mint','coral','teal','berry','amber','ice'];
-  var themeIndex = -1;
-  function rotateTheme() {
-    themeIndex = (themeIndex + 1) % themes.length;
-    document.body.dataset.theme = themes[themeIndex];
-  }
-  rotateTheme();
-  window.setInterval(rotateTheme, 8000);
   var nav = [['Home', 'index.html'], ['Mobiles', 'pages/mobiles.html'], ['Services', 'pages/services.html'], ['Android', 'pages/android.html'], ['Apple', 'pages/apple.html'], ['Downloads', 'pages/downloads.html'], ['Cyber Security', 'pages/cyber-security.html'], ['Contact', 'pages/contact.html']];
 
   function initChrome() {
