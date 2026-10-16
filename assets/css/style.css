@@ -43,3 +43,16 @@ body:before{opacity:1;background-image:radial-gradient(ellipse at 13% 20%,color-
 @media(max-width:760px){.nav{display:grid;grid-template-columns:1fr auto;grid-template-rows:61px 32px;min-height:104px;height:104px;padding:3px 15px 5px;justify-items:initial;align-items:center;gap:0}.nav>.brand{grid-column:1/-1;grid-row:1;position:absolute;top:3px;left:50%;transform:translateX(-50%)}.manager-tag{grid-column:1;grid-row:2;justify-self:start;align-self:center;font-size:8px;letter-spacing:.1em}.menu{grid-column:2;grid-row:2;justify-self:end;margin:0}.navlinks{top:103px}}
 /* Technician portrait brand mark */
 .brand-logo{width:48px;height:48px;display:block;flex:0 0 auto;border-radius:50%;object-fit:cover}.brand-logo{filter:drop-shadow(0 0 10px #4fe2d755)}@media(max-width:760px){.brand-logo{width:42px;height:42px}}
+
+/* Software directory: category sidebar with accessible filters. */
+.downloads-layout{display:grid;grid-template-columns:minmax(0,1fr) 250px;gap:30px;align-items:start;margin-top:22px}
+.downloads-main{min-width:0}
+.software-sidebar{position:sticky;top:22px;padding:20px 17px;border:1px solid #203b53;border-radius:17px;background:linear-gradient(145deg,#102036,#091522);box-shadow:0 14px 36px #0002}
+.software-sidebar h2{margin:0 0 7px;color:#eaf3fb;font:800 15px Manrope,sans-serif;letter-spacing:.08em}
+.software-sidebar>p{margin:0 0 14px;color:var(--muted);font-size:11px;line-height:1.5}
+#software-labels{display:grid;gap:3px}
+.software-label{display:flex;justify-content:space-between;align-items:center;gap:8px;width:100%;padding:8px 2px;border:0;border-bottom:1px solid #ffffff0b;background:transparent;color:#c4d2e0;text-align:left;font:500 12px/1.35 'DM Sans',system-ui,sans-serif;cursor:pointer}
+.software-label:hover,.software-label.active{color:var(--cyan)}
+.software-label.active{font-weight:800}
+.label-count{color:#91a5ba;font-size:10px}
+@media(max-width:760px){.downloads-layout{grid-template-columns:1fr;gap:18px}.software-sidebar{position:static;grid-row:1;padding:17px}.software-sidebar h2{font-size:14px}#software-labels{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:12px}.software-label{font-size:11px}}
