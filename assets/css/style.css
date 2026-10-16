@@ -178,3 +178,12 @@ button.secondary:hover,.button.secondary:hover{border-color:#ff9a47;color:#fff}
 }
 @media(max-width:400px){.hero-stage{min-height:340px}.phone-shot{width:56%;height:42%}.work-photo figcaption{left:10px;bottom:12px}.work-photo figcaption strong{font-size:13px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+
+/* Repair homepage collage on narrow screens: stack full-width photo cards in normal flow. */
+@media(max-width:760px){
+ .hero-stage{display:grid;position:relative;grid-template-columns:minmax(0,1fr);grid-auto-rows:minmax(280px,58vw);gap:14px;min-height:0;padding-bottom:28px}
+ .work-photo,.phone-shot,.laptop-shot{position:relative;inset:auto;left:auto;right:auto;top:auto;bottom:auto;width:100%;height:auto;min-height:0;margin:0;border-radius:16px}
+ .work-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+ .stage-badge{right:0;bottom:0}
+}
+@media(max-width:400px){.hero-stage{grid-auto-rows:minmax(240px,70vw)}}
