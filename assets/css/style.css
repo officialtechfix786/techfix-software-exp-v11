@@ -209,3 +209,84 @@ button.secondary:hover,.button.secondary:hover{border-color:#ff9a47;color:#fff}
  .phone-shot,.laptop-shot{grid-column:1;grid-row:auto}
  .stage-badge{position:absolute;grid-column:auto;grid-row:auto;right:0;bottom:0}
 }
+
+/* TechNex bright theme: clean white surfaces with vivid orange, blue, and violet accents. */
+:root{color-scheme:light;--bg:#f5f8ff;--surface:#ffffff;--surface2:#edf3ff;--line:#d7e0ef;--text:#17243b;--muted:#596a83;--cyan:#ef6a22;--blue:#2479e8;--orange:#f08a24;--purple:#8058da;--max:1280px}
+html{background:#f5f8ff}
+body{background:linear-gradient(135deg,#fff8ed 0%,#f5f8ff 42%,#f2f8ff 72%,#fff5f9 100%);color:#17243b}
+body:before{inset:-14%;opacity:.52;filter:none;animation:lightColorFlow 22s ease-in-out infinite alternate;background-image:radial-gradient(ellipse at 14% 18%,#ffbd4f46,transparent 34%),radial-gradient(ellipse at 82% 17%,#9670ff36,transparent 36%),radial-gradient(ellipse at 70% 76%,#46c9db32,transparent 37%),radial-gradient(ellipse at 24% 82%,#ff78a32b,transparent 34%),linear-gradient(#52688b0a 1px,transparent 1px),linear-gradient(90deg,#52688b0a 1px,transparent 1px);background-size:auto,auto,auto,auto,56px 56px,56px 56px;mask-image:linear-gradient(180deg,#000 0%,#0008 70%,transparent 100%)}
+@keyframes lightColorFlow{0%{transform:translate3d(-1%,0,0) scale(1)}100%{transform:translate3d(1%,1%,0) scale(1.04)}}
+.topbar{background:#ffffffed;border-bottom-color:#dbe3ef;box-shadow:0 4px 18px #18365c0a}
+.brand-name{color:#17243b}
+.brand small,.footgrid .brand small{color:#ed6c24!important}
+.manager-tag{color:#64748b}
+.navlinks a{color:#4a5a71}
+.navlinks a[aria-current=page],.navlinks a:hover{color:#d95a12;border-color:#f07a28}
+.menu{background:#fff;border-color:#d6dfec;color:#17243b}
+button,.button{background:linear-gradient(110deg,#ff812c,#ffc24a);color:#28160a;box-shadow:0 8px 22px #f0782a22}
+button:hover,.button:hover{color:#28160a}
+button.secondary,.button.secondary{background:linear-gradient(120deg,#eef5ff,#f3edff);border-color:#cbd9ed;color:#23436b;box-shadow:none}
+button.secondary:hover,.button.secondary:hover{border-color:#638fe0;color:#17385e}
+a:hover{color:#d95a12}
+.text-link,.source,.tile-link,.rate-card>a{color:#c75311}
+:focus-visible{outline-color:#f07828}
+.hero h1 em{background:linear-gradient(100deg,#ed681f,#de4ea3,#675fe2,#198fd1);background-clip:text;-webkit-background-clip:text;color:transparent}
+.eyebrow,.founder-kicker:before,.work-photo figcaption span,.tile-icon,.laptop-tile .tile-icon,.security-tile .tile-icon{color:#df5e18}
+.founder-kicker{background:#fff7ed;border-color:#f3b17e;color:#59432e}
+.hero-label{color:#697991}
+.lead{color:#52647e}
+.searchbox input,.toolbar input,.toolbar select,.field input,.field textarea,#software-group{background:#fff;border-color:#cbd6e5;color:#18263d;box-shadow:0 4px 16px #253b5b0a}
+.searchbox input::placeholder{color:#8391a5}
+.search-suggestions button{background:#fff;border-color:#d6dfec;color:#40536e;box-shadow:none}
+.search-results{background:#fff;border-color:#cbd6e5;box-shadow:0 18px 48px #20365220}
+.search-results a{border-color:#e8edf4}
+.hero-stage .work-photo{border-color:#ffffff;box-shadow:0 20px 48px #24385024}
+.work-photo figcaption span{color:#ffc06b}
+.photo-credit{background:#ffffffed;border-color:#ffffff;color:#26364c;box-shadow:0 3px 12px #0002}
+.stage-badge{background:#fff;border-color:#f0c08d;color:#68431f;box-shadow:0 7px 20px #28395016}
+.status-dot{background:#26ad79;box-shadow:0 0 12px #26ad79}
+.proof-strip,.proof-strip>div{border-color:#dce4ef}
+.proof-strip strong{color:#df641b}
+.proof-strip span{color:#455873}
+.section-tint{background:linear-gradient(120deg,#eef5ffed,#fff9f2e8);border-color:#dce5f1}
+.sectionhead p,.pagehead p{color:#5e6e84}
+.card,.rate-card,.software-sidebar,.model-icon,.empty,.guide-card,.contact .card,.cta{border-color:#d9e2ef;background:linear-gradient(145deg,#fff,#f7faff);box-shadow:0 12px 30px #18375912;color:#1c2d46}
+.card:hover{border-color:#efa35c;box-shadow:0 16px 36px #1837591c}
+.card p,.rate-card p,.service-tile p,.list{color:#596b83}
+.card h3,.rate-card h3,.service-tile h3,.guide-body h3{color:#1b2b43}
+.iconbox,.rate-icon{background:#fff2e7;border-color:#ffd1ae;color:#df641b}
+.tag{border-color:#d7e1ef;background:#f3f7fc;color:#485d78}
+.service-tile,.laptop-tile,.security-tile{border-color:#d8e1ee;background:linear-gradient(145deg,#fff,#f4f7fc);color:#1b2b43}
+.service-tile:after{border-color:#f0a56a40;box-shadow:0 0 0 24px #f0a56a0d,0 0 0 50px #f0a56a08}
+.service-tile:hover{border-color:#e78a43}
+.tile-index,.rate-card .meta{color:#697b93}
+.rate-card strong{border-color:#e3e9f1;color:#50627b}
+.rate-card strong b,.price{color:#d95b18}
+.brand-chip{border-color:#d6e0ed;background:#fff;color:#344b69;box-shadow:0 3px 10px #1735540a}
+.brand-chip:hover{border-color:#e9a15d;background:#fff6ed;color:#a84710}
+.featured-device-photo,.model-photo{background:radial-gradient(ellipse at 50% 40%,#f0f5fb,#fff 78%)}
+.image-credit,.image-status,.meta{color:#64748b}
+.cta-panel{border-color:#f1c39d;background:radial-gradient(ellipse at 87% 16%,#ffc84b36,transparent 42%),linear-gradient(120deg,#fff1e4,#f3f5ff 72%);box-shadow:0 20px 48px #253c5b14;color:#1c2d46}
+.cta-panel p{color:#586981}
+.cta-mark{border-color:#dbe3ef}
+.cta-mark span{color:#d95b18}
+.pagehead{border-color:#d8e3f0;background:radial-gradient(ellipse at 92% 4%,#76c9ef2b,transparent 40%),linear-gradient(120deg,#fff4e8,#f0f5ff);box-shadow:0 16px 42px #253c5b12}
+.pagehead:after{border-color:#8270d52b;box-shadow:0 0 0 34px #8270d50c,0 0 0 68px #f08b2410}
+.pagehead .eyebrow{color:#d95b18}
+.model-card,.software-card{background:#fff;border-color:#d9e2ef}
+.model-photo,.detail-photo{border-color:#d8e1ee;background:#f7f9fc}
+.spec-list>div{border-color:#e3e9f1}
+.spec-list dt,.meta,.pill{color:#677991}
+.guide-card summary p{color:#5b6d85}
+.guide-card summary:after{color:#d95b18}
+.note{border-left-color:#ed832d;background:#fff4e9;color:#574b3b}
+.footer{background:#edf3fb;border-color:#d5dfeb;color:#596b83}
+.footlinks a{color:#40546f}
+.footlinks a:hover{color:#d95a12}
+.software-sidebar{background:#fff}
+.software-sidebar h2{color:#1b2b43}
+.software-sidebar>p{color:#697b93}
+.software-label{color:#455871;border-color:#e8edf4}
+.software-label:hover,.software-label.active{color:#c75311}
+.label-count{color:#74849a}
+.model-icon{background:linear-gradient(145deg,#f1f5fa,#fff);color:#445873}
