@@ -192,7 +192,18 @@
     if (list) {
       var input = document.querySelector('#software-query');
       var group = document.querySelector('#software-group');
+      var labels = document.querySelector('#software-labels');
+      var activeCategory = '';
       var generalSoftware = software.filter(function (item) { return !/security|web|password|wireless|asset discovery/i.test(item.category); });
+      function drawLabels() {
+        if (!labels) return;
+        var counts = {};
+        generalSoftware.forEach(function (item) { counts[item.category] = (counts[item.category] || 0) + 1; });
+        var categories = Object.keys(counts).sort(function (a, b) { return a.localeCompare(b); });
+        labels.innerHTML = '<button class="software-label' + (!activeCategory ? ' active' : '') + '" type="button" data-category="" aria-pressed="' + (!activeCategory) + '"><span>All software</span><span class="label-count">' + generalSoftware.length + '</span></button>' + categories.map(function (category) {
+          return '<button class="software-label' + (activeCategory === category ? ' active' : '') + '" type="button" data-category="' + esc(category) + '" aria-pressed="' + (activeCategory === category) + '"><span>' + esc(category) + '</span><span class="label-count">' + counts[category] + '</span></button>';
+        }).join('');
+      }
       function matchesGroup(item) {
         if (!group || group.value === 'all') return true;
         var category = item.category.toLowerCase();
@@ -202,13 +213,22 @@
       }
       function draw() {
         var q = input.value.trim().toLowerCase();
-        var found = generalSoftware.filter(function (item) { return matchesGroup(item) && [item.name, item.category, item.description, item.publisher, (item.systems || []).join(' '), item.caution].join(' ').toLowerCase().includes(q); });
+        var found = generalSoftware.filter(function (item) { return (!activeCategory || item.category === activeCategory) && matchesGroup(item) && [item.name, item.category, item.description, item.publisher, (item.systems || []).join(' '), item.caution].join(' ').toLowerCase().includes(q); });
         list.innerHTML = found.length ? found.map(function (item) {
           return '<article class="card software-card" id="' + esc(item.id) + '"><div class="iconbox software-icon" aria-hidden="true">' + esc(item.name.slice(0, 2).toUpperCase()) + '</div><span class="tag">' + esc(item.category) + '</span><h3>' + esc(item.name) + '</h3><p>' + esc(item.description) + '</p><div class="meta">Publisher/project: ' + esc(item.publisher) + ' · Platforms: ' + esc((item.systems || []).join(', ')) + '</div>' + (item.version ? '<p class="meta">Version: ' + esc(item.version) + (item.versionChecked ? ' · checked ' + esc(item.versionChecked) : '') + '</p>' : '') + '<p class="note">' + esc(item.caution) + '</p><a class="button secondary" href="' + esc(item.url) + '" target="_blank" rel="noopener">Open official download page <span class="button-host">' + esc(domainLabel(item.url)) + ' ↗</span></a><div class="source">Source: <a href="' + esc(item.source || item.url) + '" target="_blank" rel="noopener">verify at publisher</a></div></article>';
         }).join('') : '<div class="empty">No software matches. Try a publisher, platform, or category.</div>';
       }
+      if (labels) labels.addEventListener('click', function (event) {
+        var button = event.target.closest('[data-category]');
+        if (!button) return;
+        activeCategory = button.getAttribute('data-category') || '';
+        drawLabels();
+        draw();
+        list.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
       input.addEventListener('input', draw);
       if (group) group.addEventListener('change', draw);
+      drawLabels();
       draw();
       if (location.hash) setTimeout(function () { var target = document.getElementById(decodeURIComponent(location.hash.slice(1))); if (target) target.scrollIntoView({ block: 'center' }); }, 100);
     }
