@@ -1,5 +1,19 @@
 [
   {
+    "id": "technex-solutions",
+    "name": "Technex Solutions",
+    "category": "Computer software",
+    "publisher": "TechNex Labs",
+    "description": "PC booster by TechNex Labs intended to improve system performance and running efficiency.",
+    "url": "https://www.mediafire.com/file/yvxtqodemj9ymnk/Technex+Labs.rar/file",
+    "source": "https://www.tiktok.com/@technexlab",
+    "sourceLabel": "TechNex Labs profile",
+    "systems": [
+      "Windows"
+    ],
+    "caution": "User-provided RAR archive hosted on MediaFire. Its contents have not been independently reviewed; scan it before extracting or running."
+  },
+  {
     "id": "android-sdk-platform-tools",
     "name": "Android SDK Platform-Tools",
     "category": "Android",
