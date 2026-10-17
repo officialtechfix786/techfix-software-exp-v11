@@ -8,6 +8,29 @@
   var assetsBase = new URL(base, location.href);
   var mediaUrl = function (path) { var value = String(path || ''); return /^https?:/.test(value) ? value : new URL(value.replace(/^\/+/, ''), assetsBase).href; };
   var domainLabel = function (value) { try { return new URL(value, location.href).hostname.replace(/^www\./, ''); } catch (_error) { return 'publisher website'; } };
+  function initAurora() {
+    var palettes = [
+      ['#ff7a45','#9b6cff','#35b9cf'], ['#f04e98','#7b61ff','#20b9a7'],
+      ['#ff9a3c','#3b82f6','#a855f7'], ['#16a085','#3498db','#f39c12'],
+      ['#ff5f6d','#845ec2','#00c9a7'], ['#ff6b35','#4f46e5','#06b6d4'],
+      ['#db2777','#2563eb','#84cc16'], ['#d946ef','#0ea5e9','#f97316']
+    ];
+    var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function shift() {
+      var p = palettes[Math.floor(Math.random() * palettes.length)];
+      document.documentElement.style.setProperty('--glow-one', p[0]);
+      document.documentElement.style.setProperty('--glow-two', p[1]);
+      document.documentElement.style.setProperty('--glow-three', p[2]);
+    }
+    shift();
+    if (!reduced) window.setInterval(shift, 12000);
+  }
+  function publisherLogo(href, label) {
+    var host = domainLabel(href);
+    var initials = String(label || host).replace(/[^a-z0-9 ]/gi, ' ').trim().split(/\s+/).slice(0, 2).map(function (part) { return part.charAt(0); }).join('').toUpperCase();
+    var logo = 'https://www.google.com/s2/favicons?domain_url=' + encodeURIComponent('https://' + host) + '&sz=128';
+    return '<span class="publisher-logo"><img src="' + esc(logo) + '" alt="" width="48" height="48" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span hidden aria-hidden="true">' + esc(initials || 'TL') + '</span></span>';
+  }
   var esc = function (value) {
     return String(value == null ? '' : value).replace(/[&<>"']/g, function (c) {
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
@@ -131,6 +154,7 @@
     var reset = document.querySelector('#reset-filters');
     var detail = document.querySelector('#mobile-detail');
     brand.innerHTML = '<option value="">All brands</option>' + Array.from(new Set(mobiles.map(function (m) { return m.brand; }))).sort().map(function (b) { return '<option value="' + esc(b) + '">' + esc(b) + '</option>'; }).join('');
+    var count = document.querySelector('#mobile-result-count');
 
     function imageMarkup(m) {
       if (!m.image) return '<div class="model-icon" aria-hidden="true">' + esc(m.brand.slice(0, 2).toUpperCase()) + '</div><div class="image-status">Image unavailable · branded fallback</div>';
@@ -146,10 +170,11 @@
     function draw() {
       var q = query.value.trim().toLowerCase();
       var items = mobiles.filter(function (m) {
-        var terms = [m.brand, m.name, m.os, m.modelNumber, m.year].join(' ').toLowerCase();
+        var terms = [m.brand, m.name, m.os, m.modelNumber, m.year, m.description, Object.values(m.specifications || {}).join(' ')].join(' ').toLowerCase();
         return (!q || terms.includes(q)) && (!brand.value || m.brand === brand.value) && (!os.value || m.os === os.value);
       });
       items.sort(function (a, b) { return sort.value === 'year' ? Number(b.year || 0) - Number(a.year || 0) || a.name.localeCompare(b.name) : a.name.localeCompare(b.name); });
+      if (count) count.textContent = 'Showing ' + items.length.toLocaleString() + ' of ' + mobiles.length.toLocaleString() + ' verified catalogue entries';
       root.innerHTML = items.length ? items.map(function (m) {
         return '<article class="card model-card" id="device-' + esc(m.id) + '"><div class="model-visual">' + imageMarkup(m) + '</div><div class="meta">' + esc(m.brand) + ' · ' + esc(m.year) + '</div><h3>' + esc(m.name) + '</h3><p>' + esc(m.description) + '</p><span class="tag">' + esc(m.os) + '</span><div class="model-actions"><a class="button secondary" href="' + esc(url('pages/mobiles.html?model=' + encodeURIComponent(m.id))) + '">View device details</a><a class="source" href="' + esc(m.source) + '" target="_blank" rel="noopener">Manufacturer source ↗</a></div></article>';
       }).join('') : '<div class="empty">No models match. Change or reset filters.</div>';
@@ -207,7 +232,7 @@
         var q = input.value.trim().toLowerCase();
         var found = generalSoftware.filter(function (item) { return (!activeCategory || item.category === activeCategory) && matchesGroup(item) && [item.name, item.category, item.description, item.publisher, (item.systems || []).join(' '), item.caution].join(' ').toLowerCase().includes(q); });
         list.innerHTML = found.length ? found.map(function (item) {
-          return '<article class="card software-card" id="' + esc(item.id) + '"><div class="iconbox software-icon" aria-hidden="true">' + esc(item.name.slice(0, 2).toUpperCase()) + '</div><span class="tag">' + esc(item.category) + '</span><h3>' + esc(item.name) + '</h3><p>' + esc(item.description) + '</p><div class="meta">Publisher/project: ' + esc(item.publisher) + ' · Platforms: ' + esc((item.systems || []).join(', ')) + '</div>' + (item.version ? '<p class="meta">Version: ' + esc(item.version) + (item.versionChecked ? ' · checked ' + esc(item.versionChecked) : '') + '</p>' : '') + '<p class="note">' + esc(item.caution) + '</p><a class="button secondary" href="' + esc(item.url) + '" target="_blank" rel="noopener">Open download link <span class="button-host">' + esc(domainLabel(item.url)) + ' ↗</span></a><div class="source">Source: <a href="' + esc(item.source || item.url) + '" target="_blank" rel="noopener">' + esc(item.sourceLabel || 'verify at publisher') + '</a></div></article>';
+          return '<article class="card software-card" id="' + esc(item.id) + '"><div class="software-card-head">' + publisherLogo(item.url, item.publisher) + '<span class="tag">' + esc(item.category) + '</span></div><h3>' + esc(item.name) + '</h3><p>' + esc(item.description) + '</p><div class="meta">Publisher/project: ' + esc(item.publisher) + ' · Platforms: ' + esc((item.systems || []).join(', ')) + '</div>' + (item.version ? '<p class="meta">Version: ' + esc(item.version) + (item.versionChecked ? ' · checked ' + esc(item.versionChecked) : '') + '</p>' : '') + '<p class="note">' + esc(item.caution) + '</p><a class="button secondary" href="' + esc(item.url) + '" target="_blank" rel="noopener">Open download link <span class="button-host">' + esc(domainLabel(item.url)) + ' ↗</span></a><div class="source">Source: <a href="' + esc(item.source || item.url) + '" target="_blank" rel="noopener">' + esc(item.sourceLabel || 'verify at publisher') + '</a></div></article>';
         }).join('') : '<div class="empty">No software matches. Try a publisher, platform, or category.</div>';
       }
       if (labels) labels.addEventListener('click', function (event) {
@@ -233,7 +258,7 @@
         var q = input.value.trim().toLowerCase();
         var found = subset.filter(function (item) { return [item.name, item.category, item.description, item.publisher].join(' ').toLowerCase().includes(q); });
         security.innerHTML = found.length ? found.map(function (item) {
-          return '<article class="card software-card" id="security-' + esc(item.id) + '"><span class="tag">' + esc(item.category) + '</span><h3>' + esc(item.name) + '</h3><p>' + esc(item.description) + '</p><div class="meta">Project: ' + esc(item.publisher) + ' · ' + esc((item.systems || []).join(', ')) + '</div><p class="note">' + esc(item.caution) + '</p><a class="button secondary" href="' + esc(item.url) + '" target="_blank" rel="noopener">Visit official project <span class="button-host">' + esc(domainLabel(item.url)) + ' ↗</span></a></article>';
+          return '<article class="card software-card" id="security-' + esc(item.id) + '"><div class="software-card-head">' + publisherLogo(item.url, item.publisher) + '<span class="tag">' + esc(item.category) + '</span></div><h3>' + esc(item.name) + '</h3><p>' + esc(item.description) + '</p><div class="meta">Project: ' + esc(item.publisher) + ' · ' + esc((item.systems || []).join(', ')) + '</div><p class="note">' + esc(item.caution) + '</p><a class="button secondary" href="' + esc(item.url) + '" target="_blank" rel="noopener">Visit official project <span class="button-host">' + esc(domainLabel(item.url)) + ' ↗</span></a></article>';
         }).join('') : '<div class="empty">No security tools match.</div>';
       }
       input.addEventListener('input', drawSecurity);
@@ -258,6 +283,7 @@
     });
   }
 
+  initAurora();
   initChrome();
   Promise.all([load('mobiles'), load('software'), load('resources'), load('solutions')]).then(function (data) {
     var mobiles = data[0], software = data[1], resources = data[2], solutions = data[3];
@@ -270,7 +296,7 @@
     if (featuredModels) featuredModels.innerHTML = mobiles.filter(function (m) { return ['apple-iphone-16-pro','samsung-galaxy-s25-ultra','google-pixel-9','oneplus-oneplus-13'].includes(m.id); }).map(function (m) { var image = mediaUrl(m.image); var alt = m.brand + ' ' + m.name + ' device photograph'; var details = url('pages/mobiles.html?model=' + encodeURIComponent(m.id)); var credit = m.creditUrl ? '<span class="image-credit"><a href="' + esc(m.creditUrl) + '" target="_blank" rel="noopener">Photo: ' + esc(m.author) + '</a> · ' + esc(m.license) + '</span>' : ''; return '<article class="card featured-device-card"><a class="featured-device-main" href="' + esc(details) + '"><img class="featured-device-photo" src="' + esc(image) + '" alt="' + esc(alt) + '" width="500" height="330" loading="eager" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="image-status" hidden>Photo unavailable</span><span class="meta">' + esc(m.brand + ' · ' + m.year) + '</span><h3>' + esc(m.name) + '</h3><p>' + esc(m.description) + '</p></a>' + credit + '<a class="source featured-detail-link" href="' + esc(details) + '">' + esc(m.os) + ' · view details →</a></article>'; }).join('');    var featuredBrands = document.querySelector('#featured-brands');
     if (featuredBrands) featuredBrands.innerHTML = ['Apple','Samsung','Google','Xiaomi','Redmi','POCO','OnePlus','OPPO','vivo','realme','TECNO','Infinix','Huawei','HONOR','Motorola','Nokia / HMD','Nothing','LG'].map(function (name) { return '<a class="brand-chip" href="' + esc(url('pages/mobiles.html?brand=' + encodeURIComponent(name))) + '">' + esc(name) + '</a>'; }).join('');
     var featuredTools = document.querySelector('#featured-tools');
-    if (featuredTools) featuredTools.innerHTML = software.filter(function (item) { return ['technex-solutions','android-sdk-platform-tools','android-studio','owasp-zap'].includes(item.id); }).map(function (item) { return card(item.name, item.description, url((/security|web|password|wireless|asset discovery/i.test(item.category) ? 'pages/cyber-security.html#security-' : 'pages/downloads.html#') + item.id), item.category); }).join('');
+    if (featuredTools) featuredTools.innerHTML = software.filter(function (item) { return ['technex-solutions','android-sdk-platform-tools','android-studio','owasp-zap'].includes(item.id); }).map(function (item) { var href=url((/security|web|password|wireless|asset discovery/i.test(item.category) ? 'pages/cyber-security.html#security-' : 'pages/downloads.html#') + item.id); return '<a class="card featured-tool-card" href="' + esc(href) + '">' + publisherLogo(item.url,item.publisher) + '<span class="tag">' + esc(item.category) + '</span><h3>' + esc(item.name) + '</h3><p>' + esc(item.description) + '</p><span class="source">Open resource ↗</span></a>'; }).join('');
     if (location.hash && !/downloads/.test(location.pathname)) setTimeout(function () { var target = document.getElementById(decodeURIComponent(location.hash.slice(1))); if (target) target.scrollIntoView({block:'start'}); }, 80);
   }).catch(function (error) {
     console.error(error);
@@ -281,3 +307,4 @@
     if (root) root.innerHTML = '<div class="empty">The catalogue could not load. Check the network connection and refresh.</div>';
   });
 }());
+
