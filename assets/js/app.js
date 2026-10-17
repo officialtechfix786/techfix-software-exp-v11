@@ -278,7 +278,8 @@
       if (!root) return;
       var items = solutions.filter(function (guide) { return guide.category === category; });
       root.innerHTML = items.map(function (guide) {
-        return '<details class="card guide-card" id="guide-' + esc(guide.id) + '"><summary><span class="tag">' + esc(guide.category) + '</span><strong>' + esc(guide.title) + '</strong><p>' + esc(guide.summary) + '</p></summary><div class="guide-body"><h3>Scope</h3><p>' + esc(guide.scope) + '</p><h3>Before you start</h3><p>' + esc(guide.prerequisites) + '</p><h3>Checklist</h3><ol class="list">' + guide.steps.map(function (step) { return '<li>' + esc(step) + '</li>'; }).join('') + '</ol><p class="note"><strong>Risks:</strong> ' + esc(guide.risks) + '</p><a class="button secondary" href="' + esc(guide.sourceUrl) + '" target="_blank" rel="noopener">' + esc(guide.sourceName) + ' ↗</a></div></details>';
+        var art = category === 'Apple' ? '<img class="guide-visual" src="' + esc(url('assets/images/apple/safety-guide.svg')) + '" alt="" loading="lazy" decoding="async">' : '';
+        return '<details class="card guide-card" id="guide-' + esc(guide.id) + '">' + art + '<summary><span class="tag">' + esc(guide.category) + '</span><strong>' + esc(guide.title) + '</strong><p>' + esc(guide.summary) + '</p></summary><div class="guide-body"><h3>Scope</h3><p>' + esc(guide.scope) + '</p><h3>Before you start</h3><p>' + esc(guide.prerequisites) + '</p><h3>Checklist</h3><ol class="list">' + guide.steps.map(function (step) { return '<li>' + esc(step) + '</li>'; }).join('') + '</ol><p class="note"><strong>Risks:</strong> ' + esc(guide.risks) + '</p><a class="button secondary" href="' + esc(guide.sourceUrl) + '" target="_blank" rel="noopener">' + esc(guide.sourceName) + ' ↗</a></div></details>';
       }).join('');
     });
   }
