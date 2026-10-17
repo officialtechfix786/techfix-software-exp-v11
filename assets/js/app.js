@@ -72,6 +72,14 @@
         var navIcons = ['⌂', '▣', '⌁', '◉', '◌', '↓', '⌘', '✉'];
         return '<a data-nav="' + index + '" href="' + url(item[1]) + '" ' + (page === item[1].replace('pages/', '').replace('.html', '') ? 'aria-current="page"' : '') + '><span class="nav-icon" aria-hidden="true">' + navIcons[index] + '</span><span>' + item[0] + '</span></a>';
       }).join('') + '</nav></div>';
+      var navContainer = header.querySelector('.nav');
+      var globalSearch = document.querySelector('.searchbox');
+      if (!globalSearch) {
+        navContainer.insertAdjacentHTML('beforeend', '<div class="searchbox header-searchbox"><form id="search-form" role="search"><label class="sr-only" for="global-search">Search devices, software, services, and guides</label><span class="mag" aria-hidden="true">⌕</span><input id="global-search" type="search" placeholder="Search everything: phones, software, services…" autocomplete="off"><button id="clear-search" class="clear-search" type="button" aria-label="Clear search">Clear</button><button type="submit">Search</button></form><div id="search-results" class="search-results hidden" role="list" aria-label="Search results" aria-live="polite"></div></div>');
+        globalSearch = navContainer.querySelector('.searchbox');
+      }
+      globalSearch.classList.add('header-searchbox');
+      navContainer.insertBefore(globalSearch, navContainer.querySelector('.navlinks'));
     }
     var footer = document.querySelector('#site-footer');
     if (footer) footer.innerHTML = '<div class="wrap footgrid"><div><a class="brand" href="' + url('index.html') + '">' + icon + '<span>TECHNEX LABS<small>FOUNDED BY MIAN AHMAD</small></span></a><p>Mobile knowledge, device support resources, responsible security learning.</p></div><div class="footlinks"><a href="' + url('pages/contact.html') + '">Contact</a><a href=\"https://wa.me/97477955297\" target=\"_blank\" rel=\"noopener\">WhatsApp ↗</a><a href="https://www.tiktok.com/@technexlab?is_from_webapp=1&amp;sender_device=pc" target="_blank" rel="noopener">TikTok ↗</a><a href="https://www.facebook.com/share/19GR9nnWdt/" target="_blank" rel="noopener">Facebook ↗</a><a href="mailto:officialtechfix786@gmail.com">Email ↗</a></div><div>© ' + new Date().getFullYear() + ' TechNex Labs · MIAN AHMAD</div></div>';
@@ -124,7 +132,15 @@
       var target = g.category === 'Apple' ? 'apple' : g.category === 'Cybersecurity' ? 'cyber-security' : 'android';
       return { title: g.title, desc: g.summary, kind: g.category + ' guide', url: url('pages/' + target + '.html#guide-' + encodeURIComponent(g.id)), search: [g.title, g.summary, g.category, g.scope, g.prerequisites, (g.steps || []).join(' '), g.risks].join(' ') };
     });
-    var all = modelResults.concat(tools, refs, guides);
+    var serviceResults = [
+      { title: 'Phone support and repair', desc: 'Supported phone diagnostics, software recovery, updates, and setup.', kind: 'Service', url: url('pages/services.html'), search: 'phone mobile repair diagnostics software recovery update setup service' },
+      { title: 'Laptop setup and repair', desc: 'Windows setup, drivers, licensed apps, and computer care.', kind: 'Service', url: url('pages/services.html'), search: 'laptop computer windows drivers install apps setup repair service' },
+      { title: 'Apple device support', desc: 'Apple ownership, backup, restore, and care resources.', kind: 'Service', url: url('pages/apple.html'), search: 'apple iphone ipad mac ios backup restore support service' },
+      { title: 'Android device support', desc: 'Android updates, backup, recovery, and device guides.', kind: 'Service', url: url('pages/android.html'), search: 'android samsung pixel xiaomi backup recovery updates support service' },
+      { title: 'Cybersecurity learning', desc: 'Authorized defensive learning resources and safe practice labs.', kind: 'Learning', url: url('pages/cyber-security.html'), search: 'cyber security ethical learning lab defense security tools' },
+      { title: 'Contact and WhatsApp', desc: 'Contact TechNex Labs for a service inquiry.', kind: 'Contact', url: url('pages/contact.html'), search: 'contact whatsapp phone appointment help' }
+    ];
+    var all = modelResults.concat(tools, refs, guides, serviceResults);
     var input = document.querySelector('#global-search');
     var results = document.querySelector('#search-results');
     var form = document.querySelector('#search-form');
