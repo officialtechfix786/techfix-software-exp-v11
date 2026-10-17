@@ -761,3 +761,24 @@ body[data-page="downloads"] .downloads-main>.meta a{color:#74efff;text-decoratio
 body[data-page="downloads"] .downloads-main>.toolbar input,body[data-page="downloads"] .downloads-main>.toolbar select{border-color:#a968df;background:linear-gradient(120deg,#17142b,#0d2030);box-shadow:inset 0 1px #ffffff12,0 8px 24px #0004}
 body[data-page="downloads"] #resource-list .card{border-color:#59d9d28a;background:radial-gradient(ellipse at 95% 0,#39d6cd45,transparent 50%),linear-gradient(145deg,#123b43,#112032 75%);box-shadow:0 17px 42px #20c9c329}
 @media(max-width:760px){body[data-page="downloads"] .pagehead{min-height:0;padding-top:52px}body[data-page="downloads"] .pagehead:before{top:17px;left:20px;right:auto;font-size:8px}body[data-page="downloads"] .downloads-layout{grid-template-columns:1fr;gap:18px}body[data-page="downloads"] .software-sidebar{grid-row:1}body[data-page="downloads"] #software-list .software-card{min-height:0}}
+/* Keep the site palette stable and put reliable contrast first. */
+body[data-page="home"]{--glow-one:#ff9168!important;--glow-two:#9a78ff!important;--glow-three:#35cdbd!important}
+body:not([data-page="cyber-security"]) .topbar{background:linear-gradient(108deg,#101827 0%,#17152b 55%,#0d2529 100%);border-bottom:1px solid #ffffff24;box-shadow:0 12px 36px #030712b8,inset 0 1px #ffffff15}
+.topbar .brand-logo.brand-avatar{display:block;width:58px;height:58px;flex:0 0 58px;object-fit:cover;object-position:50% 45%;border:2px solid #f4b37d;border-radius:17px;background:#101827;box-shadow:0 0 0 4px #f4b37d25,0 0 25px #f0845750;filter:none}
+.topbar .brand-name{color:#fff!important;text-shadow:0 1px 14px #70d8f330}
+.topbar .brand small{color:#67e4d8!important}
+.topbar .header-searchbox input{border-color:#3d5268;background:#101827;color:#fff}
+.topbar .header-searchbox input::placeholder{color:#c4cede;opacity:1}
+.topbar .header-searchbox input:focus-visible{outline:2px solid #58e5d4;outline-offset:3px}
+.topbar .header-searchbox .mag{color:#7aefe0}
+body:not([data-page="cyber-security"]) .navlinks a{border:1px solid #ffffff24;border-bottom:1px solid #ffffff24;border-radius:13px;color:#f8faff;background:linear-gradient(135deg,#1a2637,#141c2a);box-shadow:inset 0 1px #ffffff16,0 5px 13px #0005}
+body:not([data-page="cyber-security"]) .navlinks a:nth-child(4n+1) .nav-icon{color:#ffb17b;background:#ff9b6522}
+body:not([data-page="cyber-security"]) .navlinks a:nth-child(4n+2) .nav-icon{color:#80caff;background:#63baff22}
+body:not([data-page="cyber-security"]) .navlinks a:nth-child(4n+3) .nav-icon{color:#63e7c2;background:#41d3ad22}
+body:not([data-page="cyber-security"]) .navlinks a:nth-child(4n) .nav-icon{color:#caa4ff;background:#b384ff24}
+body:not([data-page="cyber-security"]) .navlinks a:hover,body:not([data-page="cyber-security"]) .navlinks a[aria-current="page"]{border-color:#53dfd2;background:linear-gradient(130deg,#17383b,#20223b);color:#fff;box-shadow:0 0 0 1px #53dfd225,0 8px 21px #27cdb526}
+body[data-page="home"] .hero h1,body[data-page="home"] .hero h1 span{color:#fff!important;-webkit-text-fill-color:#fff;background:none;text-shadow:0 5px 28px #0009}
+body[data-page="home"] .hero h1 em{color:#ffb482!important;-webkit-text-fill-color:#ffb482;text-shadow:0 0 26px #ff976c55}
+body[data-page="home"] .hero .lead{color:#f2f4fb!important}
+body[data-page="home"] .hero .eyebrow,body[data-page="home"] .hero .founder-kicker{color:#ffd5b7!important}
+@media(max-width:760px){.topbar .brand-logo.brand-avatar{width:44px;height:44px;flex-basis:44px;border-radius:14px}.topbar .brand-name{font-size:16px}}

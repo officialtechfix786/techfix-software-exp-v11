@@ -9,21 +9,9 @@
   var mediaUrl = function (path) { var value = String(path || ''); return /^https?:/.test(value) ? value : new URL(value.replace(/^\/+/, ''), assetsBase).href; };
   var domainLabel = function (value) { try { return new URL(value, location.href).hostname.replace(/^www\./, ''); } catch (_error) { return 'publisher website'; } };
   function initAurora() {
-    var palettes = [
-      ['#ff7a45','#9b6cff','#35b9cf'], ['#f04e98','#7b61ff','#20b9a7'],
-      ['#ff9a3c','#3b82f6','#a855f7'], ['#16a085','#3498db','#f39c12'],
-      ['#ff5f6d','#845ec2','#00c9a7'], ['#ff6b35','#4f46e5','#06b6d4'],
-      ['#db2777','#2563eb','#84cc16'], ['#d946ef','#0ea5e9','#f97316']
-    ];
-    var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    function shift() {
-      var p = palettes[Math.floor(Math.random() * palettes.length)];
-      document.documentElement.style.setProperty('--glow-one', p[0]);
-      document.documentElement.style.setProperty('--glow-two', p[1]);
-      document.documentElement.style.setProperty('--glow-three', p[2]);
-    }
-    shift();
-    if (!reduced) window.setInterval(shift, 12000);
+    document.documentElement.style.setProperty('--glow-one', '#ff9168');
+    document.documentElement.style.setProperty('--glow-two', '#9a78ff');
+    document.documentElement.style.setProperty('--glow-three', '#35cdbd');
   }
   function publisherLogo(href, label) {
     var host = domainLabel(href);
@@ -36,7 +24,7 @@
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
     });
   };
-  var icon = '<img class="brand-logo" src="' + url('assets/images/logo.svg?v=technex-lab-3') + '" alt="" width="48" height="48">';
+  var icon = '<img class="brand-logo brand-avatar" src="https://images.pexels.com/photos/33531815/pexels-photo-33531815.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=240" alt="Technician repairing a phone at a workbench" width="58" height="58">';
   var nav = [['Home', 'index.html'], ['Mobiles', 'pages/mobiles.html'], ['Services', 'pages/services.html'], ['Android', 'pages/android.html'], ['Apple', 'pages/apple.html'], ['Downloads', 'pages/downloads.html'], ['Cyber Security', 'pages/cyber-security.html'], ['Contact', 'pages/contact.html']];
 
   function addCardVisuals() {
@@ -75,7 +63,7 @@
       var navContainer = header.querySelector('.nav');
       var globalSearch = document.querySelector('.searchbox');
       if (!globalSearch) {
-        navContainer.insertAdjacentHTML('beforeend', '<div class="searchbox header-searchbox"><form id="search-form" role="search"><label class="sr-only" for="global-search">Search devices, software, services, and guides</label><span class="mag" aria-hidden="true">⌕</span><input id="global-search" type="search" placeholder="Search everything: phones, software, services…" autocomplete="off"><button id="clear-search" class="clear-search" type="button" aria-label="Clear search">Clear</button><button type="submit">Search</button></form><div id="search-results" class="search-results hidden" role="list" aria-label="Search results" aria-live="polite"></div></div>');
+        navContainer.insertAdjacentHTML('beforeend', '<div class="searchbox header-searchbox"><form id="search-form" role="search"><label class="sr-only" for="global-search">Search devices, software, services, and guides</label><span class="mag" aria-hidden="true">⌕</span><input id="global-search" type="search" placeholder="Search anything…" autocomplete="off"><button id="clear-search" class="clear-search" type="button" aria-label="Clear search">Clear</button><button type="submit">Search</button></form><div id="search-results" class="search-results hidden" role="list" aria-label="Search results" aria-live="polite"></div></div>');
         globalSearch = navContainer.querySelector('.searchbox');
       }
       globalSearch.classList.add('header-searchbox');
