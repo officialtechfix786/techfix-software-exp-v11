@@ -36,14 +36,41 @@
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
     });
   };
-  var icon = '<img class="brand-logo" src="' + url('assets/images/logo.svg?v=technician2') + '" alt="" width="48" height="48">';
+  var icon = '<img class="brand-logo" src="' + url('assets/images/logo.svg?v=technex-lab-3') + '" alt="" width="48" height="48">';
   var nav = [['Home', 'index.html'], ['Mobiles', 'pages/mobiles.html'], ['Services', 'pages/services.html'], ['Android', 'pages/android.html'], ['Apple', 'pages/apple.html'], ['Downloads', 'pages/downloads.html'], ['Cyber Security', 'pages/cyber-security.html'], ['Contact', 'pages/contact.html']];
+
+  function addCardVisuals() {
+    var themed = {
+      home: ['workbench.svg', 'phone.svg', 'laptop.svg', 'shield.svg'],
+      android: ['android.svg', 'phone.svg', 'network.svg', 'cloud.svg'],
+      apple: ['apple.svg', 'cloud.svg', 'shield.svg', 'phone.svg'],
+      services: ['workbench.svg', 'phone.svg', 'laptop.svg', 'support.svg'],
+      downloads: ['software.svg', 'android.svg', 'apple.svg', 'shield.svg'],
+      'cyber-security': ['cyber-terminal.svg', 'network.svg', 'shield.svg', 'cyber-terminal.svg'],
+      contact: ['support.svg', 'social.svg', 'phone.svg', 'network.svg'],
+      mobiles: ['phone.svg', 'android.svg', 'apple.svg', 'laptop.svg']
+    };
+    var choices = themed[page] || themed.home;
+    document.querySelectorAll('.card:not(.model-card),.rate-card,.service-tile').forEach(function (node, index) {
+      if (node.querySelector('img')) return;
+      var src = url('assets/images/visuals/' + choices[index % choices.length]);
+      var image = document.createElement('img');
+      image.className = 'card-visual';
+      image.src = src;
+      image.alt = '';
+      image.setAttribute('aria-hidden', 'true');
+      image.loading = 'lazy';
+      image.decoding = 'async';
+      node.insertBefore(image, node.firstChild);
+    });
+  }
 
   function initChrome() {
     var header = document.querySelector('#site-header');
     if (header) {
-      header.innerHTML = '<div class="wrap nav"><a class="brand" href="' + url('index.html') + '">' + icon + '<span><strong class="brand-name">MIAN AHMAD</strong><small>TECHNEX LABS</small></span></a><span class="manager-tag">Manager: Miss Areeha Rao</span><button class="menu" aria-expanded="false" aria-controls="navlinks" type="button">☰ <span class="sr-only">Menu</span></button><nav id="navlinks" class="navlinks" aria-label="Main navigation">' + nav.map(function (item) {
-        return '<a href="' + url(item[1]) + '" ' + (page === item[1].replace('pages/', '').replace('.html', '') ? 'aria-current="page"' : '') + '>' + item[0] + '</a>';
+      header.innerHTML = '<div class="wrap nav"><a class="brand" href="' + url('index.html') + '">' + icon + '<span><strong class="brand-name">MIAN AHMAD</strong><small>TECHNEX LABS</small></span></a><span class="manager-tag">Manager: Miss Areeha Rao</span><button class="menu" aria-expanded="false" aria-controls="navlinks" type="button">☰ <span class="sr-only">Menu</span></button><nav id="navlinks" class="navlinks" aria-label="Main navigation">' + nav.map(function (item, index) {
+        var navIcons = ['⌂', '▣', '⌁', '◉', '◌', '↓', '⌘', '✉'];
+        return '<a data-nav="' + index + '" href="' + url(item[1]) + '" ' + (page === item[1].replace('pages/', '').replace('.html', '') ? 'aria-current="page"' : '') + '><span class="nav-icon" aria-hidden="true">' + navIcons[index] + '</span><span>' + item[0] + '</span></a>';
       }).join('') + '</nav></div>';
     }
     var footer = document.querySelector('#site-footer');
@@ -299,6 +326,7 @@
     var featuredTools = document.querySelector('#featured-tools');
     if (featuredTools) featuredTools.innerHTML = software.filter(function (item) { return ['technex-solutions','android-sdk-platform-tools','android-studio','owasp-zap'].includes(item.id); }).map(function (item) { var href=url((/security|web|password|wireless|asset discovery/i.test(item.category) ? 'pages/cyber-security.html#security-' : 'pages/downloads.html#') + item.id); return '<a class="card featured-tool-card" href="' + esc(href) + '">' + publisherLogo(item.url,item.publisher) + '<span class="tag">' + esc(item.category) + '</span><h3>' + esc(item.name) + '</h3><p>' + esc(item.description) + '</p><span class="source">Open resource ↗</span></a>'; }).join('');
     if (location.hash && !/downloads/.test(location.pathname)) setTimeout(function () { var target = document.getElementById(decodeURIComponent(location.hash.slice(1))); if (target) target.scrollIntoView({block:'start'}); }, 80);
+    addCardVisuals();
   }).catch(function (error) {
     console.error(error);
     document.querySelectorAll('[data-error]').forEach(function (node) { node.textContent = 'Resource data could not be loaded. Refresh the page or check its JSON files.'; node.classList.remove('hidden'); });
@@ -308,4 +336,3 @@
     if (root) root.innerHTML = '<div class="empty">The catalogue could not load. Check the network connection and refresh.</div>';
   });
 }());
-
