@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - codex/technex-website
+      - main
   workflow_dispatch:
 
 permissions:
