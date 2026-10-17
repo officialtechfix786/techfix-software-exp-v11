@@ -50,7 +50,7 @@
   }
 
   async function load(name) {
-    var response = await fetch(url('database/' + name + '.json'));
+    var response = await fetch(url('database/' + name + '.json?v=technex-solutions-2'));
     if (!response.ok) throw new Error(name + ' data unavailable (' + response.status + ')');
     return response.json();
   }
