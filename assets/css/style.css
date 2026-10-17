@@ -438,3 +438,174 @@ body:not([data-page="cyber-security"]) .brand-name{color:#16213a}
 body:not([data-page="cyber-security"]) .manager-tag{color:#414a69}
 body:not([data-page="cyber-security"]) .menu{background:linear-gradient(135deg,#ef6f50,#8265dc);border-color:#ffffff9c;color:#fff;box-shadow:0 8px 20px #46327d30}
 @media(max-width:760px){body[data-page="home"] .section.wrap{width:min(calc(100% - 18px),1320px);padding:28px 16px;margin-block:18px;border-radius:24px}}
+Warning: truncated output (original token count: 14868)
+Total output lines: 480
+
+/* Cybersecurity gets a vivid, cinematic lab treatment while keeping the content focused on authorized learning. */
+body[data-page="cyber-security"]{background:radial-gradient(ellipse at 8% 14%,#00f59b25,transparent 27%),radial-gradient(ellipse at 94% 35%,#00b8ff22,transparent 31%),linear-gradient(145deg,#030910,#06151b 48%,#07111f)}
+body[data-page="cyber-security"]:before{opacity:.72;background-image:linear-gradient(#00ff9d13 1px,transparent 1px),linear-gradient(90deg,#00ff9d13 1px,transparent 1px),repeating-linear-gradient(0deg,#00ff9d05 0 1px,transparent 1px 5px);background-size:36px 36px,36px 36px,100% 5px;mask-image:linear-gradient(#000,transparent 90%)}
+body[data-page="cyber-security"] .cyber-pagehead{min-height:560px;border:1px solid #14f4a76b;background:radial-gradient(ellipse at 76% 50%,#00e9a528,transparent 40%),linear-gradient(120deg,#04100f 0%,#071b22 52%,#07101c);box-shadow:0 0 0 1px #00d98913,0 30px 90px #00d98920,inset 0 0 70px #00e89b0c}
+body[data-page="cyber-security"] .cyber-pagehead:before{content:"AUTHORIZED ACCESS  /  DEFENSE LAB  /  LIVE MONITOR";position:absolute;z-index:2;right:28px;top:23px;color:#75ffd0a6;font:700 9px/1.4 monospace;letter-spacing:.2em;text-shadow:0 0 12px #00ffaa}
+body[data-page="cyber-security"] .cyber-pagehead:after{right:8%;bottom:4%;width:380px;height:380px;border-color:#00f5a749;box-shadow:0 0 0 22px #00f5a710,0 0 0 48px #00f5a70b,0 0 65px #00f5a721;animation:cyber-pulse 5s ease-in-out infinite}
+body[data-page="cyber-security"] .cyber-copy{width:59%;position:relative;z-index:3}
+body[data-page="cyber-security"] .cyber-copy:before{content:"";position:absolute;z-index:-1;inset:-25px -38px -24px -24px;background:linear-gradient(90deg,#04100ff2 65%,#04100f00);pointer-events:none}
+body[data-page="cyber-security"] .cyber-pagehead h1{max-width:700px;color:#b2ffdb;text-shadow:0 0 9px #16ffae,0 0 40px #00d98d70}
+body[data-page="cyber-security"] .cyber-pagehead .eyebrow{color:#46ffc0;text-shadow:0 0 16px #00ffa5}
+body[data-page="cyber-security"] .cyber-pagehead .lead{color:#d0f9e9}
+body[data-page="cyber-security"] .cyber-pagehead .note{border:1px solid #ffc05b66;border-left:4px solid #ffb547;background:linear-gradient(100deg,#2a1d0dcc,#182116c9);color:#ffe7b3;box-shadow:0 0 30px #ff9e1b15}
+body[data-page="cyber-security"] .cyber-status span{border-color:#25e9a477;background:#031e18e8;box-shadow:inset 0 0 20px #00ff9d13,0 0 18px #00e98a1c;color:#77ffd0}
+body[data-page="cyber-security"] .cyber-hero-art{right:1%;width:47%;max-height:92%;filter:drop-shadow(0 0 24px #00f1a745) drop-shadow(0 25px 42px #000b)}
+body[data-page="cyber-security"] .section .card{border-color:#1cc78c47;background:linear-gradient(145deg,#0b201feF,#091722 70%);box-shadow:0 14px 38px #0007,inset 0 1px #41ffc018;transition:transform .25s,border-color .25s,box-shadow .25s}
+body[data-page="cyber-security"] .section .card:hover{transform:translateY(-6px);border-color:#38ffc0;box-shadow:0 18px 48px #00d98d21,0 0 24px #00d98d19}
+body[data-page="cyber-security"] .section .tag{border-color:#18c98c55;background:#00b87518;color:#81f7cb}
+body[data-page="cyber-security"] .section h2{color:#d5ffed;text-shadow:0 0 24px #00e79b30}
+@keyframes cyber-pulse{0%,100%{opacity:.55;transform:scale(.97)}50%{opacity:1;transform:scale(1.025)}}
+
+/* A different accent system per manufacturer makes the device catalogue feel curated rather than cloned. */
+body[data-page="mobiles"] #mobile-list{align-items:stretch}
+body[data-page="mobiles"] .model-card{--device-accent:#57d6ff;--device-secondary:#7472ff;position:relative;isolation:isolate;overflow:hidden;border:1px solid color-mix(in srgb,var(--device-accent) 46%,#25384f);border-radius:23px;background:radial-gradient(ellipse at 85% 0%,color-mix(in srgb,var(--device-accent) 26%,transparent),transparent 45%),linear-gradient(150deg,color-mix(in srgb,var(--device-secondary) 16%,#101a2c),#0a1220 72%);box-shadow:0 15px 38px #0005,inset 0 1px color-mix(in srgb,var(--device-accent) 35%,transparent);transition:transform .24s,border-color .24s,box-shadow .24s}
+body[data-page="mobiles"] .model-card:before{content:"";position:absolute;z-index:-1;right:-60px;top:108px;width:180px;height:180px;border:1px solid color-mix(in srgb,var(--device-accent) 55%,transparent);border-radius:44% 56% 53% 47%;box-shadow:0 0 0 17px color-mix(in srgb,var(--device-accent) 7%,transparent),0 0 45px color-mix(in srgb,var(--device-accent) 19%,transparent);transform:rotate(22deg);pointer-events:none}
+body[data-page="mobiles"] .model-card:hover{transform:translateY(-7px);border-color:var(--device-accent);box-shadow:0 22px 48px color-mix(in srgb,var(--device-accent) 17%,#000),0 0 22px color-mix(in srgb,var(--device-accent) 20%,transparent)}
+body[data-page="mobiles"] .model-card .model-photo{height:220px;border:1px solid color-mix(in srgb,var(--device-accent) 42%,transparent);background:radial-gradient(ellipse at 48% 43%,color-mix(in srgb,var(--device-accent) 31%,#14223a),#080f1c 74%);filter:drop-shadow(0 10px 18px #0007)}
+body[data-page="mobiles"] .model-card .model-icon{color:var(--device-accent);border:1px solid color-mix(in srgb,var(--device-accent) 42%,transparent);background:radial-gradient(circle at 50% 35%,color-mix(in srgb,var(--device-accent) 25%,#182138),#080f1c 75%);font-size:32px;text-shadow:0 0 20px color-mix(in srgb,var(--device-accent) 58%,transparent)}
+body[data-page="mobiles"] .model-card .meta,body[data-page="mobiles"] .model-card .source{color:var(--device-accent)}
+body[data-page="mobiles"] .model-card h3{font-size:19px;letter-spacing:-.025em}
+body[data-page="mobiles"] .model-card .tag{border-color:color-mix(in srgb,var(--device-accent) 45%,transparent);background:color-mix(in srgb,var(--device-accent) 12%,transparent);color:#eef8ff}
+body[data-page="mobiles"] .model-card .button.secondary{border-color:color-mix(in srgb,var(--device-accent) 55%,#26384c);background:linear-gradient(110deg,color-mix(in srgb,var(--device-accent) 25%,#101a29),color-mix(in srgb,var(--device-secondary) 25%,#101a29));box-shadow:0 7px 20px color-mix(in srgb,var(--device-accent) 12%,transparent)}
+body[data-page="mobiles"] .brand-apple{--device-accent:#ff8a9e;--device-secondary:#b48aff}
+body[data-page="mobiles"] .brand-samsung{--device-accent:#73baff;--device-secondary:#5b71ed}
+body[data-page="mobiles"] .brand-google{--device-accent:#ffbd66;--device-secondary:#5bd2a2}
+body[data-page="mobiles"] .brand-xiaomi,body[data-page="mobiles"] .brand-redmi{--device-accent:#ff845e;--device-secondary:#ffbe57}
+body[data-page="mobiles"] .brand-poco{--device-accent:#e3f35c;--device-secondary:#83ce55}
+body[data-page="mobiles"] .brand-oneplus{--device-accent:#ff656f;--device-secondary:#d44854}
+body[data-page="mobiles"] .brand-oppo{--device-accent:#7be19b;--device-secondary:#38ab7d}
+body[data-page="mobiles"] .brand-vivo{--device-accent:#76d6ff;--device-secondary:#696cff}
+body[data-page="mobiles"] .brand-realme{--device-accent:#ffd65d;--device-secondary:#f2a84e}
+body[data-page="mobiles"] .brand-tecno{--device-accent:#5cf0dc;--device-secondary:#3b8dd9}
+body[data-page="mobiles"] .brand-infinix{--device-accent:#85e96d;--device-secondary:#29b7a0}
+body[data-page="mobiles"] .brand-huawei{--device-accent:#ff7f8b;--device-secondary:#d23d5c}
+body[data-page="mobiles"] .brand-honor{--device-accent:#ba9bff;--device-secondary:#6795ff}
+body[data-page="mobiles"] .brand-motorola{--device-accent:#7dbeff;--device-secondary:#4465d9}
+body[data-page="mobiles"] .brand-nokia-hmd{--device-accent:#74d7ff;--device-secondary:#177bb9}
+body[data-page="mobiles"] .brand-nothing{--device-accent:#f1f1f1;--device-secondary:#9ca8b5}
+body[data-page="mobiles"] .brand-lg{--device-accent:#ff8fbd;--device-secondary:#a24b91}
+body[data-page="mobiles"] .brand-chip{border-color:color-mix(in srgb,var(--device-accent) 45%,#26384c)}
+@media(max-width:820px){body[data-page="cyber-security"] .cyber-pagehead{min-height:590px;padding-bottom:245px}body[data-page="cyber-security"] .cyber-copy{width:100%}body[data-page="cyber-security"] .cyber-copy:before{inset:-18px -10px -16px -10px;background:linear-gradient(90deg,#04100ff5 35%,#04100fdd 76%,#04100f55)}body[data-page="cyber-security"] .cyber-hero-art{right:1%;width:74%;max-height:240px;opacity:.92}body[data-page="cyber-security"] .cyber-pagehead:before{right:16px;top:14px;font-size:7px}}
+@media(max-width:520px){body[data-page="cyber-security"] .cyber-pagehead{min-height:0;padding-bottom:205px}body[data-page="cyber-security"] .cyber-hero-art{width:90%;max-height:195px}body[data-page="mobiles"] .model-card .model-photo{height:245px}}
+@media(prefers-reduced-motion:reduce){body[data-page="cyber-security"] .cyber-pagehead:after{animation:none}}
+
+/* Animated cyber colour field: restrained neon shifts every eight seconds. */
+body{position:relative;isolation:isolate;background:#07111f}
+body:before{content:"";position:fixed;z-index:-1;pointer-events:none;inset:-12%;background:radial-gradient(ellipse at 18% 25%,color-mix(in srgb,var(--cyan) 23%,transparent),transparent 32%),radial-gradient(ellipse at 76% 12%,color-mix(in srgb,var(--purple) 23%,transparent),transparent 34%),radial-gradient(ellipse at 65% 78%,color-mix(in srgb,var(--orange) 16%,transparent),transparent 33%),linear-gradient(#80c9ff08 1px,transparent 1px),linear-gradient(90deg,#80c9ff08 1px,transparent 1px);background-size:auto,auto,auto,54px 54px,54px 54px;mask-image:linear-gradient(180deg,#000 0%,#000b 55%,transparent 100%);opacity:.88;animation:cyberGlow 22s ease-in-out infinite alternate}
+body[data-theme="ice"]{--cyan:#55eaff;--blue:#6fa8ff;--purple:#a18bff;--orange:#ffb454}
+body[data-theme="violet"]{--cyan:#d39aff;--blue:#8e9dff;--purple:#f178d4;--orange:#ffc26e}
+body[data-theme="mint"]{--cyan:#71f1c3;--blue:#61d9ee;--purple:#94a7ff;--orange:#ffd166}
+body[data-theme="coral"]{--cyan:#ff8fa3;--blue:#ffad72;--purple:#d19cff;--orange:#ffd166}
+body[data-theme="teal"]{--cyan:#45f0d1;--blue:#49c8ff;--purple:#82cfff;--orange:#ffbd69}
+body[data-theme="berry"]{--cyan:#f28aff;--blue:#81d7ff;--purple:#ff78bd;--orange:#ffc46d}
+body[data-theme="amber"]{--cyan:#ffd45d;--blue:#ff9e66;--purple:#c39aff;--orange:#fff08b}
+body[data-theme="ember"]{--cyan:#ff9b5f;--blue:#ff6b88;--purple:#c28cff;--orange:#ffd166}
+@keyframes cyberGlow{0%{transform:translate3d(-1.5%,0,0) scale(1);filter:hue-rotate(-10deg)}100%{transform:translate3d(1.5%,1%,0) scale(1.04);filter:hue-rotate(18deg)}}
+@media(prefers-reduced-motion:reduce){body:before{animation:none!important}}
+
+/* TechNex flagship pages: visual options, editorial service cards, bolder home hero. */
+.service-option-grid,.apple-option-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
+.apple-option-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.option-card{position:relative;min-width:0;overflow:hidden;display:flex;flex-direction:column;align-items:flex-start;padding:15px 18px 21px;border:1px solid #fff;border-radius:26px;background:linear-gradient(145deg,#fff,#f8f7ff);box-shadow:0 18px 45px #26395513;transition:transform .25s,box-shadow .25s,border-color .25s}
+.option-card:hover{transform:translateY(-6px);border-color:color-mix(in srgb,var(--glow-two) 35%,white);box-shadow:0 26px 54px #26395521}
+.option-art{width:100%;height:auto;aspect-ratio:1.42;object-fit:cover;display:block;margin-bottom:17px;border-radius:18px;background:#eef2fc}
+.option-card>.tag{margin-bottom:10px;color:#5f54b8;background:linear-gradient(100deg,#f3efff,#edf7ff);border-color:#e7e0ff;font-size:10px;letter-spacing:.09em;font-weight:900}
+.option-card h3{font-size:19px;line-height:1.25;letter-spacing:-.025em;margin:2px 0 7px}
+.option-card p{font-size:13px;line-height:1.65}.option-card .price{font-size:18px;font-weight:900;color:#d85128;margin:3px 0 8px}
+.option-card>.button,.option-card>.source{margin-top:auto}.option-card>.button{align-self:stretch;min-height:46px;margin-top:14px}
+.option-links{display:grid;gap:9px;margin-top:auto;padding-top:12px;font-size:12px;fon…8868 tokens truncated…der-color:transparent;background:transparent;box-shadow:none}
+
+/* Keep hero photo captions readable over the photo tint in the light theme. */
+.work-photo figcaption strong{color:#fff;text-shadow:0 1px 8px #0008}.work-photo figcaption span{color:#ffd08a}
+
+/* Give every information card a visual and keep it aligned with its page topic. */
+.card-visual{display:block;width:100%;height:150px;object-fit:cover;border:1px solid #ffffff;border-radius:17px;margin:0 0 17px;background:#101a30}
+.guide-card>.card-visual{height:130px;margin-bottom:12px}
+.service-tile>.card-visual,.rate-card>.card-visual{height:125px;object-fit:cover;border-radius:18px}
+.featured-device-card .card-visual,.model-card .card-visual{display:none}
+body[data-page="cyber-security"]{color:#e2f3ef;background:radial-gradient(ellipse at 78% 8%,#0b573f88,transparent 36%),radial-gradient(ellipse at 12% 42%,#102c4b88,transparent 40%),linear-gradient(145deg,#06101b,#091a24 55%,#07111d);background-attachment:fixed}
+body[data-page="cyber-security"]:before{opacity:.28;background-image:linear-gradient(#48e5a812 1px,transparent 1px),linear-gradient(90deg,#48e5a812 1px,transparent 1px);background-size:32px 32px;mask-image:linear-gradient(180deg,#000 0%,#0008 72%,transparent)}
+body[data-page="cyber-security"] .topbar{background:#07131ee8;border-color:#164233;box-shadow:0 10px 35px #0007}
+body[data-page="cyber-security"] .brand-name,body[data-page="cyber-security"] .navlinks a{color:#e2f3ef}
+body[data-page="cyber-security"] .navlinks a:hover,body[data-page="cyber-security"] .navlinks a[aria-current=page]{background:#0c3028;color:#78ffc4}
+body[data-page="cyber-security"] .manager-tag{color:#8eb4a9}
+body[data-page="cyber-security"] .pagehead{position:relative;min-height:430px;overflow:hidden;border:1px solid #1b7358;background:radial-gradient(ellipse at 82% 35%,#0c714b55,transparent 42%),linear-gradient(130deg,#071722,#0b1c28 62%,#091a25);box-shadow:0 30px 85px #0008}
+body[data-page="cyber-security"] .pagehead:after{border-color:#41e6a344;box-shadow:0 0 0 36px #2cdf9e0d,0 0 0 72px #1eaf9b0a}
+.cyber-copy{position:relative;z-index:2;width:min(58%,700px)}
+body[data-page="cyber-security"] .pagehead h1,body[data-page="cyber-security"] h2{color:#e8fff5}
+body[data-page="cyber-security"] .pagehead .eyebrow,body[data-page="cyber-security"] .eyebrow{color:#69f4b7}
+body[data-page="cyber-security"] .lead,body[data-page="cyber-security"] .sectionhead p{color:#a8c4bd}
+body[data-page="cyber-security"] .pagehead .note{border-color:#34d999;background:#0a2b25;color:#bcebd6}
+.cyber-hero-art{position:absolute;z-index:1;right:2.5%;top:50%;width:42%;max-height:86%;object-fit:contain;transform:translateY(-50%);filter:drop-shadow(0 25px 40px #0008)}
+.cyber-status{display:flex;gap:20px;flex-wrap:wrap;margin-top:18px;color:#71e9b7;font:800 11px/1.5 Manrope,Arial,sans-serif;letter-spacing:.12em}
+.cyber-status span{padding:9px 12px;border:1px solid #236d52;border-radius:999px;background:#0a2822}
+.cyber-status i{display:inline-block;width:7px;height:7px;margin-right:7px;border-radius:50%;background:#48f6a5;box-shadow:0 0 13px #48f6a5}
+body[data-page="cyber-security"] .card,body[data-page="cyber-security"] .guide-card,body[data-page="cyber-security"] .cta{border:1px solid #1d4b42;background:linear-gradient(145deg,#0d202a,#0a1822);box-shadow:0 18px 42px #0005;color:#d9eee7}
+body[data-page="cyber-security"] .card:hover,body[data-page="cyber-security"] .guide-card:hover{border-color:#39c98e;box-shadow:0 20px 50px #00bb7740}
+body[data-page="cyber-security"] .card h3,body[data-page="cyber-security"] .guide-card strong{color:#effff8}
+body[data-page="cyber-security"] .card p,body[data-page="cyber-security"] .list,body[data-page="cyber-security"] .guide-body p{color:#a5bdb6}
+body[data-page="cyber-security"] .tag{border-color:#23654e;background:#0d3027;color:#7cf2b9}
+body[data-page="cyber-security"] a,body[data-page="cyber-security"] .text-link,body[data-page="cyber-security"] .source{color:#66e9ae}
+body[data-page="cyber-security"] .toolbar{border-color:#1a5143;background:#0a1b25e8;box-shadow:0 12px 32px #0006}
+body[data-page="cyber-security"] .toolbar input,body[data-page="cyber-security"] .toolbar select{border-color:#255247;background:#0c2029;color:#e4f4ef}
+body[data-page="cyber-security"] .toolbar input::placeholder,body[data-page="cyber-security"] .meta{color:#91aaa3}
+body[data-page="cyber-security"] .software-card{border-color:#1f5847;background:linear-gradient(145deg,#0d232b,#0a1922)}
+body[data-page="cyber-security"] .software-card .publisher-logo{border-color:#27594b;background:#102b30}
+body[data-page="cyber-security"] .software-card .note{border-color:#49d997;background:#0e3028;color:#bee9d6}
+body[data-page="cyber-security"] .footer{border-color:#164233;background:#07131ee8;color:#99b9ad}
+body[data-page="cyber-security"] .footlinks a{color:#6ce9b4}
+body[data-page="cyber-security"] .button,body[data-page="cyber-security"] a.button{border-color:#51e5a1;background:linear-gradient(110deg,#28ba80,#147b73);color:#041710;box-shadow:0 12px 26px #07ba7b30}
+@media(max-width:820px){body[data-page="cyber-security"] .pagehead{min-height:0;padding-bottom:245px}.cyber-copy{width:100%}.cyber-hero-art{right:3%;top:auto;bottom:7px;width:64%;max-height:225px;transform:none}}
+@media(max-width:520px){.card-visual{height:128px}.cyber-status{gap:8px}body[data-page="cyber-security"] .pagehead{padding-bottom:198px}.cyber-hero-art{width:77%;max-height:180px}}
+
+/* Colorful navigation tiles make the key pages easy to spot at a glance. */
+.navlinks a{display:inline-flex;align-items:center;gap:7px;padding:8px 10px;border:1px solid transparent;border-radius:13px;color:#fff;background:linear-gradient(135deg,#f07838,#c74e73);box-shadow:0 8px 18px #17243a24;transition:transform .2s,filter .2s,box-shadow .2s}
+.navlinks a[data-nav="1"]{background:linear-gradient(135deg,#536ff0,#7b57db)}
+.navlinks a[data-nav="2"]{background:linear-gradient(135deg,#13a99f,#167a9a)}
+.navlinks a[data-nav="3"]{background:linear-gradient(135deg,#38a66d,#198974)}
+.navlinks a[data-nav="4"]{background:linear-gradient(135deg,#424f69,#65758c)}
+.navlinks a[data-nav="5"]{background:linear-gradient(135deg,#e07c39,#ca4d52)}
+.navlinks a[data-nav="6"]{background:linear-gradient(135deg,#177d66,#135e72)}
+.navlinks a[data-nav="7"]{background:linear-gradient(135deg,#ca4b9b,#8054c8)}
+.navlinks a .nav-icon{display:grid;place-items:center;width:22px;height:22px;border-radius:7px;background:#ffffff2c;color:#fff;font-size:15px;font-weight:900;line-height:1}
+.navlinks a[aria-current="page"]{border-color:#ffffffa8;filter:saturate(1.2) brightness(1.08);box-shadow:0 0 0 2px #ffffff44,0 10px 24px #17243a32}
+.navlinks a:hover{color:#fff;transform:translateY(-2px);filter:brightness(1.12)}
+body:not([data-page="cyber-security"]) .grid>.card:not(.software-card):not(.model-card){border-left:4px solid #f07838;background:linear-gradient(145deg,#fff5e9,#fff 72%)}
+body:not([data-page="cyber-security"]) .grid>.card:nth-child(4n+2):not(.software-card):not(.model-card){border-left-color:#5779e9;background:linear-gradient(145deg,#edf3ff,#fff 72%)}
+body:not([data-page="cyber-security"]) .grid>.card:nth-child(4n+3):not(.software-card):not(.model-card){border-left-color:#22a88e;background:linear-gradient(145deg,#eafaf5,#fff 72%)}
+body:not([data-page="cyber-security"]) .grid>.card:nth-child(4n):not(.software-card):not(.model-card){border-left-color:#a45fd7;background:linear-gradient(145deg,#f6efff,#fff 72%)}
+@media(max-width:1000px){.navlinks{gap:6px}.navlinks a{padding:7px 8px;font-size:10px}.navlinks a .nav-icon{width:19px;height:19px}}
+@media(max-width:760px){.navlinks a{padding:6px 8px;font-size:10px}.navlinks a .nav-icon{width:18px;height:18px;font-size:13px}}
+
+/* The homepage uses saturated color blocks throughout, not plain white panels. */
+body[data-page="home"]{background:radial-gradient(ellipse at 2% 16%,#ffd8ba 0,transparent 28%),radial-gradient(ellipse at 96% 22%,#d8c7ff 0,transparent 30%),radial-gradient(ellipse at 55% 68%,#c4eff0 0,transparent 38%),linear-gradient(145deg,#f8d9bd 0%,#e5ddff 48%,#d0eff0 100%);background-attachment:fixed}
+body[data-page="home"]:before{opacity:.46;background-image:radial-gradient(ellipse at 15% 12%,#ff8d6540,transparent 36%),radial-gradient(ellipse at 86% 32%,#8c68e740,transparent 36%),radial-gradient(ellipse at 40% 80%,#38b8b440,transparent 38%),linear-gradient(#fff8 1px,transparent 1px),linear-gradient(90deg,#fff8 1px,transparent 1px)}
+body[data-page="home"] .section.wrap{padding:clamp(34px,5vw,68px);margin-block:30px;border:1px solid #ffffffb3;border-radius:34px;background:linear-gradient(135deg,#fff2d9e8,#efddffdb 52%,#d9f7f0e8);box-shadow:0 24px 65px #4234771a;backdrop-filter:blur(16px)}
+body[data-page="home"] .section.section-tint{border-radius:0;background:linear-gradient(112deg,#ffc9b9,#e4cbff 48%,#bfeeea);box-shadow:0 15px 50px #45336d1b}
+body[data-page="home"] .proof-strip{background:linear-gradient(100deg,#ffe0b9,#e7d8ff 50%,#cef4e9);border:1px solid #ffffffc9}
+body[data-page="home"] .proof-strip>div:nth-child(4n+1) strong{color:#da5b2c}body[data-page="home"] .proof-strip>div:nth-child(4n+2) strong{color:#6253d8}body[data-page="home"] .proof-strip>div:nth-child(4n+3) strong{color:#138c80}
+body[data-page="home"] .service-tile{border:1px solid #ffffffb5;color:#18223b;background:linear-gradient(145deg,#ffceaa,#fff0d7 80%);box-shadow:0 20px 48px #62422927}
+body[data-page="home"] .service-tile:nth-child(2){background:linear-gradient(145deg,#aed3ff,#e7e4ff 82%);box-shadow:0 20px 48px #344c8427}
+body[data-page="home"] .service-tile:nth-child(3){background:linear-gradient(145deg,#9be6d7,#daf8ed 82%);box-shadow:0 20px 48px #1d76652a}
+body[data-page="home"] .service-tile h3,body[data-page="home"] .service-tile p{color:#172338}
+body[data-page="home"] .rate-card{border-color:#ffffffb5;background:radial-gradient(ellipse at 90% 0%,#ffc464a0,transparent 48%),linear-gradient(145deg,#ffdfb3,#fff0d5);color:#18223b}
+body[data-page="home"] .rate-card:nth-child(2){background:radial-gradient(ellipse at 90% 0%,#84d8f2a8,transparent 48%),linear-gradient(145deg,#c2e8ff,#e7e5ff)}
+body[data-page="home"] .rate-card:nth-child(3){background:radial-gradient(ellipse at 90% 0%,#c08cf2a8,transparent 48%),linear-gradient(145deg,#e6cdfb,#f8e3ef)}
+body[data-page="home"] .featured-device-card{border-color:#ffffffc4;background:linear-gradient(145deg,#fff1d7,#f7ddff 56%,#d9f5ed);box-shadow:0 20px 45px #42347720}
+body[data-page="home"] .featured-device-card:nth-child(4n+2){background:linear-gradient(145deg,#cfe6ff,#eff0ff 55%,#d6f5f3)}
+body[data-page="home"] .featured-device-card:nth-child(4n+3){background:linear-gradient(145deg,#c4f2df,#f0f8d6 55%,#fff0d9)}
+body[data-page="home"] .featured-tool-card{border-color:#ffffffc9;background:linear-gradient(135deg,#ffd8bb,#e4d4ff 52%,#cef2e7)}
+body[data-page="home"] .featured-tool-card:nth-child(even){background:linear-gradient(135deg,#d4e4ff,#e8d8ff 52%,#c8f2f0)}
+body[data-page="home"] .brand-chip{border-color:#ffffff;background:linear-gradient(120deg,#fff0d6,#eadfff 62%,#d5f7ee);color:#29345b}
+body[data-page="home"] .cta-panel{border-color:#ffffff;background:radial-gradient(ellipse at 85% 15%,#ffb65d90,transparent 42%),linear-gradient(125deg,#ffcdb7,#ded4ff 58%,#bdeee7);box-shadow:0 28px 70px #4c33772a}
+body:not([data-page="cyber-security"]) .topbar{background:linear-gradient(100deg,#ffc084,#d7b8ff 52%,#88dfd1);border-color:#ffffff;box-shadow:0 10px 30px #3a34731b}
+body:not([data-page="cyber-security"]) .brand-name{color:#16213a}
+body:not([data-page="cyber-security"]) .manager-tag{color:#414a69}
+body:not([data-page="cyber-security"]) .menu{background:linear-gradient(135deg,#ef6f50,#8265dc);border-color:#ffffff9c;color:#fff;box-shadow:0 8px 20px #46327d30}
+@media(max-width:760px){body[data-page="home"] .section.wrap{width:min(calc(100% - 18px),1320px);padding:28px 16px;margin-block:18px;border-radius:24px}}
+

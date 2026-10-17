@@ -203,7 +203,8 @@
       items.sort(function (a, b) { return sort.value === 'year' ? Number(b.year || 0) - Number(a.year || 0) || a.name.localeCompare(b.name) : a.name.localeCompare(b.name); });
       if (count) count.textContent = 'Showing ' + items.length.toLocaleString() + ' of ' + mobiles.length.toLocaleString() + ' verified catalogue entries';
       root.innerHTML = items.length ? items.map(function (m) {
-        return '<article class="card model-card" id="device-' + esc(m.id) + '"><div class="model-visual">' + imageMarkup(m) + '</div><div class="meta">' + esc(m.brand) + ' · ' + esc(m.year) + '</div><h3>' + esc(m.name) + '</h3><p>' + esc(m.description) + '</p><span class="tag">' + esc(m.os) + '</span><div class="model-actions"><a class="button secondary" href="' + esc(url('pages/mobiles.html?model=' + encodeURIComponent(m.id))) + '">View device details</a><a class="source" href="' + esc(m.source) + '" target="_blank" rel="noopener">Manufacturer source ↗</a></div></article>';
+        var brandClass = 'brand-' + String(m.brand).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+        return '<article class="card model-card ' + esc(brandClass) + '" id="device-' + esc(m.id) + '"><div class="model-visual">' + imageMarkup(m) + '</div><div class="meta">' + esc(m.brand) + ' · ' + esc(m.year) + '</div><h3>' + esc(m.name) + '</h3><p>' + esc(m.description) + '</p><span class="tag">' + esc(m.os) + '</span><div class="model-actions"><a class="button secondary" href="' + esc(url('pages/mobiles.html?model=' + encodeURIComponent(m.id))) + '">View device details</a><a class="source" href="' + esc(m.source) + '" target="_blank" rel="noopener">Manufacturer source ↗</a></div></article>';
       }).join('') : '<div class="empty">No models match. Change or reset filters.</div>';
     }
 
