@@ -4,10 +4,20 @@
   var nested = /\/pages\//.test(location.pathname);
   var base = nested ? '../' : './';
   var page = document.body.dataset.page || 'home';
+  var WHATSAPP_OPTION_ENABLED = false;
   var url = function (path) { return base + path; };
   var assetsBase = new URL(base, location.href);
   var mediaUrl = function (path) { var value = String(path || ''); return /^https?:/.test(value) ? value : new URL(value.replace(/^\/+/, ''), assetsBase).href; };
   var domainLabel = function (value) { try { return new URL(value, location.href).hostname.replace(/^www\./, ''); } catch (_error) { return 'publisher website'; } };
+  function applyWhatsAppOption() {
+    if (WHATSAPP_OPTION_ENABLED) return;
+    document.querySelectorAll('a[href*="wa.me"]').forEach(function (link) {
+      var contactCard = link.closest('.card.contact');
+      if (contactCard) contactCard.remove();
+      else link.remove();
+    });
+  }
+
   function initAurora() {
     document.documentElement.style.setProperty('--glow-one', '#ff9168');
     document.documentElement.style.setProperty('--glow-two', '#9a78ff');
@@ -318,6 +328,7 @@
 
   initAurora();
   initChrome();
+  applyWhatsAppOption();
   Promise.all([load('mobiles'), load('software'), load('resources'), load('solutions')]).then(function (data) {
     var mobiles = data[0], software = data[1], resources = data[2], solutions = data[3];
     createSearchIndex(mobiles, software, resources, solutions);
