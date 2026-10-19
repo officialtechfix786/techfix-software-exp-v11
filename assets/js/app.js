@@ -136,7 +136,7 @@
       { title: 'Apple device support', desc: 'Apple ownership, backup, restore, and care resources.', kind: 'Service', url: url('pages/apple.html'), search: 'apple iphone ipad mac ios backup restore support service' },
       { title: 'Android device support', desc: 'Android updates, backup, recovery, and device guides.', kind: 'Service', url: url('pages/android.html'), search: 'android samsung pixel xiaomi backup recovery updates support service' },
       { title: 'Cybersecurity learning', desc: 'Authorized defensive learning resources and safe practice labs.', kind: 'Learning', url: url('pages/cyber-security.html'), search: 'cyber security ethical learning lab defense security tools' },
-      { title: 'Contact and WhatsApp', desc: 'Contact TechNex Labs for a service inquiry.', kind: 'Contact', url: url('pages/contact.html'), search: 'contact whatsapp phone appointment help' }
+      { title: 'Contact TechNex Labs', desc: 'Contact TechNex Labs for service information.', kind: 'Contact', url: url('pages/contact.html'), search: 'contact whatsapp phone appointment help' }
     ];
     var all = modelResults.concat(tools, refs, guides, serviceResults);
     var input = document.querySelector('#global-search');
